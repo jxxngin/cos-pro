@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>3장 합계 · 평균 · 최댓값 · COS Pro 3급</title>
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/print.css">
+  <script src="../assets/js/sheet.js" defer></script>
+</head>
+<body data-footer="COS Pro 3급 · 3장 합계 · 평균 · 최댓값">
+
+<section class="page">
+  <header class="chapter-band">
+    <div class="ch-no">3</div>
+    <div>
+      <h1>합계 · 평균 · 최댓값</h1>
+      <p>리스트의 합과 평균, 가장 큰 값을 구하는 문제. 내장 함수로 푸는 방법(A)과 반복문으로 직접 푸는 방법(B)을 모두 써 본다.</p>
+    </div>
+  </header>
+  <div class="prob-head">
+    <h2>세 과목 평균 · A</h2>
+    <span class="src">2세트-01</span>
+    <span class="badge type-blank">빈칸 채우기</span>
+    <span class="tag">sum</span><span class="tag">%.2f</span>
+  </div>
+  <p class="cond">내장 함수 sum을 사용해 푼다.</p>
+  <div class="orig">
+    <div class="sec"><div class="lbl">문제 설명</div><div><p>국어, 영어, 수학 점수가 정수 리스트 score의 원소로 주어졌을 때, 평균 점수를 출력하는 프로그램의 빈칸을 채우십시오.</p><p>(단, 평균점수는 소수점 두 번째 자리까지 출력합니다.)</p></div></div>
+    <div class="sec"><div class="lbl">입력 설명</div><div><p>score : 국어, 영어, 수학 점수가 차례대로 저장된 정수 리스트</p></div></div>
+    <div class="sec"><div class="lbl">출력 설명</div><div><p>국어, 영어, 수학 점수의 평균 점수가 소수점 두 번째 자리까지 출력됩니다.</p></div></div>
+    <div class="sec"><div class="lbl">예제</div><div><table class="ex"><tr><th>score</th><th>result</th></tr><tr><td>85 89 91</td><td>88.33</td></tr></table></div></div>
+    <div class="sec"><div class="lbl"></div><div class="io-pair">
+      <div><span class="lbl">입력</span><pre>85 89 91</pre></div>
+      <div><span class="lbl">출력</span><pre>88.33</pre></div>
+    </div></div>
+    <div class="sec"><div class="lbl">예제 설명</div><div><p>국어점수 : 85점, 영어점수 : 89점, 수학점수 : 91 입니다.<br>세 과목의 평균 점수는 88.3333333 이지만, 소수점 두번째 자리까지 출력하여 88.33을 출력합니다.</p></div></div>
+  </div>
+  <p class="steps-title">단계별로 풀기</p>
+  <div class="step">
+    <p class="q"><span class="n">1.</span>입력된 점수 세 개를 정수 리스트로 바꿔 <code>score</code>에 대입한다.<span class="hint-tag">힌트</span></p>
+    <div class="write-lines"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">2.</span><code>sum</code>을 사용해 <code>score</code>의 합을 <code>total</code>에 대입한다.<span class="hint-tag">힌트</span></p>
+    <div class="write-lines"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">3.</span><code>total</code>을 3으로 나눈 값을 <code>average</code>에 대입한다.<span class="hint-tag">힌트</span></p>
+    <div class="write-lines"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">4.</span><code>average</code>를 소수점 두 번째 자리까지 출력한다.<span class="hint-tag">힌트</span></p>
+    <div class="write-lines"></div>
+  </div>
+  <div class="step fill-rest">
+    <p class="q"><span class="n">5.</span>1~4를 모아 완성 코드를 작성한다.</p>
+    <div class="write-lines" style="--lines: 4"></div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="prob-head">
+    <h2>세 과목 평균 · B</h2>
+    <span class="src">2세트-01</span>
+    <span class="badge type-blank">빈칸 채우기</span>
+    <span class="tag">for</span><span class="tag">누적</span>
+  </div>
+  <p class="cond">문제는 A와 같다. 이번에는 sum을 사용하지 않는다.</p>
+  <div class="step">
+    <p class="q"><span class="n">1.</span>입력된 점수 세 개를 정수 리스트로 바꿔 <code>score</code>에 대입한다.</p>
+    <div class="write-lines"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">2.</span>합을 담을 변수 <code>total_score</code>를 만들고 0을 대입한다.<span class="hint-tag">힌트</span></p>
+    <div class="write-lines"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">3.</span><code>for</code>를 사용해 <code>score</code>의 원소를 하나씩 <code>subject</code>로 꺼내 <code>total_score</code>에 더한다.<span class="hint-tag">힌트</span></p>
+    <div class="write-lines" style="--lines: 2"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">4.</span><code>total_score</code>를 3으로 나눈 값을 <code>average</code>에 대입한다.</p>
+    <div class="write-lines"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">5.</span><code>average</code>를 소수점 두 번째 자리까지 출력한다.</p>
+    <div class="write-lines"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">6.</span>1~5를 모아 완성 코드를 작성한다.</p>
+    <div class="write-lines" style="--lines: 6"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">7.</span>시험 코드의 빈칸 ①②③을 채운다.<span class="hint-tag">힌트</span></p>
+<pre class="code">
+if __name__ == "__main__":
+    score = {{1:wide}}
+
+    total_score = 0
+
+    for subject in score :
+        total_score = total_score + {{2}}
+
+    average = total_score / 3
+
+    print({{3:wide}})
+</pre>
+  </div>
+</section>
+
+<section class="page">
+  <div class="prob-head">
+    <h2>두 반의 최장신 · A</h2>
+    <span class="src">2세트-08</span>
+    <span class="badge type-write">함수 작성</span>
+    <span class="tag">max</span><span class="tag">print 여러 값</span>
+  </div>
+  <p class="cond">내장 함수 max를 사용해 푼다.</p>
+  <div class="orig">
+    <div class="sec"><div class="lbl">문제 설명</div><div><p>대한 어린이집의 초록반, 노랑반에는 각각 4명의 원아가 있습니다.</p><p>초록반, 노랑반 원아들의 키가 두 개의 정수 리스트 green, yellow에 주어졌을 때, 각 반의 최장신(가장 큰 키)을 출력하는 프로그램을 완성해주세요.</p></div></div>
+    <div class="sec"><div class="lbl">입력 설명</div><div><p>green : 4명의 초록반 원아들의 키가 저장된 정수 리스트<br>50 이상 150 이하의 자연수<br>yellow : 4명의 노랑반 원아들의 키가 저장된 정수 리스트<br>50 이상 150 이하의 자연수</p></div></div>
+    <div class="sec"><div class="lbl">출력 설명</div><div><p>초록반, 노랑반의 최장신을 차례대로 출력합니다.</p></div></div>
+    <div class="sec"><div class="lbl">예제</div><div><table class="ex"><tr><th>green</th><th>yellow</th><th>result</th></tr><tr><td>75 60 120 99</td><td>54 88 60 85</td><td>120 88</td></tr></table></div></div>
+    <div class="sec"><div class="lbl"></div><div class="io-pair">
+      <div><span class="lbl">입력</span><pre>75 60 120 99
+54 88 60 85</pre></div>
+      <div><span class="lbl">출력</span><pre>120 88</pre></div>
+    </div></div>
+    <div class="sec"><div class="lbl">예제 설명</div><div><p>초록반의 최장신 : 120, 노랑반의 최장신 : 88<br>초록반, 노랑반 순서로 최장신 값을 출력합니다.<br>출력값 : 120 88</p></div></div>
+  </div>
+  <p class="steps-title">단계별로 풀기</p>
+  <div class="step">
+    <p class="q"><span class="n">1.</span>첫째 줄 입력을 정수 리스트로 바꿔 <code>green</code>에, 둘째 줄 입력을 정수 리스트로 바꿔 <code>yellow</code>에 대입한다.</p>
+    <div class="write-lines" style="--lines: 2"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">2.</span><code>max</code>를 사용해 두 반의 최장신을 한 줄에 공백으로 구분해 출력한다.<span class="hint-tag">힌트</span></p>
+    <div class="write-lines"></div>
+  </div>
+  <div class="step fill-rest">
+    <p class="q"><span class="n">3.</span>1~2를 모아 완성 코드를 작성한다.</p>
+    <div class="write-lines" style="--lines: 3"></div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="prob-head">
+    <h2>두 반의 최장신 · B</h2>
+    <span class="src">2세트-08</span>
+    <span class="badge type-write">함수 작성</span>
+    <span class="tag">for</span><span class="tag">if</span><span class="tag">최댓값 찾기</span>
+  </div>
+  <p class="cond">문제는 A와 같다. 이번에는 max를 사용하지 않는다.</p>
+  <div class="step">
+    <p class="q"><span class="n">1.</span>두 줄을 각각 정수 리스트로 바꿔 <code>green</code>, <code>yellow</code>에 대입한다.</p>
+    <div class="write-lines" style="--lines: 2"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">2.</span><code>green</code>의 첫 번째 원소를 <code>g_max</code>에 대입한다.<span class="hint-tag">힌트</span></p>
+    <div class="write-lines"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">3.</span><code>for</code>로 <code>green</code>의 원소를 하나씩 <code>h</code>로 꺼내, <code>h</code>가 <code>g_max</code>보다 크면 <code>g_max</code>에 <code>h</code>를 대입한다.<span class="hint-tag">힌트</span></p>
+    <div class="write-lines" style="--lines: 3"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">4.</span>같은 방법으로 <code>yellow</code>의 최댓값을 <code>y_max</code>에 구한다.</p>
+    <div class="write-lines" style="--lines: 4"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">5.</span><code>g_max</code>와 <code>y_max</code>를 한 줄에 공백으로 구분해 출력한다.</p>
+    <div class="write-lines"></div>
+  </div>
+  <div class="step fill-rest">
+    <p class="q"><span class="n">6.</span>1~5를 모아 완성 코드를 작성한다.</p>
+    <div class="write-lines" style="--lines: 11"></div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="prob-head">
+    <h2>사전 순으로 뒤에 오는 문자열 · A</h2>
+    <span class="src">1세트-08</span>
+    <span class="badge type-blank">빈칸 채우기</span>
+    <span class="tag">문자열 비교</span><span class="tag">max</span>
+  </div>
+  <p class="cond">내장 함수 max를 사용해 푼다.</p>
+  <div class="orig">
+    <div class="sec"><div class="lbl">문제 설명</div><div><p>두 문자열 중 영어사전 순으로 뒤에 오는 문자열을 구하려 합니다.</p><p>문자열 두 개를 전달받아 영어사전 순으로 뒤에 있는 문자열을 출력하도록 코드를 작성하려 합니다. 빈칸(⬜)을 채워 전체 코드를 완성해주세요.</p></div></div>
+    <div class="sec"><div class="lbl">입력 설명</div><div><p>문자열 두 개가 주어집니다.</p><ul><li>두 문자열 길이는 1 이상 100 이하입니다.</li><li>두 문자열은 알파벳 소문자로만 이루어져 있습니다.</li></ul></div></div>
+    <div class="sec"><div class="lbl">출력 설명</div><div><p>두 문자열 중 영어사전 순으로 뒤에 오는 문자열을 출력해주세요.</p></div></div>
+    <div class="sec"><div class="lbl">예제</div><div><table class="ex"><tr><th>str1</th><th>str2</th><th>result</th></tr><tr><td>yellow</td><td>green</td><td>yellow</td></tr></table></div></div>
+    <div class="sec"><div class="lbl"></div><div class="io-pair">
+      <div><span class="lbl">입력</span><pre>yellow
+green</pre></div>
+      <div><span class="lbl">출력</span><pre>yellow</pre></div>
+    </div></div>
+    <div class="sec"><div class="lbl">예제 설명</div><div><p>두 문자열 “yellow”와 “green” 중 영어사전 순으로 뒤에 오는 문자열은 “yellow”이므로 “yellow”를 출력합니다.</p></div></div>
+  </div>
+  <p class="steps-title">단계별로 풀기</p>
+  <div class="step">
+    <p class="q"><span class="n">1.</span>입력된 문자열 두 개를 <code>str1</code>, <code>str2</code>에 대입한다.<span class="hint-tag">힌트</span></p>
+    <div class="write-lines" style="--lines: 2"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">2.</span><code>max</code>를 사용해 사전 순으로 뒤에 오는 문자열을 출력한다.<span class="hint-tag">힌트</span></p>
+    <div class="write-lines"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">3.</span>시험 코드의 빈칸 ①을 채운다.</p>
+<pre class="code">
+str1 = input()
+str2 = input()
+
+print({{1:wide}})
+</pre>
+  </div>
+</section>
+
+<section class="page">
+  <div class="prob-head">
+    <h2>사전 순으로 뒤에 오는 문자열 · B</h2>
+    <span class="src">1세트-08</span>
+    <span class="badge type-blank">빈칸 채우기</span>
+    <span class="tag">문자열 비교</span><span class="tag">if</span>
+  </div>
+  <p class="cond">문제는 A와 같다. 이번에는 max를 사용하지 않는다.</p>
+  <div class="step">
+    <p class="q"><span class="n">1.</span>입력된 문자열 두 개를 <code>str1</code>, <code>str2</code>에 대입한다.</p>
+    <div class="write-lines" style="--lines: 2"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">2.</span><code>str1</code>이 <code>str2</code>보다 사전 순으로 뒤이면 <code>str1</code>을, 아니면 <code>str2</code>를 출력한다.<span class="hint-tag">힌트</span></p>
+    <div class="write-lines" style="--lines: 4"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">3.</span>1~2를 모아 완성 코드를 작성한다.</p>
+    <div class="write-lines" style="--lines: 6"></div>
+  </div>
+</section>
+
+<section class="page">
+  <h2 class="answers-title">3장 힌트</h2>
+  <div class="answer hint-box">
+    <h3>2세트-01 · 세 과목 평균 · A</h3>
+    <ol>
+      <li><span class="no">1</span><span><p><code>input()</code>은 입력 한 줄을 문자열로 받는다. <code>split()</code>은 그 문자열을 공백 기준으로 잘라 리스트로 만들고, <code>list(map(int, 리스트))</code>는 리스트의 모든 원소를 정수로 바꾼다. 세 가지를 한 줄로 쓸 수 있다.</p>
+<pre class="code plain">
+line = input()               # "1 2 3"
+parts = line.split()         # ['1', '2', '3']
+nums = list(map(int, parts)) # [1, 2, 3]
+nums = list(map(int, input().split()))   # 한 줄 버전
+</pre></span></li>
+      <li><span class="no">2</span><span><p><code>sum(리스트)</code>는 리스트 원소의 합을 돌려준다. 예) <code>sum([1, 2, 3])</code> → <code>6</code></p></span></li>
+      <li><span class="no">3</span><span><p><code>/</code>로 나눈 결과는 항상 실수다. 예) <code>9 / 3</code> → <code>3.0</code></p></span></li>
+      <li><span class="no">4</span><span><p><code>"%.2f" % 값</code>은 값을 소수점 두 번째 자리까지(셋째 자리에서 반올림) 나타낸 문자열을 만든다. <code>round(값, 2)</code>는 끝자리 0을 지우므로 자릿수가 고정되지 않는다.</p>
+<pre class="code plain">
+print("%.2f" % 3.14159)   # 3.14
+print("%.2f" % 88.0)      # 88.00
+print(round(88.0, 2))      # 88.0
+</pre></span></li>
+    </ol>
+  </div>
+  <div class="answer hint-box">
+    <h3>2세트-01 · 세 과목 평균 · B</h3>
+    <ol>
+      <li><span class="no">2</span><span><p>합을 반복해서 더해 갈 변수는 반복문 전에 0으로 시작한다.</p></span></li>
+      <li><span class="no">3</span><span><p><code>for 변수 in 리스트:</code>는 리스트의 원소를 앞에서부터 하나씩 변수에 꺼내 아래 줄을 반복한다. <code>total = total + x</code>처럼 쓰면 원소가 하나씩 더해진다(누적).</p>
+<pre class="code plain">
+total = 0
+for x in [1, 2, 3]:
+    total = total + x
+print(total)    # 6
+</pre></span></li>
+      <li><span class="no">7</span><span><p>시험 코드의 빈칸 ①은 입력 처리, ②는 더할 값, ③은 출력 형식이다. 1단계·3단계·5단계에서 쓴 코드와 같다.</p></span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="page">
+  <h2 class="answers-title">3장 힌트 <span style="font-size: 10pt; color: var(--c-muted);">(이어서)</span></h2>
+  <div class="answer hint-box">
+    <h3>2세트-08 · 두 반의 최장신 · A</h3>
+    <ol>
+      <li><span class="no">2</span><span><p><code>max(리스트)</code>는 리스트에서 가장 큰 원소를 돌려준다. <code>print(a, b)</code>처럼 여러 값을 쉼표로 넘기면 공백으로 구분해 한 줄에 출력한다.</p>
+<pre class="code plain">
+print(max([3, 9, 4]))    # 9
+print(1, 2)              # 1 2
+</pre></span></li>
+    </ol>
+  </div>
+  <div class="answer hint-box">
+    <h3>2세트-08 · 두 반의 최장신 · B</h3>
+    <ol>
+      <li><span class="no">2</span><span><p>최댓값을 직접 찾을 때는 먼저 첫 번째 원소(<code>리스트[0]</code>)를 최댓값이라고 정해 둔다.</p></span></li>
+      <li><span class="no">3</span><span><p>원소를 하나씩 꺼내 지금까지의 최댓값과 비교하고, 더 크면 최댓값을 바꾼다. 반복이 끝나면 가장 큰 값이 남는다.</p>
+<pre class="code plain">
+nums = [3, 9, 4]
+big = nums[0]
+for x in nums:
+    if x &gt; big:
+        big = x
+print(big)    # 9
+</pre></span></li>
+    </ol>
+  </div>
+  <div class="answer hint-box">
+    <h3>1세트-08 · 사전 순으로 뒤에 오는 문자열 · A</h3>
+    <ol>
+      <li><span class="no">1</span><span><p>입력이 문자열이므로 <code>int()</code>로 바꾸지 않는다.</p></span></li>
+      <li><span class="no">2</span><span><p>문자열끼리는 사전 순서로 크기를 비교한다. 사전에서 뒤에 오는 문자열이 더 크다. 그래서 <code>max</code>를 문자열에 쓰면 사전 순으로 뒤에 오는 문자열이 나온다.</p>
+<pre class="code plain">
+print(max("apple", "banana"))   # banana
+</pre></span></li>
+    </ol>
+  </div>
+  <div class="answer hint-box">
+    <h3>1세트-08 · 사전 순으로 뒤에 오는 문자열 · B</h3>
+    <ol>
+      <li><span class="no">2</span><span><p>문자열도 <code>&gt;</code>, <code>&lt;</code>로 비교할 수 있다. 앞 글자부터 차례로 비교하고, 사전에서 뒤에 오는 쪽이 크다. 예) <code>"yellow" &gt; "green"</code> → <code>True</code>, <code>"apple" &lt; "apply"</code> → <code>True</code></p></span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="page">
+  <h2 class="answers-title">3장 정답</h2>
+  <div class="answer">
+    <h3>2세트-01 · 세 과목 평균 · A <span class="badge type-blank">빈칸 채우기</span></h3>
+    <ol>
+      <li><span class="no">1</span><span><code>score = list(map(int, input().split()))</code></span></li>
+      <li><span class="no">2</span><span><code>total = sum(score)</code></span></li>
+      <li><span class="no">3</span><span><code>average = total / 3</code></span></li>
+      <li><span class="no">4</span><span><code>print("%.2f" % average)</code></span></li>
+      <li><span class="no">5</span><span>
+<pre class="code small">
+score = list(map(int, input().split()))
+total = sum(score)
+average = total / 3
+print("%.2f" % average)
+</pre></span></li>
+    </ol>
+  </div>
+  <div class="answer">
+    <h3>2세트-01 · 세 과목 평균 · B <span class="badge type-blank">빈칸 채우기</span></h3>
+    <ol>
+      <li><span class="no">1</span><span><code>score = list(map(int, input().split()))</code></span></li>
+      <li><span class="no">2</span><span><code>total_score = 0</code></span></li>
+      <li><span class="no">3</span><span><code>for subject in score:</code> 다음 줄에 <code>total_score = total_score + subject</code></span></li>
+      <li><span class="no">4</span><span><code>average = total_score / 3</code></span></li>
+      <li><span class="no">5</span><span><code>print("%.2f" % average)</code></span></li>
+      <li><span class="no">6</span><span>
+<pre class="code small">
+score = list(map(int, input().split()))
+total_score = 0
+for subject in score:
+    total_score = total_score + subject
+average = total_score / 3
+print("%.2f" % average)
+</pre></span></li>
+      <li><span class="no blank-no">7 ①</span><span><code>list(map(int, input().split()))</code></span></li>
+      <li><span class="no blank-no">7 ②</span><span><code>subject</code></span></li>
+      <li><span class="no blank-no">7 ③</span><span><code>"%.2f" % average</code></span></li>
+    </ol>
+
+<pre class="code small">
+if __name__ == "__main__":
+    score = ⟦list(map(int, input().split()))⟧
+
+    total_score = 0
+
+    for subject in score :
+        total_score = total_score + ⟦subject⟧
+
+    average = total_score / 3
+
+    print(⟦"%.2f" % average⟧)
+</pre>
+  </div>
+</section>
+
+<section class="page">
+  <h2 class="answers-title">3장 정답 <span style="font-size: 10pt; color: var(--c-muted);">(이어서)</span></h2>
+  <div class="answer">
+    <h3>2세트-08 · 두 반의 최장신 · A <span class="badge type-write">함수 작성</span></h3>
+    <ol>
+      <li><span class="no">1</span><span><code>green = list(map(int, input().split()))</code> / <code>yellow = list(map(int, input().split()))</code></span></li>
+      <li><span class="no">2</span><span><code>print(max(green), max(yellow))</code></span></li>
+      <li><span class="no">3</span><span>
+<pre class="code small">
+green = list(map(int, input().split()))
+yellow = list(map(int, input().split()))
+print(max(green), max(yellow))
+</pre></span></li>
+    </ol>
+  </div>
+  <div class="answer">
+    <h3>2세트-08 · 두 반의 최장신 · B <span class="badge type-write">함수 작성</span></h3>
+    <ol>
+      <li><span class="no">1</span><span>A의 1단계와 같다.</span></li>
+      <li><span class="no">2</span><span><code>g_max = green[0]</code></span></li>
+      <li><span class="no">3</span><span>
+<pre class="code small">
+for h in green:
+    if h &gt; g_max:
+        g_max = h
+</pre></span></li>
+      <li><span class="no">4</span><span>
+<pre class="code small">
+y_max = yellow[0]
+for h in yellow:
+    if h &gt; y_max:
+        y_max = h
+</pre></span></li>
+      <li><span class="no">5</span><span><code>print(g_max, y_max)</code></span></li>
+      <li><span class="no">6</span><span>
+<pre class="code small">
+green = list(map(int, input().split()))
+yellow = list(map(int, input().split()))
+g_max = green[0]
+for h in green:
+    if h &gt; g_max:
+        g_max = h
+y_max = yellow[0]
+for h in yellow:
+    if h &gt; y_max:
+        y_max = h
+print(g_max, y_max)
+</pre></span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="page">
+  <h2 class="answers-title">3장 정답 <span style="font-size: 10pt; color: var(--c-muted);">(이어서)</span></h2>
+  <div class="answer">
+    <h3>1세트-08 · 사전 순으로 뒤에 오는 문자열 · A <span class="badge type-blank">빈칸 채우기</span></h3>
+    <ol>
+      <li><span class="no">1</span><span><code>str1 = input()</code> / <code>str2 = input()</code></span></li>
+      <li><span class="no">2</span><span><code>print(max(str1, str2))</code></span></li>
+      <li><span class="no blank-no">3 ①</span><span><code>max(str1, str2)</code></span></li>
+    </ol>
+
+<pre class="code small">
+str1 = input()
+str2 = input()
+
+print(⟦max(str1, str2)⟧)
+</pre>
+  </div>
+  <div class="answer">
+    <h3>1세트-08 · 사전 순으로 뒤에 오는 문자열 · B <span class="badge type-blank">빈칸 채우기</span></h3>
+    <ol>
+      <li><span class="no">1</span><span><code>str1 = input()</code> / <code>str2 = input()</code></span></li>
+      <li><span class="no">2 · 3</span><span>
+<pre class="code small">
+str1 = input()
+str2 = input()
+if str1 &gt; str2:
+    print(str1)
+else:
+    print(str2)
+</pre></span></li>
+    </ol>
+  </div>
+</section>
+
+</body>
+</html>
