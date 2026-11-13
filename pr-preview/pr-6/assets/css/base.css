@@ -1,0 +1,504 @@
+/* =========================================================
+   COS Pro 학습지 공통 스타일
+   - 규칙: docs/design.md, 사용법: docs/template.md
+   - 한 장(.page) = A4 한 쪽. 화면에서도 종이 모양으로 보여 준다.
+   - 문제는 원문 그대로 싣고, 단계(.step)별 질문과 쓰기 칸으로 푼다. 힌트·정답은 장 끝.
+   ========================================================= */
+
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap");
+
+:root {
+  /* 색상 */
+  --c-primary: #4338CA;
+  --c-primary-soft: #EEF2FF;
+  --c-blank: #D97706;
+  --c-blank-soft: #FEF3C7;
+  --c-write: #059669;
+  --c-write-soft: #D1FAE5;
+  --c-warn: #DC2626;
+  --c-warn-soft: #FEF2F2;
+  --c-note: #0369A1;
+  --c-note-soft: #F0F9FF;
+  --c-text: #1F2937;
+  --c-muted: #6B7280;
+  --c-line: #E5E7EB;
+  --c-code-bg: #F8FAFC;
+  --c-desk: #E9EBF0;          /* 화면에서 종이 뒤 바탕 */
+
+  /* 코드 문법 색 (옅게) */
+  --c-tok-kw: #7C3AED;
+  --c-tok-str: #B45309;
+  --c-tok-num: #0E7490;
+  --c-tok-fn: #1D4ED8;
+  --c-tok-com: #9CA3AF;
+
+  /* 글꼴 */
+  --f-body: "Pretendard", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+  --f-code: "Nanum Gothic Coding", "D2Coding", Consolas, monospace;
+
+  /* A4 */
+  --page-w: 210mm;
+  --page-h: 297mm;
+  --page-pad-y: 14mm;
+  --page-pad-x: 16mm;
+  --foot-h: 8mm;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+body {
+  margin: 0;
+  background: var(--c-desk);
+  color: var(--c-text);
+  font-family: var(--f-body);
+  font-size: 10.5pt;
+  line-height: 1.55;
+  word-break: keep-all;
+}
+
+code, pre, kbd { font-family: var(--f-code); }
+
+/* ---------------------------------------------------------
+   쪽
+   --------------------------------------------------------- */
+.page {
+  position: relative;
+  width: var(--page-w);
+  height: var(--page-h);
+  margin: 12mm auto;
+  padding: var(--page-pad-y) var(--page-pad-x) calc(var(--page-pad-y) + var(--foot-h));
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, .12);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5mm;
+}
+
+.page-foot {
+  position: absolute;
+  left: var(--page-pad-x);
+  right: var(--page-pad-x);
+  bottom: var(--page-pad-y);
+  height: var(--foot-h);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  font-size: 8.5pt;
+  color: var(--c-muted);
+  border-top: 1px solid var(--c-line);
+}
+
+/* 화면 전용: 내용이 넘치면 표시 (인쇄에는 나오지 않음) */
+.page.is-overflow { outline: 3px solid var(--c-warn); }
+.page.is-overflow::after {
+  content: "내용이 쪽을 넘칩니다";
+  position: absolute;
+  top: 4mm;
+  right: 4mm;
+  font-size: 9pt;
+  color: #fff;
+  background: var(--c-warn);
+  padding: 1mm 3mm;
+  border-radius: 2mm;
+}
+.is-overflow-el { outline: 2px dashed var(--c-warn); outline-offset: 1px; }
+
+/* ---------------------------------------------------------
+   장 머리띠
+   --------------------------------------------------------- */
+.chapter-band {
+  background: var(--c-primary-soft);
+  border-radius: 3mm;
+  padding: 4mm 5mm;
+  display: flex;
+  align-items: center;
+  gap: 5mm;
+}
+.chapter-band .ch-no {
+  flex: none;
+  width: 12mm;
+  height: 12mm;
+  border-radius: 50%;
+  background: var(--c-primary);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 15pt;
+  font-weight: 800;
+}
+.chapter-band h1 {
+  margin: 0;
+  font-size: 16pt;
+  line-height: 1.25;
+  color: var(--c-primary);
+}
+.chapter-band p { margin: 1mm 0 0; }
+
+/* ---------------------------------------------------------
+   문제 머리말 · 문제 읽기
+   --------------------------------------------------------- */
+.prob-head {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2mm;
+  border-bottom: 2px solid var(--c-primary);
+  padding-bottom: 1.5mm;
+}
+.prob-head h2 {
+  margin: 0 2mm 0 0;
+  font-size: 13pt;
+  line-height: 1.3;
+}
+.prob-head .src {
+  font-size: 9pt;
+  color: var(--c-muted);
+  font-weight: 600;
+}
+.prob-head .cont {
+  font-size: 9pt;
+  color: var(--c-muted);
+}
+
+.badge {
+  display: inline-block;
+  font-size: 8.5pt;
+  font-weight: 700;
+  padding: .3mm 2.2mm;
+  border-radius: 99px;
+  line-height: 1.6;
+}
+.badge.type-blank { background: var(--c-blank-soft); color: var(--c-blank); }
+.badge.type-write { background: var(--c-write-soft); color: var(--c-write); }
+
+.tag {
+  display: inline-block;
+  font-size: 8.5pt;
+  color: var(--c-muted);
+  border: 1px solid var(--c-line);
+  border-radius: 99px;
+  padding: 0 2mm;
+  line-height: 1.6;
+}
+
+/* 문제 읽기: 쉬운 말 요약 + 입출력 예시 */
+.summary {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4mm;
+  align-items: start;
+}
+.summary p { margin: 0; }
+
+.io {
+  border-collapse: collapse;
+  font-family: var(--f-code);
+  font-size: 9.5pt;
+  min-width: 42mm;
+}
+.io th {
+  font-family: var(--f-body);
+  font-size: 8.5pt;
+  font-weight: 700;
+  color: var(--c-muted);
+  background: var(--c-code-bg);
+  text-align: left;
+}
+.io th, .io td {
+  border: 1px solid var(--c-line);
+  padding: .8mm 2.5mm;
+  vertical-align: top;
+  white-space: pre;
+}
+
+/* 문제 원문 (그대로 싣는다)
+   <div class="orig">
+     <div class="sec"><div class="lbl">문제 설명</div><div>…</div></div> … */
+.orig {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8mm;
+  font-size: 10pt;
+}
+.orig .sec {
+  display: grid;
+  grid-template-columns: 17mm 1fr;
+  gap: 2mm;
+  align-items: start;
+}
+.orig .lbl {
+  font-size: 8.5pt;
+  font-weight: 800;
+  color: var(--c-primary);
+  padding-top: .4mm;
+  white-space: nowrap;
+}
+.orig p { margin: 0; }
+.orig p + p { margin-top: .8mm; }
+.orig ul { margin: 0; padding-left: 4mm; }
+
+/* 원문 예제 표 */
+.ex {
+  border-collapse: collapse;
+  font-size: 9.5pt;
+}
+.ex th {
+  font-size: 8.5pt;
+  font-weight: 700;
+  color: var(--c-muted);
+  background: var(--c-code-bg);
+  text-align: left;
+}
+.ex th, .ex td {
+  border: 1px solid var(--c-line);
+  padding: .6mm 2.5mm;
+  vertical-align: top;
+}
+.ex td { font-family: var(--f-code); white-space: pre; }
+
+/* 원문 입력 / 출력 상자 */
+.io-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3mm;
+}
+.io-pair > div { min-width: 0; }
+.io-pair .lbl { display: block; margin-bottom: .5mm; }
+.io-pair pre {
+  margin: 0;
+  background: var(--c-code-bg);
+  border: 1px solid var(--c-line);
+  border-radius: 1.5mm;
+  padding: 1mm 2.5mm;
+  font-size: 9.5pt;
+  line-height: 1.45;
+  white-space: pre;
+  overflow: hidden;
+}
+
+/* A / B 문제의 조건 한 줄 */
+.cond {
+  margin: 0;
+  font-weight: 700;
+  color: var(--c-primary);
+}
+
+/* ---------------------------------------------------------
+   단계: 질문 한 줄 + 답 쓰는 칸
+   --------------------------------------------------------- */
+.steps-title {
+  margin: 1mm 0 0;
+  font-size: 10.5pt;
+  font-weight: 800;
+  border-top: 1px solid var(--c-line);
+  padding-top: 2mm;
+}
+.step {
+  display: flex;
+  flex-direction: column;
+  gap: .5mm;
+  break-inside: avoid;
+}
+.step > .q { margin: 0; font-weight: 600; }
+.step > .q .n {
+  color: var(--c-primary);
+  font-weight: 800;
+  margin-right: 1.5mm;
+}
+.step > pre.code { margin-top: 1mm; }
+
+/* 장 끝 힌트가 있는 단계 */
+.hint-tag {
+  display: inline-block;
+  margin-left: 1.5mm;
+  font-size: 7.5pt;
+  font-weight: 700;
+  color: var(--c-note);
+  border: 1px solid var(--c-note);
+  border-radius: 99px;
+  padding: 0 1.5mm;
+  line-height: 1.5;
+  vertical-align: middle;
+}
+
+/* 쓰기 칸 */
+.write-lines {
+  --lines: 1;
+  height: calc(var(--lines) * 8mm);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent calc(8mm - 1px),
+    var(--c-line) calc(8mm - 1px),
+    var(--c-line) 8mm
+  );
+}
+/* 완성 코드처럼 남는 공간을 모두 채울 때: .step.fill-rest (쪽에 바로 넣는다) */
+.fill-rest { flex: 1 0 auto; }
+.fill-rest > .write-lines { flex: 1 0 auto; height: auto; min-height: calc(var(--lines) * 8mm); }
+
+/* ---------------------------------------------------------
+   칸 그림 (리스트·문자열의 위치와 인덱스)
+   <table class="cells">
+     <tr class="pos"><th>번째</th><td>1</td>…
+     <tr class="val"><th>값</th><td>-85</td>…
+     <tr class="idx"><th>인덱스</th><td>0</td>…
+   강조할 칸은 td 에 class="hl"
+   --------------------------------------------------------- */
+.cells {
+  border-collapse: separate;
+  border-spacing: 1.2mm 0;
+  font-family: var(--f-code);
+  font-size: 10pt;
+}
+.cells th {
+  font-family: var(--f-body);
+  font-size: 8.5pt;
+  font-weight: 700;
+  color: var(--c-muted);
+  text-align: right;
+  padding-right: 1mm;
+  white-space: nowrap;
+}
+.cells td { text-align: center; min-width: 11mm; padding: .5mm 1.5mm; }
+.cells tr.val td {
+  border: 1.5px solid var(--c-text);
+  background: #fff;
+  font-weight: 700;
+  padding: 1mm 2mm;
+}
+.cells tr.pos td { color: var(--c-muted); font-size: 8.5pt; font-family: var(--f-body); }
+.cells tr.idx td { color: var(--c-note); font-weight: 700; font-size: 9pt; }
+.cells td.hl { background: var(--c-blank-soft); color: var(--c-blank); }
+.cells tr.val td.hl { border-color: var(--c-blank); color: var(--c-text); }
+
+/* 시험 코드 동작 순서 설명 */
+.steps { margin: 0; padding-left: 5mm; }
+.steps li + li { margin-top: .6mm; }
+
+/* ---------------------------------------------------------
+   코드 블록 (assets/js/sheet.js 가 줄 번호·색·빈칸을 붙인다)
+     {{1}}  → 손으로 채울 빈칸 ①      {{2:wide}} → 넓은 빈칸
+     ⟦값⟧   → 채운 정답 (강조)
+   --------------------------------------------------------- */
+pre.code {
+  margin: 0;
+  background: var(--c-code-bg);
+  border: 1px solid var(--c-line);
+  border-radius: 2mm;
+  padding: 1.5mm 0;
+  font-size: 9pt;
+  line-height: 1.5;
+  white-space: pre;
+  overflow: hidden;
+  counter-reset: ln;
+}
+pre.code.small { font-size: 8.5pt; }
+
+pre.code .line { display: block; padding-right: 3mm; }
+pre.code .line::before {
+  counter-increment: ln;
+  content: counter(ln);
+  display: inline-block;
+  width: 7mm;
+  margin-right: 2.5mm;
+  text-align: right;
+  color: var(--c-tok-com);
+  border-right: 1px solid var(--c-line);
+  padding-right: 1.5mm;
+}
+/* 줄 번호 없는 짧은 예시 */
+pre.code.plain { padding: 1.2mm 3mm; }
+pre.code.plain .line::before { display: none; }
+
+.tok-kw  { color: var(--c-tok-kw); font-weight: 700; }
+.tok-str { color: var(--c-tok-str); }
+.tok-num { color: var(--c-tok-num); }
+.tok-fn  { color: var(--c-tok-fn); }
+.tok-com { color: var(--c-tok-com); font-style: italic; }
+
+/* 빈칸: 손으로 쓸 수 있게 넉넉히 */
+.blank {
+  display: inline-block;
+  min-width: 26mm;
+  height: 1.45em;
+  vertical-align: middle;
+  background: var(--c-blank-soft);
+  border: 1.5px solid var(--c-blank);
+  border-radius: 1.5mm;
+  color: var(--c-blank);
+  font-family: var(--f-body);
+  font-size: 8.5pt;
+  font-weight: 800;
+  line-height: 1.45em;
+  padding: 0 1.5mm;
+}
+.blank.wide { min-width: 60mm; }
+
+/* 채워진 정답 */
+mark.fill {
+  background: var(--c-blank-soft);
+  color: inherit;
+  border-bottom: 2px solid var(--c-blank);
+  border-radius: 1mm;
+  padding: 0 .5mm;
+}
+
+/* 본문 속 짧은 코드 */
+:not(pre) > code {
+  font-size: .92em;
+  background: var(--c-code-bg);
+  border: 1px solid var(--c-line);
+  border-radius: 1mm;
+  padding: 0 1mm;
+}
+
+/* 원문 수정 표시 */
+.edited {
+  font-size: 7.5pt;
+  color: var(--c-muted);
+  border: 1px solid var(--c-line);
+  border-radius: 99px;
+  padding: 0 1.5mm;
+  margin-left: 1mm;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+/* ---------------------------------------------------------
+   장 끝 힌트 (.answer 와 같은 구조, 머리 색만 다르다)
+   --------------------------------------------------------- */
+.hint-box .no { color: var(--c-note); }
+.hint-box > ol > li > span:last-child > * { margin: 0; }
+.hint-box > ol > li > span:last-child > * + * { margin-top: 1mm; }
+
+/* ---------------------------------------------------------
+   장 끝 정답
+   --------------------------------------------------------- */
+.answers-title {
+  margin: 0;
+  font-size: 16pt;
+  color: var(--c-primary);
+  border-bottom: 2px solid var(--c-primary);
+  padding-bottom: 2mm;
+}
+.answer {
+  border: 1px solid var(--c-line);
+  border-radius: 2mm;
+  padding: 2.5mm 4mm;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5mm;
+  break-inside: avoid;
+}
+.answer h3 { margin: 0; font-size: 11pt; display: flex; gap: 2mm; align-items: center; flex-wrap: wrap; }
+.answer > ol { margin: 0; padding-left: 0; list-style: none; }
+.answer > ol > li { display: grid; grid-template-columns: 13mm 1fr; gap: 2mm; align-items: baseline; }
+.answer > ol > li + li { margin-top: 1mm; }
+.answer .no { color: var(--c-primary); font-weight: 800; font-size: 9.5pt; }
+.answer .no.blank-no { color: var(--c-blank); }
+.answer p { margin: 0; }
