@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>COS Pro 학습지</title>
+  <style>
+    :root {
+      --c-primary: #4338CA;
+      --c-primary-soft: #EEF2FF;
+      --c-text: #1F2937;
+      --c-muted: #6B7280;
+      --c-line: #E5E7EB;
+      --c-bg: #F8FAFC;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--c-bg);
+      color: var(--c-text);
+      font-family: "Pretendard", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+      line-height: 1.6;
+    }
+    main { max-width: 720px; margin: 0 auto; padding: 48px 16px; }
+    header { border-left: 6px solid var(--c-primary); padding-left: 16px; margin-bottom: 32px; }
+    h1 { margin: 0; font-size: 28px; }
+    header p { margin: 4px 0 0; color: var(--c-muted); }
+    h2 { font-size: 18px; margin: 32px 0 12px; }
+    .card {
+      background: #fff;
+      border: 1px solid var(--c-line);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 12px;
+    }
+    .card h3 { margin: 0 0 4px; font-size: 16px; color: var(--c-primary); }
+    .card p { margin: 0; color: var(--c-muted); font-size: 14px; }
+    .card ul { margin: 8px 0 0; padding-left: 20px; }
+    .badge {
+      display: inline-block;
+      font-size: 12px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: var(--c-primary-soft);
+      color: var(--c-primary);
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+    a { color: var(--c-primary); }
+    footer { margin-top: 40px; font-size: 13px; color: var(--c-muted); }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>COS Pro 학습지</h1>
+      <p>시험 전날, 풀어 본 문제의 풀이 방법을 다시 떠올리는 복습지 (A4 인쇄용)</p>
+    </header>
+
+    <h2>학습지</h2>
+    <div class="card">
+      <h3>COS Pro 3급 (Python) <span class="badge">준비 중</span></h3>
+      <p>패턴별 장으로 나누어 작성 중입니다. 완성된 장부터 이곳에 링크가 추가됩니다.</p>
+      <!-- 장이 추가되면 아래 목록에 링크를 넣는다. 예: <li><a href="grade3/ch01-basic-output.html">1장 · 기본 연산과 출력 형식</a></li> -->
+      <ul id="grade3-list"></ul>
+    </div>
+
+    <h2>보는 방법</h2>
+    <div class="card">
+      <ul>
+        <li>학습지는 A4 크기로 만들어집니다. 인쇄 미리보기(<kbd>Ctrl</kbd> + <kbd>P</kbd>)로 실제 인쇄 모양을 확인할 수 있습니다.</li>
+        <li>검수 중인 버전은 PR 미리보기 주소(<code>/cos-pro/pr-preview/pr-번호/</code>)에서 볼 수 있습니다.</li>
+      </ul>
+    </div>
+
+    <footer>
+      작성 규칙: <a href="https://github.com/jxxngin/cos-pro/tree/main/docs">docs/</a>
+    </footer>
+  </main>
+</body>
+</html>
