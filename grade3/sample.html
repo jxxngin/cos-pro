@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>디자인 견본 · COS Pro 3급</title>
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/print.css">
+  <script src="../assets/js/sheet.js" defer></script>
+</head>
+<body data-footer="COS Pro 3급 · 디자인 견본 (2장 비교와 조건)">
+
+<!-- =====================================================
+     1세트-03 A
+     ===================================================== -->
+<section class="page">
+  <header class="chapter-band">
+    <div class="ch-no">2</div>
+    <div>
+      <h1>비교와 조건</h1>
+      <p>두 값을 비교하거나 조건을 나눠 출력이 달라지는 문제. 막히면 장 끝의 힌트를 본다.</p>
+    </div>
+  </header>
+
+  <div class="prob-head">
+    <h2>두 수 중 작은 수 · A</h2>
+    <span class="src">1세트-03</span>
+    <span class="badge type-write">함수 작성</span>
+    <span class="tag">min</span><span class="tag">max</span>
+  </div>
+  <p class="cond">내장 함수 min, max를 사용해 푼다.</p>
+  <div class="orig">
+    <div class="sec"><div class="lbl">문제 설명</div><div><p>숫자 두 개를 전달받아, 두 수 중 더 작은 수를 출력해주세요.</p></div></div>
+    <div class="sec"><div class="lbl">입력 설명</div><div>
+      <p>숫자 두 개가 주어집니다.</p>
+      <ul><li>두 수는 -1,000 이상 1,000 이하인 정수입니다.</li><li>두 숫자는 같지 않습니다.</li></ul>
+    </div></div>
+    <div class="sec"><div class="lbl">출력 설명</div><div><p>두 수 중 더 작은 수를 출력해주세요.</p></div></div>
+    <div class="sec"><div class="lbl">예제</div><div>
+      <table class="ex"><tr><th>n1</th><th>n2</th><th>result</th></tr><tr><td>27</td><td>64</td><td>27</td></tr></table>
+    </div></div>
+    <div class="sec"><div class="lbl"></div><div class="io-pair">
+      <div><span class="lbl">입력</span><pre>27
+64</pre></div>
+      <div><span class="lbl">출력</span><pre>27</pre></div>
+    </div></div>
+    <div class="sec"><div class="lbl">예제 설명</div><div><p>27과 64중에서 더 작은 수는 27이므로 27를 출력합니다.</p></div></div>
+  </div>
+
+  <p class="steps-title">단계별로 풀기</p>
+  <div class="step">
+    <p class="q"><span class="n">1.</span>입력된 숫자 두 개를 <code>n1</code>, <code>n2</code>에 대입한다.<span class="hint-tag">힌트</span></p>
+    <div class="write-lines" style="--lines: 2"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">2.</span><code>n1</code>, <code>n2</code>를 정수로 바꾼다.<span class="hint-tag">힌트</span></p>
+    <div class="write-lines" style="--lines: 2"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">3.</span><code>min</code>을 사용해 <code>n1</code>, <code>n2</code> 중 작은 수를 출력한다.<span class="hint-tag">힌트</span></p>
+    <div class="write-lines"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">4.</span><code>max</code>를 사용해 <code>n1</code>, <code>n2</code> 중 큰 수를 출력한다. (추가 연습)</p>
+    <div class="write-lines"></div>
+  </div>
+  <div class="step fill-rest">
+    <p class="q"><span class="n">5.</span>1~3을 모아 완성 코드를 작성한다.</p>
+    <div class="write-lines" style="--lines: 3"></div>
+  </div>
+</section>
+
+<!-- =====================================================
+     1세트-03 B  →  2세트-10
+     ===================================================== -->
+<section class="page">
+  <div class="prob-head">
+    <h2>두 수 중 작은 수 · B</h2>
+    <span class="src">1세트-03</span>
+    <span class="badge type-write">함수 작성</span>
+    <span class="tag">if</span><span class="tag">else</span>
+  </div>
+  <p class="cond">문제는 A와 같다. 이번에는 min, max를 사용하지 않는다.</p>
+
+  <div class="step">
+    <p class="q"><span class="n">1.</span>입력된 숫자 두 개를 정수로 바꿔 <code>n1</code>, <code>n2</code>에 대입한다.</p>
+    <div class="write-lines" style="--lines: 2"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">2.</span><code>if</code> / <code>else</code>를 사용해 <code>n1</code>이 <code>n2</code>보다 작으면 <code>n1</code>을, 아니면 <code>n2</code>를 출력한다.<span class="hint-tag">힌트</span></p>
+    <div class="write-lines" style="--lines: 4"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">3.</span>1~2를 모아 완성 코드를 작성한다.</p>
+    <div class="write-lines" style="--lines: 6"></div>
+  </div>
+
+  <div class="prob-head">
+    <h2>n번째 원소의 부호</h2>
+    <span class="src">2세트-10</span>
+    <span class="badge type-write">함수 작성</span>
+    <span class="tag">리스트</span><span class="tag">인덱스</span><span class="tag">elif</span>
+  </div>
+  <div class="orig">
+    <div class="sec"><div class="lbl">문제 설명</div><div><p>5개 정수로 구성된 리스트 arr과 정수 n이 주어졌을 때, arr의 n번째 원소가 음수이면 -1, 0이면 0, 양수이면 1을 출력하는 프로그램을 완성해주세요.</p></div></div>
+    <div class="sec"><div class="lbl">입력 설명</div><div>
+      <p>arr : 5개 정수를 원소로 가지는 리스트<br>각 원소는 -999 이상 999 이하<br>n : 1 이상 5 이하의 자연수</p>
+    </div></div>
+    <div class="sec"><div class="lbl">출력 설명</div><div><p>리스트 arr의 n번째 원소값에 대하여 음수, 0, 양수를 판단하여 각각 -1, 0, 1 중 하나의 값을 출력합니다.</p></div></div>
+    <div class="sec"><div class="lbl">예제</div><div>
+      <table class="ex"><tr><th>arr</th><th>n</th><th>result</th></tr><tr><td>-85 999 111 -32 0</td><td>3</td><td>1</td></tr></table>
+    </div></div>
+    <div class="sec"><div class="lbl"></div><div class="io-pair">
+      <div><span class="lbl">입력</span><pre>-85 999 111 -32 0
+3</pre></div>
+      <div><span class="lbl">출력</span><pre>1</pre></div>
+    </div></div>
+    <div class="sec"><div class="lbl">예제 설명</div><div><p>arr의 3번째 원소는 111이고, 양수이므로 1을 출력합니다.</p></div></div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="prob-head">
+    <h2>n번째 원소의 부호</h2>
+    <span class="src">2세트-10</span>
+    <span class="cont">(이어서)</span>
+  </div>
+  <p class="steps-title">단계별로 풀기</p>
+  <div class="step">
+    <p class="q"><span class="n">1.</span>첫째 줄 입력을 <code>line</code>에 대입한다.</p>
+    <div class="write-lines"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">2.</span><code>line</code>을 공백 기준으로 나눠 리스트 <code>arr</code>에 대입한다.<span class="hint-tag">힌트</span></p>
+    <div class="write-lines"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">3.</span><code>arr</code>의 원소를 모두 정수로 바꾼다.<span class="hint-tag">힌트</span></p>
+    <div class="write-lines"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">4.</span>둘째 줄 입력을 정수로 바꿔 <code>n</code>에 대입한다.</p>
+    <div class="write-lines"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">5.</span><code>arr</code>의 n번째 원소를 <code>x</code>에 대입한다.<span class="hint-tag">힌트</span></p>
+    <div class="write-lines"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">6.</span><code>x</code>가 음수면 <code>-1</code>, 0이면 <code>0</code>, 양수면 <code>1</code>을 출력한다.<span class="hint-tag">힌트</span></p>
+    <div class="write-lines" style="--lines: 6"></div>
+  </div>
+  <div class="step fill-rest">
+    <p class="q"><span class="n">7.</span>1~6을 모아 완성 코드를 작성한다.</p>
+    <div class="write-lines" style="--lines: 9"></div>
+  </div>
+</section>
+
+<!-- =====================================================
+     2세트-05 (빈칸 채우기)
+     ===================================================== -->
+<section class="page">
+  <div class="prob-head">
+    <h2>J · Q · K 카드 게임</h2>
+    <span class="src">2세트-05</span>
+    <span class="badge type-blank">빈칸 채우기</span>
+    <span class="tag">문자열 인덱스</span><span class="tag">index()</span>
+  </div>
+  <div class="orig">
+    <div class="sec"><div class="lbl">문제 설명</div><div>
+      <p>A와 B는 카드게임을 하고 있습니다.</p>
+      <p>J, Q, K로 구성된 3장의 카드에서 A와 B가 1장씩 뽑았을 때, 우선순위가 높은 카드를 뽑은 사람이 이기게 됩니다. 카드의 우선순위는 J &lt; Q &lt; K 입니다.</p>
+      <p>A와 B가 뽑은 카드가 순서대로 저장된 문자열 cards가 주어졌을 때, 게임에서 이기는 사람을 출력하는 프로그램의 빈칸을 채우십시오.</p>
+    </div></div>
+    <div class="sec"><div class="lbl">입력 설명</div><div>
+      <p>cards : A가 뽑은 카드와 B가 뽑은 카드가 순서대로 저장된 문자열<br>각 문자는 J, Q, K 중 하나의 값을 가지며 중복된 원소는 존재하지 않음</p>
+    </div></div>
+    <div class="sec"><div class="lbl">출력 설명</div><div><p>A가 뽑은 카드의 우선순위가 높으면 A를 출력하고, B가 뽑은 카드의 우선순위가 높으면 B를 출력합니다.</p></div></div>
+    <div class="sec"><div class="lbl">예제</div><div>
+      <table class="ex">
+        <tr><th>예제</th><th>cards</th><th>result</th></tr>
+        <tr><td>#1</td><td>QK</td><td>B</td></tr>
+        <tr><td>#2</td><td>KJ</td><td>A</td></tr>
+      </table>
+    </div></div>
+    <div class="sec"><div class="lbl"></div><div>
+      <p>예제 #1. A가 Q를 뽑고, B가 K를 뽑은 상황<br>K가 Q보다 우선순위가 높으므로 K를 뽑은 B 승리<br>출력값 : B<br>예제 #2. A가 K를 뽑고, B가 J를 뽑은 상황<br>K가 J보다 우선순위가 높으므로 K를 뽑은 A 승리<br>출력값 : A</p>
+    </div></div>
+    <div class="sec"><div class="lbl"></div><div class="io-pair">
+      <div><span class="lbl">입력</span><pre>QK</pre></div>
+      <div><span class="lbl">출력</span><pre>B</pre></div>
+    </div></div>
+  </div>
+
+  <p class="steps-title">단계별로 풀기</p>
+  <div class="step">
+    <p class="q"><span class="n">1.</span>입력을 <code>cards</code>에 대입한다.<span class="hint-tag">힌트</span></p>
+    <div class="write-lines"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">2.</span>A의 카드를 <code>a</code>에, B의 카드를 <code>b</code>에 대입한다.<span class="hint-tag">힌트</span></p>
+    <div class="write-lines" style="--lines: 2"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">3.</span>우선순위가 낮은 카드부터 쓴 문자열 <code>"JQK"</code>를 <code>priority</code>에 대입한다.</p>
+    <div class="write-lines"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">4.</span><code>priority</code>에서 <code>a</code>, <code>b</code>의 인덱스를 구해 <code>rank_a</code>, <code>rank_b</code>에 대입한다.<span class="hint-tag">힌트</span></p>
+    <div class="write-lines" style="--lines: 2"></div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="prob-head">
+    <h2>J · Q · K 카드 게임</h2>
+    <span class="src">2세트-05</span>
+    <span class="cont">(이어서)</span>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">5.</span><code>rank_a</code>와 <code>rank_b</code>를 비교해 이긴 사람을 출력한다.<span class="hint-tag">힌트</span></p>
+    <div class="write-lines" style="--lines: 4"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">6.</span>1~5를 모아 완성 코드를 작성한다.</p>
+    <div class="write-lines" style="--lines: 10"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">7.</span>시험 코드의 빈칸 ①②③을 채운다.<span class="hint-tag">힌트</span></p>
+<pre class="code">
+if __name__ == "__main__":
+    cards = input()
+
+    priority = "JQK"
+    winner = 'A'
+
+    for i in range(0, len(priority)):
+        if priority[i] == {{1}} :
+            for k in range( {{2}}, len(priority)):
+                if priority[k] == {{3}}:
+                    winner = 'B'
+
+    print(winner)
+</pre>
+  </div>
+</section>
+
+<!-- =====================================================
+     장 끝 힌트
+     ===================================================== -->
+<section class="page">
+  <h2 class="answers-title">2장 힌트</h2>
+
+  <div class="answer hint-box">
+    <h3>1세트-03 · 두 수 중 작은 수 · A</h3>
+    <ol>
+      <li><span class="no">1</span><span><p><code>input()</code>은 입력 한 줄을 받아 문자열로 돌려준다. 받은 값은 변수에 대입해야 다시 쓸 수 있다.</p>
+<pre class="code plain">
+name = input()
+</pre></span></li>
+      <li><span class="no">2</span><span><p><code>input()</code>으로 받은 값은 숫자처럼 보여도 문자열이다. 크기를 비교하거나 계산하려면 <code>int()</code>로 정수로 바꾼다. 바꾸지 않으면 문자열끼리 비교하므로 <code>"100" &lt; "27"</code>이 <code>True</code>가 된다.</p>
+<pre class="code plain">
+age = int(age)        # 이미 받은 값을 바꾼다
+age = int(input())    # 받으면서 바로 바꾼다
+</pre></span></li>
+      <li><span class="no">3</span><span><p><code>min(a, b)</code>는 둘 중 작은 값을, <code>max(a, b)</code>는 큰 값을 돌려준다. 예) <code>min(3, 8)</code> → <code>3</code>, <code>max(3, 8)</code> → <code>8</code></p></span></li>
+    </ol>
+  </div>
+
+  <div class="answer hint-box">
+    <h3>1세트-03 · 두 수 중 작은 수 · B</h3>
+    <ol>
+      <li><span class="no">2</span><span><p><code>if 조건:</code> 아래 줄은 조건이 참일 때, <code>else:</code> 아래 줄은 거짓일 때 실행된다. 아래 줄은 4칸 들여 쓴다.</p>
+<pre class="code plain">
+if age &lt; 20:
+    print("학생")
+else:
+    print("어른")
+</pre></span></li>
+    </ol>
+  </div>
+
+  <div class="answer hint-box">
+    <h3>2세트-10 · n번째 원소의 부호</h3>
+    <ol>
+      <li><span class="no">2</span><span><p><code>split()</code>은 문자열을 공백 기준으로 잘라 리스트로 만든다. 잘린 조각은 아직 문자열이다.</p>
+<pre class="code plain">
+"1 2 3".split()    # ['1', '2', '3']
+</pre></span></li>
+      <li><span class="no">3</span><span><p><code>list(map(int, 리스트))</code>는 리스트의 모든 원소에 <code>int()</code>를 적용한 새 리스트를 만든다.</p>
+<pre class="code plain">
+list(map(int, ['1', '2', '3']))    # [1, 2, 3]
+</pre></span></li>
+      <li><span class="no">5</span><span><p>리스트의 인덱스는 0부터 시작한다. 따라서 n번째 원소의 인덱스는 <code>n - 1</code>이다. <code>arr[n]</code>은 n+1번째 원소다.</p>
+        <table class="cells">
+          <tr class="pos"><th>번째</th><td>1</td><td>2</td><td class="hl">3</td><td>4</td><td>5</td></tr>
+          <tr class="val"><th>arr</th><td>-85</td><td>999</td><td class="hl">111</td><td>-32</td><td>0</td></tr>
+          <tr class="idx"><th>인덱스</th><td>0</td><td>1</td><td class="hl">2</td><td>3</td><td>4</td></tr>
+        </table></span></li>
+      <li><span class="no">6</span><span><p>경우가 셋이면 <code>if</code> / <code>elif</code> / <code>else</code>를 쓴다. 위에서부터 차례로 검사해 처음 참인 곳 하나만 실행한다. 같은지 비교할 때는 <code>==</code>를 쓴다.</p>
+<pre class="code plain">
+if score &gt;= 90:
+    print("A")
+elif score &gt;= 80:
+    print("B")
+else:
+    print("C")
+</pre></span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="page">
+  <h2 class="answers-title">2장 힌트 <span style="font-size: 10pt; color: var(--c-muted);">(이어서)</span></h2>
+
+  <div class="answer hint-box">
+    <h3>2세트-05 · J · Q · K 카드 게임</h3>
+    <ol>
+      <li><span class="no">1</span><span><p>카드는 문자이므로 <code>int()</code>로 바꾸지 않는다.</p></span></li>
+      <li><span class="no">2</span><span><p>문자열도 리스트처럼 인덱스로 한 글자씩 꺼낼 수 있다. 첫 글자의 인덱스는 0이다.</p>
+        <table class="cells">
+          <tr class="val"><th>cards</th><td>Q</td><td>K</td></tr>
+          <tr class="idx"><th>인덱스</th><td>0</td><td>1</td></tr>
+          <tr class="pos"><th>카드 주인</th><td>A</td><td>B</td></tr>
+        </table></span></li>
+      <li><span class="no">4</span><span><p><code>문자열.index(글자)</code>는 그 글자의 인덱스를 돌려준다. <code>"JQK"</code>는 우선순위가 낮은 카드부터 썼으므로 인덱스가 클수록 우선순위가 높다.</p>
+        <table class="cells">
+          <tr class="val"><th>priority</th><td>J</td><td>Q</td><td>K</td></tr>
+          <tr class="idx"><th>인덱스</th><td>0</td><td>1</td><td>2</td></tr>
+        </table>
+<pre class="code plain">
+"JQK".index("Q")    # 1
+</pre></span></li>
+      <li><span class="no">5</span><span><p>인덱스가 큰 쪽이 이긴다. <code>rank_a</code>가 더 작으면 B가 이긴다.</p></span></li>
+      <li><span class="no">7</span><span><p>시험 코드는 <code>index()</code> 대신 반복문으로 위치를 찾는다.</p>
+        <ol class="steps">
+          <li><code>winner</code>를 <code>'A'</code>로 정해 두고, B가 이기는 경우만 찾는다.</li>
+          <li>바깥 <code>for</code>: <code>priority</code>에서 A의 카드가 있는 인덱스 <code>i</code>를 찾는다.</li>
+          <li>안쪽 <code>for</code>: <code>i</code> 바로 다음 칸부터 끝까지 보면서 B의 카드가 있으면 B가 이긴다.</li>
+        </ol></span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- =====================================================
+     장 끝 정답
+     ===================================================== -->
+<section class="page">
+  <h2 class="answers-title">2장 정답</h2>
+
+  <div class="answer">
+    <h3>1세트-03 · 두 수 중 작은 수 · A <span class="badge type-write">함수 작성</span></h3>
+    <ol>
+      <li><span class="no">1</span><span><code>n1 = input()</code> / <code>n2 = input()</code></span></li>
+      <li><span class="no">2</span><span><code>n1 = int(n1)</code> / <code>n2 = int(n2)</code> (1과 합쳐 <code>n1 = int(input())</code>도 정답)</span></li>
+      <li><span class="no">3</span><span><code>print(min(n1, n2))</code></span></li>
+      <li><span class="no">4</span><span><code>print(max(n1, n2))</code></span></li>
+      <li><span class="no">5</span><span>
+<pre class="code small">
+n1 = int(input())
+n2 = int(input())
+print(min(n1, n2))
+</pre></span></li>
+    </ol>
+  </div>
+
+  <div class="answer">
+    <h3>1세트-03 · 두 수 중 작은 수 · B <span class="badge type-write">함수 작성</span></h3>
+    <ol>
+      <li><span class="no">1</span><span><code>n1 = int(input())</code> / <code>n2 = int(input())</code></span></li>
+      <li><span class="no">2 · 3</span><span>
+<pre class="code small">
+n1 = int(input())
+n2 = int(input())
+if n1 &lt; n2:
+    print(n1)
+else:
+    print(n2)
+</pre></span></li>
+    </ol>
+  </div>
+
+  <div class="answer">
+    <h3>2세트-10 · n번째 원소의 부호 <span class="badge type-write">함수 작성</span></h3>
+    <ol>
+      <li><span class="no">1</span><span><code>line = input()</code></span></li>
+      <li><span class="no">2</span><span><code>arr = line.split()</code></span></li>
+      <li><span class="no">3</span><span><code>arr = list(map(int, arr))</code></span></li>
+      <li><span class="no">4</span><span><code>n = int(input())</code></span></li>
+      <li><span class="no">5</span><span><code>x = arr[n - 1]</code></span></li>
+      <li><span class="no">6 · 7</span><span>
+<pre class="code small">
+line = input()
+arr = line.split()
+arr = list(map(int, arr))
+n = int(input())
+x = arr[n - 1]
+if x &lt; 0:
+    print(-1)
+elif x == 0:
+    print(0)
+else:
+    print(1)
+</pre></span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="page">
+  <h2 class="answers-title">2장 정답 <span style="font-size: 10pt; color: var(--c-muted);">(이어서)</span></h2>
+
+  <div class="answer">
+    <h3>2세트-05 · J · Q · K 카드 게임 <span class="badge type-blank">빈칸 채우기</span></h3>
+    <ol>
+      <li><span class="no">1</span><span><code>cards = input()</code></span></li>
+      <li><span class="no">2</span><span><code>a = cards[0]</code> / <code>b = cards[1]</code></span></li>
+      <li><span class="no">3</span><span><code>priority = "JQK"</code></span></li>
+      <li><span class="no">4</span><span><code>rank_a = priority.index(a)</code> / <code>rank_b = priority.index(b)</code></span></li>
+      <li><span class="no">5 · 6</span><span>
+<pre class="code small">
+cards = input()
+a = cards[0]
+b = cards[1]
+priority = "JQK"
+rank_a = priority.index(a)
+rank_b = priority.index(b)
+if rank_a &lt; rank_b:
+    print("B")
+else:
+    print("A")
+</pre></span></li>
+      <li><span class="no blank-no">7 ①</span><span><code>cards[0]</code> — A의 카드</span></li>
+      <li><span class="no blank-no">7 ②</span><span><code>i + 1</code> — A의 카드 바로 다음 칸부터</span></li>
+      <li><span class="no blank-no">7 ③</span><span><code>cards[1]</code> — B의 카드</span></li>
+    </ol>
+<pre class="code small">
+if __name__ == "__main__":
+    cards = input()
+
+    priority = "JQK"
+    winner = 'A'
+
+    for i in range(0, len(priority)):
+        if priority[i] == ⟦cards[0]⟧ :
+            for k in range( ⟦i + 1⟧, len(priority)):
+                if priority[k] == ⟦cards[1]⟧:
+                    winner = 'B'
+
+    print(winner)
+</pre>
+  </div>
+</section>
+
+</body>
+</html>
