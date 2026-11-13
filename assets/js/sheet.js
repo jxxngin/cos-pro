@@ -2,7 +2,7 @@
    학습지 공통 스크립트
    1) <pre class="code"> : 줄 번호, 문법 색, 빈칸({{1}}), 채운 정답(⟦값⟧)
    2) 쪽 아래 머리글/쪽 번호
-   3) 화면 전용 넘침 검사: 쪽·반 쪽·코드가 넘치면 빨간 표시
+   3) 화면 전용 넘침 검사: 쪽·미션·코드가 넘치면 빨간 표시
       (검사 결과는 <body data-overflow="개수"> 로도 남긴다)
    ========================================================= */
 (function () {
@@ -118,8 +118,8 @@
       });
       mark(page, over);
     });
-    // 2) 반 쪽 문제, 써 보기 칸: 안쪽 내용이 잘리면 넘침
-    document.querySelectorAll(".half-pair > .problem, .practice").forEach(function (el) {
+    // 2) 미션·알아 두기·정답 상자: 안쪽 내용이 잘리면 넘침
+    document.querySelectorAll(".mission, .note, .answer").forEach(function (el) {
       mark(el, el.scrollHeight - el.clientHeight);
     });
     // 3) 코드: 가로·세로로 잘리면 넘침
