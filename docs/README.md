@@ -9,6 +9,7 @@
 | [rules.md](rules.md) | 원문 정리·검수, 코드 작성, 풀이 비교, 해설 작성 규칙 |
 | [problems.md](problems.md) | 문제 목록, 유형, 패턴 분류, 코드 스크린샷 확보 현황 |
 | [workflow.md](workflow.md) | 브랜치 / PR / 리뷰 진행 방식 |
+| [template.md](template.md) | 학습지 HTML 템플릿 사용법 (구조, 코드 표시법, 넘침 검사) |
 | [sources/grade3.md](sources/grade3.md) | 3급 문제 원문과 시험 코드 틀 (학습지의 원본 자료) |
 
 ## 한 줄 요약

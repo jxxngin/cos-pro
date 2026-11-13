@@ -33,7 +33,7 @@ CSS 변수로 정의하고, 모든 페이지가 같은 변수를 쓴다. 아래 
 | 용도 | 글꼴 | 대체 글꼴 |
 | --- | --- | --- |
 | 본문 | Pretendard | `Malgun Gothic`, sans-serif |
-| 코드 | D2Coding | `Consolas`, monospace |
+| 코드 | 나눔고딕코딩 (Nanum Gothic Coding, Google Fonts) | `D2Coding`, `Consolas`, monospace |
 
 - 본문 10.5pt, 코드 10pt, 문제 제목 13pt, 장 제목 18pt를 기준으로 한다.
 - 코드는 줄 번호를 붙인다. 해설에서 "3번 줄"처럼 가리키기 위해서다.
