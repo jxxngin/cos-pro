@@ -2,7 +2,7 @@
    COS Pro 학습지 공통 스타일
    - 규칙: docs/design.md, 사용법: docs/template.md
    - 한 장(.page) = A4 한 쪽. 화면에서도 종이 모양으로 보여 준다.
-   - 문제는 작은 미션(.mission)으로 나눠 하나씩 푼다.
+   - 문제는 원문 그대로 싣고, 단계(.step)별 질문과 쓰기 칸으로 푼다. 힌트·정답은 장 끝.
    ========================================================= */
 
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
@@ -215,95 +215,119 @@ code, pre, kbd { font-family: var(--f-code); }
   white-space: pre;
 }
 
-/* 이번 문제의 목표 */
-.goal {
-  margin: 0;
-  background: var(--c-primary-soft);
-  border-left: 4px solid var(--c-primary);
-  border-radius: 0 2mm 2mm 0;
-  padding: 2mm 4mm;
-  font-weight: 600;
+/* 문제 원문 (그대로 싣는다)
+   <div class="orig">
+     <div class="sec"><div class="lbl">문제 설명</div><div>…</div></div> … */
+.orig {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8mm;
+  font-size: 10pt;
 }
-.goal::before {
-  content: "목표";
-  color: var(--c-primary);
+.orig .sec {
+  display: grid;
+  grid-template-columns: 17mm 1fr;
+  gap: 2mm;
+  align-items: start;
+}
+.orig .lbl {
+  font-size: 8.5pt;
   font-weight: 800;
-  margin-right: 3mm;
+  color: var(--c-primary);
+  padding-top: .4mm;
+  white-space: nowrap;
+}
+.orig p { margin: 0; }
+.orig p + p { margin-top: .8mm; }
+.orig ul { margin: 0; padding-left: 4mm; }
+
+/* 원문 예제 표 */
+.ex {
+  border-collapse: collapse;
+  font-size: 9.5pt;
+}
+.ex th {
+  font-size: 8.5pt;
+  font-weight: 700;
+  color: var(--c-muted);
+  background: var(--c-code-bg);
+  text-align: left;
+}
+.ex th, .ex td {
+  border: 1px solid var(--c-line);
+  padding: .6mm 2.5mm;
+  vertical-align: top;
+}
+.ex td { font-family: var(--f-code); white-space: pre; }
+
+/* 원문 입력 / 출력 상자 */
+.io-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3mm;
+}
+.io-pair > div { min-width: 0; }
+.io-pair .lbl { display: block; margin-bottom: .5mm; }
+.io-pair pre {
+  margin: 0;
+  background: var(--c-code-bg);
+  border: 1px solid var(--c-line);
+  border-radius: 1.5mm;
+  padding: 1mm 2.5mm;
+  font-size: 9.5pt;
+  line-height: 1.45;
+  white-space: pre;
+  overflow: hidden;
+}
+
+/* A / B 문제의 조건 한 줄 */
+.cond {
+  margin: 0;
+  font-weight: 700;
+  color: var(--c-primary);
 }
 
 /* ---------------------------------------------------------
-   미션
+   단계: 질문 한 줄 + 답 쓰는 칸
    --------------------------------------------------------- */
-.mission {
-  position: relative;
-  padding-left: 12mm;
+.steps-title {
+  margin: 1mm 0 0;
+  font-size: 10.5pt;
+  font-weight: 800;
+  border-top: 1px solid var(--c-line);
+  padding-top: 2mm;
+}
+.step {
   display: flex;
   flex-direction: column;
-  gap: 1.5mm;
+  gap: .5mm;
   break-inside: avoid;
 }
-.mission > .m-no {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 9mm;
-  height: 9mm;
-  border-radius: 50%;
-  border: 2px solid var(--c-primary);
+.step > .q { margin: 0; font-weight: 600; }
+.step > .q .n {
   color: var(--c-primary);
-  display: grid;
-  place-items: center;
   font-weight: 800;
-  font-size: 11pt;
+  margin-right: 1.5mm;
 }
-.mission > h3 {
-  margin: 1.5mm 0 0;
-  font-size: 11pt;
-  line-height: 1.3;
-}
+.step > pre.code { margin-top: 1mm; }
 
-/* 질문: 한 문장 */
-.ask {
-  margin: 0;
+/* 장 끝 힌트가 있는 단계 */
+.hint-tag {
+  display: inline-block;
+  margin-left: 1.5mm;
+  font-size: 7.5pt;
   font-weight: 700;
-}
-.ask::before { content: "Q. "; color: var(--c-primary); }
-
-/* 최종 미션 */
-.mission.final > .m-no { background: var(--c-primary); color: #fff; }
-
-/* 알아 두기 (질문보다 먼저) */
-.note {
-  background: var(--c-note-soft);
-  border-radius: 2mm;
-  padding: 2mm 3.5mm;
-}
-.note::before {
-  content: "알아 두기";
-  display: block;
-  font-size: 8.5pt;
-  font-weight: 800;
   color: var(--c-note);
-  margin-bottom: .5mm;
+  border: 1px solid var(--c-note);
+  border-radius: 99px;
+  padding: 0 1.5mm;
+  line-height: 1.5;
+  vertical-align: middle;
 }
-.note > * { margin: 0; }
-.note > * + * { margin-top: 1.5mm; }
-/* 짧은 알아 두기 (장의 두 번째 문제부터 반복되는 미션) */
-.note.short { padding: 1.5mm 3.5mm; }
-.note.short::before { display: inline; margin: 0 2mm 0 0; }
-.note.short > p { display: inline; }
-
-/* 주의 */
-.caution {
-  margin: 0;
-  font-size: 9.5pt;
-  color: var(--c-warn);
-}
-.caution::before { content: "⚠ 주의 "; font-weight: 800; }
 
 /* 쓰기 칸 */
 .write-lines {
-  --lines: 2;
+  --lines: 1;
   height: calc(var(--lines) * 8mm);
   background-image: repeating-linear-gradient(
     to bottom,
@@ -312,9 +336,8 @@ code, pre, kbd { font-family: var(--f-code); }
     var(--c-line) calc(8mm - 1px),
     var(--c-line) 8mm
   );
-  border-top: 1px solid var(--c-line);
 }
-/* 최종 미션처럼 남는 공간을 모두 채울 때: .mission.fill-rest (쪽에 바로 넣는다) */
+/* 완성 코드처럼 남는 공간을 모두 채울 때: .step.fill-rest (쪽에 바로 넣는다) */
 .fill-rest { flex: 1 0 auto; }
 .fill-rest > .write-lines { flex: 1 0 auto; height: auto; min-height: calc(var(--lines) * 8mm); }
 
@@ -447,6 +470,13 @@ mark.fill {
 }
 
 /* ---------------------------------------------------------
+   장 끝 힌트 (.answer 와 같은 구조, 머리 색만 다르다)
+   --------------------------------------------------------- */
+.hint-box .no { color: var(--c-note); }
+.hint-box > ol > li > span:last-child > * { margin: 0; }
+.hint-box > ol > li > span:last-child > * + * { margin-top: 1mm; }
+
+/* ---------------------------------------------------------
    장 끝 정답
    --------------------------------------------------------- */
 .answers-title {
@@ -466,9 +496,9 @@ mark.fill {
   break-inside: avoid;
 }
 .answer h3 { margin: 0; font-size: 11pt; display: flex; gap: 2mm; align-items: center; flex-wrap: wrap; }
-.answer ol { margin: 0; padding-left: 0; list-style: none; }
-.answer ol li { display: grid; grid-template-columns: 22mm 1fr; gap: 2mm; align-items: baseline; }
-.answer ol li + li { margin-top: 1mm; }
+.answer > ol { margin: 0; padding-left: 0; list-style: none; }
+.answer > ol > li { display: grid; grid-template-columns: 13mm 1fr; gap: 2mm; align-items: baseline; }
+.answer > ol > li + li { margin-top: 1mm; }
 .answer .no { color: var(--c-primary); font-weight: 800; font-size: 9.5pt; }
 .answer .no.blank-no { color: var(--c-blank); }
 .answer p { margin: 0; }
