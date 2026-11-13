@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>4장 개수 세기 · COS Pro 3급</title>
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/print.css">
+  <script src="../assets/js/sheet.js" defer></script>
+</head>
+<body data-footer="COS Pro 3급 · 4장 개수 세기">
+
+<section class="page">
+  <header class="chapter-band">
+    <div class="ch-no">4</div>
+    <div>
+      <h1>개수 세기</h1>
+      <p>조건에 맞는 원소나 글자의 개수를 세는 문제. 0에서 시작해 조건에 맞을 때마다 1씩 늘린다.</p>
+    </div>
+  </header>
+  <div class="prob-head">
+    <h2>소문자 개수 · A</h2>
+    <span class="src">1세트-06</span>
+    <span class="badge type-blank">빈칸 채우기</span>
+    <span class="tag">islower</span><span class="tag">range</span><span class="tag">인덱스</span>
+  </div>
+  <p class="cond">문자열 메서드 islower를 사용해 푼다.</p>
+  <div class="orig">
+    <div class="sec"><div class="lbl">문제 설명</div><div><p>문자열에 포함된 알파벳 소문자의 개수를 구하려 합니다.</p><p>문자열을 전달받아, 문자열에 포함된 알파벳 소문자의 개수를 출력하도록 코드를 작성하려 합니다. 빈칸(⬜)을 채워 전체 코드를 완성해주세요.</p></div></div>
+    <div class="sec"><div class="lbl">입력 설명</div><div><p>문자열 하나가 주어집니다.</p><ul><li>주어지는 문자는 알파벳 대문자 혹은 소문자입니다.</li><li>문자열의 길이는 1 이상 100이하입니다.</li></ul></div></div>
+    <div class="sec"><div class="lbl">출력 설명</div><div><p>입력받은 문자열에 포함된 알파벳 소문자의 개수를 출력해주세요.</p></div></div>
+    <div class="sec"><div class="lbl">예제</div><div><table class="ex"><tr><th>str</th><th>result</th></tr><tr><td>LOGic</td><td>2</td></tr></table></div></div>
+    <div class="sec"><div class="lbl"></div><div class="io-pair">
+      <div><span class="lbl">입력</span><pre>LOGic</pre></div>
+      <div><span class="lbl">출력</span><pre>2</pre></div>
+    </div></div>
+    <div class="sec"><div class="lbl">예제 설명</div><div><p>문자열에 포함된 알파벳 소문자는 ‘i’, ‘c’ 이므로 2를 출력합니다.</p></div></div>
+  </div>
+  <p class="steps-title">단계별로 풀기</p>
+  <div class="step">
+    <p class="q"><span class="n">1.</span>입력된 문자열을 <code>s</code>에 대입한다.<span class="hint-tag">힌트</span></p>
+    <div class="write-lines"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">2.</span>소문자 개수를 셀 변수 <code>counter</code>에 0을 대입한다.<span class="hint-tag">힌트</span></p>
+    <div class="write-lines"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">3.</span><code>for</code>와 <code>range</code>를 사용해 인덱스 <code>i</code>를 0부터 문자열 길이 - 1까지 바꾸며 반복한다.<span class="hint-tag">힌트</span></p>
+    <div class="write-lines"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">4.</span><code>islower</code>를 사용해 <code>s[i]</code>가 소문자이면 <code>counter</code>를 1 늘린다.<span class="hint-tag">힌트</span></p>
+    <div class="write-lines" style="--lines: 2"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">5.</span><code>counter</code>를 출력한다.</p>
+    <div class="write-lines"></div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="prob-head">
+    <h2>소문자 개수 · A</h2>
+    <span class="src">1세트-06</span>
+    <span class="cont">(이어서)</span>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">6.</span>1~5를 모아 완성 코드를 작성한다.</p>
+    <div class="write-lines" style="--lines: 7"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">7.</span>시험 코드의 빈칸 ①을 채운다.<span class="hint-tag">힌트</span></p>
+<pre class="code">
+counter = 0
+str = input()
+
+for i in range(0, len(str)):
+    if {{1:wide}} :
+        counter+=1
+print("%d" % counter)
+</pre>
+  </div>
+  <div class="prob-head">
+    <h2>소문자 개수 · B</h2>
+    <span class="src">1세트-06</span>
+    <span class="badge type-blank">빈칸 채우기</span>
+    <span class="tag">문자 비교</span><span class="tag">range</span>
+  </div>
+  <p class="cond">문제는 A와 같다. 이번에는 islower를 사용하지 않는다.</p>
+  <div class="step">
+    <p class="q"><span class="n">1.</span>입력된 문자열을 <code>s</code>에, 0을 <code>counter</code>에 대입한다.</p>
+    <div class="write-lines" style="--lines: 2"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">2.</span>인덱스 <code>i</code>로 반복하면서 <code>s[i]</code>가 <code>"a"</code> 이상 <code>"z"</code> 이하이면 <code>counter</code>를 1 늘린다.<span class="hint-tag">힌트</span></p>
+    <div class="write-lines" style="--lines: 3"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">3.</span><code>counter</code>를 출력한다.</p>
+    <div class="write-lines"></div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="prob-head">
+    <h2>소문자 개수 · B</h2>
+    <span class="src">1세트-06</span>
+    <span class="cont">(이어서)</span>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">4.</span>1~3을 모아 완성 코드를 작성한다.</p>
+    <div class="write-lines" style="--lines: 6"></div>
+  </div>
+  <div class="prob-head">
+    <h2>k · K 개수 · A</h2>
+    <span class="src">2세트-09</span>
+    <span class="badge type-write">함수 작성</span>
+    <span class="tag">count</span>
+  </div>
+  <p class="cond">문자열 메서드 count를 사용해 푼다.</p>
+  <div class="orig">
+    <div class="sec"><div class="lbl">문제 설명</div><div><p>영어 알파벳으로 구성된 이름 문자열 name이 주어졌을 때, 이름에 소문자 k 또는 대문자 K가 총 몇 개 포함되어있는지 출력하는 프로그램을 완성해주세요.</p></div></div>
+    <div class="sec"><div class="lbl">입력 설명</div><div><p>name : 알파벳 대/소문자의 조합으로 구성된 문자열<br>문자열 길이는 2 이상, 999 이하</p></div></div>
+    <div class="sec"><div class="lbl">출력 설명</div><div><p>문자열에 포함된 소문자 k, 대문자 K 수를 카운트하여 출력합니다.</p></div></div>
+    <div class="sec"><div class="lbl">예제</div><div><table class="ex"><tr><th>name</th><th>result</th></tr><tr><td>Kimmy</td><td>1</td></tr></table></div></div>
+    <div class="sec"><div class="lbl"></div><div><p>문자열 name에는 대문자 K가 1개 포함되어 있으므로 1 출력</p></div></div>
+    <div class="sec"><div class="lbl"></div><div class="io-pair">
+      <div><span class="lbl">입력</span><pre>Kimmy</pre></div>
+      <div><span class="lbl">출력</span><pre>1</pre></div>
+    </div></div>
+  </div>
+  <p class="steps-title">단계별로 풀기</p>
+  <div class="step">
+    <p class="q"><span class="n">1.</span>입력된 문자열을 <code>name</code>에 대입한다.</p>
+    <div class="write-lines"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">2.</span><code>count</code>를 사용해 소문자 k의 개수를 <code>small</code>에, 대문자 K의 개수를 <code>big</code>에 대입한다.<span class="hint-tag">힌트</span></p>
+    <div class="write-lines" style="--lines: 2"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">3.</span><code>small</code>과 <code>big</code>의 합을 출력한다.</p>
+    <div class="write-lines"></div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="prob-head">
+    <h2>k · K 개수 · A</h2>
+    <span class="src">2세트-09</span>
+    <span class="cont">(이어서)</span>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">4.</span>1~3을 모아 완성 코드를 작성한다.</p>
+    <div class="write-lines" style="--lines: 4"></div>
+  </div>
+  <div class="prob-head">
+    <h2>k · K 개수 · B</h2>
+    <span class="src">2세트-09</span>
+    <span class="badge type-write">함수 작성</span>
+    <span class="tag">for</span><span class="tag">or</span>
+  </div>
+  <p class="cond">문제는 A와 같다. 이번에는 count를 사용하지 않는다.</p>
+  <div class="step">
+    <p class="q"><span class="n">1.</span>입력된 문자열을 <code>name</code>에, 0을 <code>cnt</code>에 대입한다.</p>
+    <div class="write-lines" style="--lines: 2"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">2.</span><code>for</code>로 <code>name</code>의 글자를 하나씩 <code>ch</code>로 꺼내, <code>ch</code>가 <code>"k"</code> 또는 <code>"K"</code>이면 <code>cnt</code>를 1 늘린다.<span class="hint-tag">힌트</span></p>
+    <div class="write-lines" style="--lines: 3"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">3.</span><code>cnt</code>를 출력한다.</p>
+    <div class="write-lines"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">4.</span>1~3을 모아 완성 코드를 작성한다.</p>
+    <div class="write-lines" style="--lines: 6"></div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="prob-head">
+    <h2>홀수 개수 × 짝수 개수</h2>
+    <span class="src">2세트-06</span>
+    <span class="badge type-write">함수 작성</span>
+    <span class="tag">%</span><span class="tag">if / else</span>
+  </div>
+  <div class="orig">
+    <div class="sec"><div class="lbl">문제 설명</div><div><p>7개의 정수를 원소로 가지는 리스트 arr이 주어졌을 때, 홀수 개수와 짝수 개수의 곱셈 결과를 출력하는 프로그램을 완성해주세요.</p></div></div>
+    <div class="sec"><div class="lbl">입력 설명</div><div><p>arr : 1이상 100 이하의 자연수 7개로 구성된 정수 리스트</p></div></div>
+    <div class="sec"><div class="lbl">출력 설명</div><div><p>arr의 원소 중, 홀수 개수와 짝수 개수를 파악하여 두 수의 곱셈 결과를 출력해주세요.</p></div></div>
+    <div class="sec"><div class="lbl">예제</div><div><table class="ex"><tr><th>예제</th><th>arr</th><th>result</th></tr><tr><td>#1</td><td>52 42 61 34 17 1 98</td><td>12</td></tr><tr><td>#2</td><td>13 96 87 43 11 7 2</td><td>10</td></tr></table></div></div>
+    <div class="sec"><div class="lbl"></div><div><p>예제 #1 : 주어진 리스트 arr에서 홀수는 61, 17, 1, 짝수는 52, 42, 34, 98 입니다.<br>따라서 홀수 개수인 3과 짝수 개수인 4를 곱한 결과인 12를 출력합니다.<br>예제 #2 : 주어진 리스트 arr에서 홀수는 13, 87, 43, 11, 7, 짝수는 96, 2 입니다.<br>따라서 홀수 개수인 5와 짝수 개수인 2를 곱한 결과인 10을 출력합니다.</p></div></div>
+  </div>
+  <p class="steps-title">단계별로 풀기</p>
+  <div class="step">
+    <p class="q"><span class="n">1.</span>입력된 정수 7개를 정수 리스트로 바꿔 <code>arr</code>에 대입한다.<span class="hint-tag">힌트</span></p>
+    <div class="write-lines"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">2.</span>홀수 개수를 셀 <code>odd</code>와 짝수 개수를 셀 <code>even</code>에 각각 0을 대입한다.</p>
+    <div class="write-lines" style="--lines: 2"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">3.</span><code>for</code>로 <code>arr</code>의 원소를 하나씩 <code>x</code>로 꺼내, <code>x</code>가 홀수이면 <code>odd</code>를, 아니면 <code>even</code>을 1 늘린다.<span class="hint-tag">힌트</span></p>
+    <div class="write-lines" style="--lines: 5"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">4.</span><code>odd</code>와 <code>even</code>의 곱을 출력한다.</p>
+    <div class="write-lines"></div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="prob-head">
+    <h2>홀수 개수 × 짝수 개수</h2>
+    <span class="src">2세트-06</span>
+    <span class="cont">(이어서)</span>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">5.</span>1~4를 모아 완성 코드를 작성한다.</p>
+    <div class="write-lines" style="--lines: 9"></div>
+  </div>
+  <div class="prob-head">
+    <h2>7 앞에 있는 숫자의 개수 · A</h2>
+    <span class="src">1세트-02</span>
+    <span class="badge type-write">함수 작성</span>
+    <span class="tag">index</span>
+  </div>
+  <p class="cond">리스트 메서드 index를 사용해 푼다.</p>
+  <div class="orig">
+    <div class="sec"><div class="lbl">문제 설명</div><div><p>7보다 이전에 있는 숫자의 개수를 출력하려 합니다.</p><p>숫자 정보를 가지는 리스트 n을 전달받아, 7보다 이전에 있는 숫자의 개수를 출력해주세요.</p></div></div>
+    <div class="sec"><div class="lbl">입력 설명</div><div><p>숫자 정보를 가지고 있는 리스트 n이 주어집니다.</p><ul><li>숫자는 1 이상 100 이하인 자연수입니다.</li><li>숫자 리스트의 크기는 1개 이상 10,000개 이하입니다.</li><li>7은 한 번 입력되어 있습니다.</li></ul></div></div>
+    <div class="sec"><div class="lbl">출력 설명</div><div><p>7보다 이전에 있는 숫자의 개수를 세어 출력해주세요.</p></div></div>
+    <div class="sec"><div class="lbl">예제</div><div><table class="ex"><tr><th>n</th><th>result</th></tr><tr><td>14 45 50 3 7 11 5 23 9 80</td><td>4</td></tr></table></div></div>
+    <div class="sec"><div class="lbl"></div><div class="io-pair">
+      <div><span class="lbl">입력</span><pre>14 45 50 3 7 11 5 23 9 80</pre></div>
+      <div><span class="lbl">출력</span><pre>4</pre></div>
+    </div></div>
+    <div class="sec"><div class="lbl">예제 설명</div><div><p>7보다 이전에 있는 숫자는 14, 45, 50, 3입니다. 따라서 4를 출력합니다.</p></div></div>
+  </div>
+  <p class="steps-title">단계별로 풀기</p>
+  <div class="step">
+    <p class="q"><span class="n">1.</span>입력된 숫자들을 정수 리스트로 바꿔 <code>n</code>에 대입한다.</p>
+    <div class="write-lines"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">2.</span><code>index</code>를 사용해 7의 인덱스를 구해 출력한다.<span class="hint-tag">힌트</span></p>
+    <div class="write-lines"></div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="prob-head">
+    <h2>7 앞에 있는 숫자의 개수 · A</h2>
+    <span class="src">1세트-02</span>
+    <span class="cont">(이어서)</span>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">3.</span>1~2를 모아 완성 코드를 작성한다.</p>
+    <div class="write-lines" style="--lines: 2"></div>
+  </div>
+  <div class="prob-head">
+    <h2>7 앞에 있는 숫자의 개수 · B</h2>
+    <span class="src">1세트-02</span>
+    <span class="badge type-write">함수 작성</span>
+    <span class="tag">for</span><span class="tag">break</span>
+  </div>
+  <p class="cond">문제는 A와 같다. 이번에는 index를 사용하지 않는다.</p>
+  <div class="step">
+    <p class="q"><span class="n">1.</span>입력된 숫자들을 정수 리스트로 바꿔 <code>n</code>에, 0을 <code>cnt</code>에 대입한다.</p>
+    <div class="write-lines" style="--lines: 2"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">2.</span><code>for</code>로 <code>n</code>의 원소를 하나씩 <code>x</code>로 꺼내, <code>x</code>가 7이면 반복을 멈추고 아니면 <code>cnt</code>를 1 늘린다.<span class="hint-tag">힌트</span></p>
+    <div class="write-lines" style="--lines: 4"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">3.</span><code>cnt</code>를 출력한다.</p>
+    <div class="write-lines"></div>
+  </div>
+  <div class="step fill-rest">
+    <p class="q"><span class="n">4.</span>1~3을 모아 완성 코드를 작성한다.</p>
+    <div class="write-lines" style="--lines: 7"></div>
+  </div>
+</section>
+
+<section class="page">
+  <h2 class="answers-title">4장 힌트</h2>
+  <div class="answer hint-box">
+    <h3>1세트-06 · 소문자 개수 · A</h3>
+    <ol>
+      <li><span class="no">1</span><span><p><code>input()</code>은 입력 한 줄을 문자열로 돌려준다. 이 문제는 문자열을 그대로 쓰므로 <code>int()</code>로 바꾸지 않는다.</p></span></li>
+      <li><span class="no">2</span><span><p>개수를 셀 변수는 반복 전에 0으로 시작하고, 조건에 맞을 때마다 1씩 늘린다. <code>counter += 1</code>은 <code>counter = counter + 1</code>과 같다.</p></span></li>
+      <li><span class="no">3</span><span><p><code>len(문자열)</code>은 글자 수를 돌려준다. <code>range(0, len(s))</code>는 0부터 <code>len(s) - 1</code>까지의 수를 차례로 만든다. 이 수를 인덱스로 쓰면 <code>s[i]</code>로 한 글자씩 꺼낼 수 있다.</p>
+        <table class="cells">
+          <tr class="val"><th>s</th><td>L</td><td>O</td><td>G</td><td>i</td><td>c</td></tr>
+          <tr class="idx"><th>인덱스 i</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+        </table>
+<pre class="code plain">
+for i in range(0, len("abc")):
+    print(i)        # 0, 1, 2
+</pre></span></li>
+      <li><span class="no">4</span><span><p><code>문자열.islower()</code>는 글자가 소문자이면 <code>True</code>를 돌려준다. <code>if</code> 조건에 바로 쓸 수 있다. 예) <code>"a".islower()</code> → <code>True</code>, <code>"A".islower()</code> → <code>False</code></p></span></li>
+      <li><span class="no">7</span><span><p>시험 코드는 문자열 변수 이름으로 <code>str</code>을 쓴다. 빈칸에는 <code>s</code> 대신 <code>str</code>을 넣는다. 참고로 <code>str</code>은 원래 내장 함수 이름이라, 직접 코드를 쓸 때는 <code>s</code>처럼 다른 이름을 쓰는 것이 좋다.</p></span></li>
+    </ol>
+  </div>
+  <div class="answer hint-box">
+    <h3>1세트-06 · 소문자 개수 · B</h3>
+    <ol>
+      <li><span class="no">2</span><span><p>글자도 크기를 비교할 수 있다. 소문자는 <code>"a"</code>부터 <code>"z"</code>까지 차례로 커지므로, 한 글자가 <code>"a"</code> 이상 <code>"z"</code> 이하이면 소문자다. 파이썬은 <code>a &lt;= x &lt;= b</code>처럼 비교를 이어 쓸 수 있다.</p>
+<pre class="code plain">
+ch = "q"
+if "a" &lt;= ch &lt;= "z":
+    print("소문자")
+</pre></span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="page">
+  <h2 class="answers-title">4장 힌트 <span style="font-size: 10pt; color: var(--c-muted);">(이어서)</span></h2>
+  <div class="answer hint-box">
+    <h3>2세트-09 · k · K 개수 · A</h3>
+    <ol>
+      <li><span class="no">2</span><span><p><code>문자열.count(글자)</code>는 그 글자가 문자열에 몇 번 나오는지 돌려준다. 대문자와 소문자는 다른 글자로 센다.</p>
+<pre class="code plain">
+"banana".count("a")    # 3
+"Kk".count("k")        # 1
+</pre></span></li>
+    </ol>
+  </div>
+  <div class="answer hint-box">
+    <h3>2세트-09 · k · K 개수 · B</h3>
+    <ol>
+      <li><span class="no">2</span><span><p><code>for 변수 in 문자열:</code>은 문자열의 글자를 앞에서부터 하나씩 꺼낸다. <code>or</code>는 둘 중 하나라도 참이면 참이다.</p>
+<pre class="code plain">
+for ch in "cat":
+    if ch == "c" or ch == "t":
+        print(ch)    # c, t
+</pre></span></li>
+    </ol>
+  </div>
+  <div class="answer hint-box">
+    <h3>2세트-06 · 홀수 개수 × 짝수 개수</h3>
+    <ol>
+      <li><span class="no">1</span><span><p>한 줄에 여러 숫자가 오면 <code>split()</code>으로 공백 기준으로 자르고, <code>list(map(int, ...))</code>로 모두 정수로 바꾼다.</p>
+<pre class="code plain">
+nums = list(map(int, input().split()))   # "1 2 3" → [1, 2, 3]
+</pre></span></li>
+      <li><span class="no">3</span><span><p><code>x % 2</code>는 <code>x</code>를 2로 나눈 나머지다. 1이면 홀수, 0이면 짝수다. <code>if</code> / <code>else</code>로 두 경우를 나눠 각각 센다.</p>
+<pre class="code plain">
+print(7 % 2)    # 1
+print(8 % 2)    # 0
+</pre></span></li>
+    </ol>
+  </div>
+  <div class="answer hint-box">
+    <h3>1세트-02 · 7 앞에 있는 숫자의 개수 · A</h3>
+    <ol>
+      <li><span class="no">2</span><span><p><code>리스트.index(값)</code>은 그 값이 처음 나오는 인덱스를 돌려준다. 인덱스는 0부터 시작하므로, 어떤 값의 인덱스는 그 값 앞에 있는 원소의 개수와 같다.</p>
+        <table class="cells">
+          <tr class="val"><th>n</th><td>14</td><td>45</td><td>50</td><td>3</td><td class="hl">7</td><td>11</td></tr>
+          <tr class="idx"><th>인덱스</th><td>0</td><td>1</td><td>2</td><td>3</td><td class="hl">4</td><td>5</td></tr>
+        </table></span></li>
+    </ol>
+  </div>
+  <div class="answer hint-box">
+    <h3>1세트-02 · 7 앞에 있는 숫자의 개수 · B</h3>
+    <ol>
+      <li><span class="no">2</span><span><p><code>break</code>는 반복문을 그 자리에서 끝낸다. 7을 만나면 멈추고, 그때까지 센 개수가 답이다. <code>break</code>가 <code>cnt += 1</code>보다 위에 있어야 7은 세지 않는다.</p>
+<pre class="code plain">
+for x in [1, 2, 9, 3]:
+    if x == 9:
+        break
+    print(x)    # 1, 2
+</pre></span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="page">
+  <h2 class="answers-title">4장 정답</h2>
+  <div class="answer">
+    <h3>1세트-06 · 소문자 개수 · A <span class="badge type-blank">빈칸 채우기</span></h3>
+    <ol>
+      <li><span class="no">1</span><span><code>s = input()</code></span></li>
+      <li><span class="no">2</span><span><code>counter = 0</code></span></li>
+      <li><span class="no">3</span><span><code>for i in range(0, len(s)):</code></span></li>
+      <li><span class="no">4</span><span>
+<pre class="code small">
+    if s[i].islower():
+        counter += 1
+</pre></span></li>
+      <li><span class="no">5</span><span><code>print(counter)</code></span></li>
+      <li><span class="no">6</span><span>
+<pre class="code small">
+s = input()
+counter = 0
+for i in range(0, len(s)):
+    if s[i].islower():
+        counter += 1
+print(counter)
+</pre></span></li>
+      <li><span class="no blank-no">7 ①</span><span><code>str[i].islower()</code> (시험 코드의 변수 이름은 <code>str</code>)</span></li>
+    </ol>
+
+<pre class="code small">
+counter = 0
+str = input()
+
+for i in range(0, len(str)):
+    if ⟦str[i].islower()⟧ :
+        counter+=1
+print("%d" % counter)
+</pre>
+  </div>
+  <div class="answer">
+    <h3>1세트-06 · 소문자 개수 · B <span class="badge type-blank">빈칸 채우기</span></h3>
+    <ol>
+      <li><span class="no">1</span><span><code>s = input()</code> / <code>counter = 0</code></span></li>
+      <li><span class="no">2</span><span>
+<pre class="code small">
+for i in range(0, len(s)):
+    if "a" &lt;= s[i] &lt;= "z":
+        counter += 1
+</pre></span></li>
+      <li><span class="no">3</span><span><code>print(counter)</code></span></li>
+      <li><span class="no">4</span><span>
+<pre class="code small">
+s = input()
+counter = 0
+for i in range(0, len(s)):
+    if "a" &lt;= s[i] &lt;= "z":
+        counter += 1
+print(counter)
+</pre></span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="page">
+  <h2 class="answers-title">4장 정답 <span style="font-size: 10pt; color: var(--c-muted);">(이어서)</span></h2>
+  <div class="answer">
+    <h3>2세트-09 · k · K 개수 · A <span class="badge type-write">함수 작성</span></h3>
+    <ol>
+      <li><span class="no">1</span><span><code>name = input()</code></span></li>
+      <li><span class="no">2</span><span><code>small = name.count("k")</code> / <code>big = name.count("K")</code></span></li>
+      <li><span class="no">3</span><span><code>print(small + big)</code></span></li>
+      <li><span class="no">4</span><span>
+<pre class="code small">
+name = input()
+small = name.count("k")
+big = name.count("K")
+print(small + big)
+</pre></span></li>
+    </ol>
+  </div>
+  <div class="answer">
+    <h3>2세트-09 · k · K 개수 · B <span class="badge type-write">함수 작성</span></h3>
+    <ol>
+      <li><span class="no">1</span><span><code>name = input()</code> / <code>cnt = 0</code></span></li>
+      <li><span class="no">2</span><span>
+<pre class="code small">
+for ch in name:
+    if ch == "k" or ch == "K":
+        cnt += 1
+</pre></span></li>
+      <li><span class="no">3</span><span><code>print(cnt)</code></span></li>
+      <li><span class="no">4</span><span>
+<pre class="code small">
+name = input()
+cnt = 0
+for ch in name:
+    if ch == "k" or ch == "K":
+        cnt += 1
+print(cnt)
+</pre></span></li>
+    </ol>
+  </div>
+  <div class="answer">
+    <h3>2세트-06 · 홀수 개수 × 짝수 개수 <span class="badge type-write">함수 작성</span></h3>
+    <ol>
+      <li><span class="no">1</span><span><code>arr = list(map(int, input().split()))</code></span></li>
+      <li><span class="no">2</span><span><code>odd = 0</code> / <code>even = 0</code></span></li>
+      <li><span class="no">3</span><span>
+<pre class="code small">
+for x in arr:
+    if x % 2 == 1:
+        odd += 1
+    else:
+        even += 1
+</pre></span></li>
+      <li><span class="no">4</span><span><code>print(odd * even)</code></span></li>
+      <li><span class="no">5</span><span>
+<pre class="code small">
+arr = list(map(int, input().split()))
+odd = 0
+even = 0
+for x in arr:
+    if x % 2 == 1:
+        odd += 1
+    else:
+        even += 1
+print(odd * even)
+</pre></span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="page">
+  <h2 class="answers-title">4장 정답 <span style="font-size: 10pt; color: var(--c-muted);">(이어서)</span></h2>
+  <div class="answer">
+    <h3>1세트-02 · 7 앞에 있는 숫자의 개수 · A <span class="badge type-write">함수 작성</span></h3>
+    <ol>
+      <li><span class="no">1</span><span><code>n = list(map(int, input().split()))</code></span></li>
+      <li><span class="no">2</span><span><code>print(n.index(7))</code></span></li>
+      <li><span class="no">3</span><span>
+<pre class="code small">
+n = list(map(int, input().split()))
+print(n.index(7))
+</pre></span></li>
+    </ol>
+  </div>
+  <div class="answer">
+    <h3>1세트-02 · 7 앞에 있는 숫자의 개수 · B <span class="badge type-write">함수 작성</span></h3>
+    <ol>
+      <li><span class="no">1</span><span><code>n = list(map(int, input().split()))</code> / <code>cnt = 0</code></span></li>
+      <li><span class="no">2</span><span>
+<pre class="code small">
+for x in n:
+    if x == 7:
+        break
+    cnt += 1
+</pre></span></li>
+      <li><span class="no">3</span><span><code>print(cnt)</code></span></li>
+      <li><span class="no">4</span><span>
+<pre class="code small">
+n = list(map(int, input().split()))
+cnt = 0
+for x in n:
+    if x == 7:
+        break
+    cnt += 1
+print(cnt)
+</pre></span></li>
+    </ol>
+  </div>
+</section>
+
+</body>
+</html>
