@@ -1,0 +1,28 @@
+# PR마다 미리보기를 https://jxxngin.github.io/cos-pro/pr-preview/pr-<번호>/ 에 배포하고,
+# PR에 링크 댓글을 단다. PR이 머지되거나 닫히면 미리보기를 지운다.
+name: PR preview
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, closed]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: false
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy PR preview
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: .
+          preview-branch: gh-pages
+          umbrella-dir: pr-preview

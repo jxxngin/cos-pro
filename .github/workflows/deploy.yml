@@ -1,0 +1,29 @@
+# main에 머지된 학습지를 GitHub Pages 루트(https://jxxngin.github.io/cos-pro/)에 배포한다.
+name: Deploy site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy to gh-pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: .
+          # PR 미리보기 폴더는 지우지 않는다.
+          clean-exclude: pr-preview/
+          force: false
