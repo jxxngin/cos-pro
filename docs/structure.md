@@ -25,7 +25,8 @@
 ### 한 장 요약에 들어갈 항목 (초안)
 
 - 입력 처리: `input()`, `int(input())`, `input().split()`, `list(map(int, input().split()))`
-- 출력 형식: `print`의 `sep` / `end`, 소수점 자리 출력(f-string, `%` 포맷, `round`의 차이)
+- 출력 형식: `%` 포맷(`"%d"`, `"%s"`, `"%.1f"`, 여러 값은 `"%d %d" % (a, b)`) — 시험 틀이 주로 쓰는 방식,
+  `print`의 `sep` / `end`, 소수점 자리 출력에서 `round`·f-string과의 차이
 - 연산자: `/` vs `//`, `%`, 비교 연산자(문자열 비교 포함)
 - 내장 함수: `sum`, `max`, `min`, `abs`, `len`, `range`
 - 리스트·문자열: 인덱스(0부터 시작), 슬라이싱 `[start:stop:step]`, `index`, `count`
