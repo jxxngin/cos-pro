@@ -8,10 +8,14 @@ on:
 
 permissions:
   contents: write
+  pages: write
 
+# preview.yml과 같은 그룹을 써서 gh-pages 푸시를 한 번에 하나씩 실행한다.
+# queue: max — 대기 중인 실행(예: PR 미리보기 정리)이 새 실행에 밀려 취소되지 않게 한다.
 concurrency:
   group: pages-deploy
   cancel-in-progress: false
+  queue: max
 
 jobs:
   deploy:
@@ -27,3 +31,9 @@ jobs:
           # PR 미리보기 폴더는 지우지 않는다.
           clean-exclude: pr-preview/
           force: false
+
+      # GITHUB_TOKEN으로 한 푸시는 Pages 빌드를 시작하지 않으므로 빌드를 직접 요청한다.
+      - name: Request Pages build
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds"
