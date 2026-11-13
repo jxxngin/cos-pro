@@ -105,16 +105,21 @@
       if (isOver) { el.setAttribute("data-over-px", String(Math.round(over))); count++; }
       else el.removeAttribute("data-over-px");
     }
-    // 1) 쪽: 본문 요소가 쪽의 본문 영역(아래 여백·머리글 위)을 벗어나면 넘침
+    // 1) 쪽: 본문 요소가 쪽의 본문 영역(위·아래·좌우 여백 안쪽)을 벗어나면 넘침.
+    //    .page 는 overflow: hidden 이라 세로뿐 아니라 가로로 넘친 내용도 잘리므로 둘 다 본다.
     document.querySelectorAll(".page").forEach(function (page) {
       var box = page.getBoundingClientRect();
       var cs = getComputedStyle(page);
       var bottom = box.bottom - parseFloat(cs.paddingBottom);
-      var over = page.scrollHeight - page.clientHeight;
+      var left = box.left + parseFloat(cs.paddingLeft);
+      var right = box.right - parseFloat(cs.paddingRight);
+      var over = Math.max(page.scrollHeight - page.clientHeight, page.scrollWidth - page.clientWidth);
       page.querySelectorAll("*").forEach(function (el) {
         if (el.closest(".page-foot")) return;
         var r = el.getBoundingClientRect();
-        if (r.height > 0) over = Math.max(over, r.bottom - bottom);
+        if (r.height > 0 && r.width > 0) {
+          over = Math.max(over, r.bottom - bottom, r.right - right, left - r.left);
+        }
       });
       mark(page, over);
     });
