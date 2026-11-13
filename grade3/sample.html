@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>디자인 견본 · COS Pro 3급</title>
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/print.css">
+  <script src="../assets/js/sheet.js" defer></script>
+</head>
+<body data-footer="COS Pro 3급 · 디자인 견본 (2장 비교와 조건)">
+
+<!-- =====================================================
+     1쪽: 장 머리띠 + 반 쪽 문제 2개 (함수 작성)
+     ===================================================== -->
+<section class="page">
+  <header class="chapter-band">
+    <div class="ch-no">2</div>
+    <div>
+      <h1>비교와 조건</h1>
+      <p>값을 비교해 출력이 갈리는 문제 · <code>if</code> / <code>elif</code> / <code>else</code> vs <code>min</code> · <code>max</code></p>
+    </div>
+  </header>
+
+  <div class="half-pair">
+    <!-- 1세트-03 -->
+    <article class="problem half">
+      <div class="prob-head">
+        <h2>두 수 중 작은 수</h2>
+        <span class="src">1세트-03</span>
+        <span class="badge type-write">함수 작성</span>
+        <span class="tag">조건문</span><span class="tag">min</span>
+      </div>
+      <div class="summary">
+        <p>정수 두 개를 한 줄에 하나씩 입력받아 더 작은 수를 출력한다. (-1,000 ~ 1,000, 서로 다름)</p>
+        <table class="io"><tr><th>입력</th><th>출력</th></tr><tr><td>27
+64</td><td>27</td></tr></table>
+      </div>
+      <p class="idea">두 수를 비교해서 작은 쪽을 출력한다.</p>
+      <div class="half-grid">
+        <div class="compare stack">
+          <div class="method">
+            <div class="method-head"><span class="label">방법 A</span> 내장 함수 <code>min</code><span class="memo">가장 짧다.</span></div>
+<pre class="code">
+n1 = int(input())
+n2 = int(input())
+print(min(n1, n2))
+</pre>
+          </div>
+          <div class="method">
+            <div class="method-head"><span class="label">방법 B</span> <code>if</code> / <code>else</code><span class="memo">빈칸 문제로 나오면 이 모양이다.</span></div>
+<pre class="code">
+n1 = int(input())
+n2 = int(input())
+if n1 &lt; n2:
+    print(n1)
+else:
+    print(n2)
+</pre>
+          </div>
+        </div>
+        <div class="side">
+          <div class="warn">
+            <p class="sec-title">헷갈리기 쉬운 점</p>
+            <ul>
+              <li><code>int()</code>를 빼면 문자열끼리 비교한다. <code>"100" &lt; "27"</code>은 <code>True</code>라서 <code>100</code>과 <code>27</code> 중 <code>100</code>을 출력하게 된다.</li>
+            </ul>
+          </div>
+          <div class="practice">
+            <p class="sec-title">직접 써 보기</p>
+            <div class="write-lines" style="--lines: 3"></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 2세트-10 -->
+    <article class="problem half">
+      <div class="prob-head">
+        <h2>n번째 원소의 부호</h2>
+        <span class="src">2세트-10</span>
+        <span class="badge type-write">함수 작성</span>
+        <span class="tag">조건문</span><span class="tag">인덱스</span>
+      </div>
+      <div class="summary">
+        <p>정수 5개 리스트 <code>arr</code>(한 줄, 공백 구분)와 <code>n</code>(1~5)을 입력받아, <code>arr</code>의 n번째 원소가 음수면 <code>-1</code>, 0이면 <code>0</code>, 양수면 <code>1</code>을 출력한다.</p>
+        <table class="io"><tr><th>입력</th><th>출력</th></tr><tr><td>-85 999 111 -32 0
+3</td><td>1</td></tr></table>
+      </div>
+      <p class="idea">n번째 원소는 <code>arr[n - 1]</code>. 그 값을 세 갈래로 나눈다.</p>
+      <div class="half-grid">
+        <div class="compare stack">
+          <div class="method">
+            <div class="method-head"><span class="label">풀이</span> <code>if</code> / <code>elif</code> / <code>else</code><span class="memo">세 갈래는 <code>elif</code>로 나눈다.</span></div>
+<pre class="code">
+arr = list(map(int, input().split()))
+n = int(input())
+x = arr[n - 1]
+if x &lt; 0:
+    print(-1)
+elif x == 0:
+    print(0)
+else:
+    print(1)
+</pre>
+          </div>
+        </div>
+        <div class="side">
+          <div class="warn">
+            <p class="sec-title">헷갈리기 쉬운 점</p>
+            <ul>
+              <li>n번째는 인덱스 <code>n - 1</code>. <code>arr[n]</code>으로 쓰면 3번째(111) 대신 4번째(-32)를 보고 <code>-1</code>을 출력한다.</li>
+            </ul>
+          </div>
+          <div class="practice">
+            <p class="sec-title">직접 써 보기</p>
+            <div class="write-lines" style="--lines: 3"></div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- =====================================================
+     2쪽: 1쪽짜리 문제 (빈칸 채우기)
+     ===================================================== -->
+<section class="page">
+  <article class="problem full">
+    <div class="prob-head">
+      <h2>J · Q · K 카드 게임</h2>
+      <span class="src">2세트-05</span>
+      <span class="badge type-blank">빈칸 채우기</span>
+      <span class="tag">문자열 인덱스</span><span class="tag">순서 비교</span>
+    </div>
+
+    <div class="summary">
+      <p>A와 B가 J, Q, K 중 한 장씩 뽑았다. 우선순위는 <b>J &lt; Q &lt; K</b>. A의 카드와 B의 카드가 순서대로 들어 있는 문자열 <code>cards</code>를 입력받아 이긴 사람(<code>A</code> 또는 <code>B</code>)을 출력한다. 두 카드는 서로 다르다.</p>
+      <table class="io">
+        <tr><th>입력</th><th>출력</th></tr>
+        <tr><td>QK</td><td>B</td></tr>
+        <tr><td>KJ</td><td>A</td></tr>
+      </table>
+    </div>
+
+    <p class="idea">카드를 <code>"JQK"</code> 안의 위치(0, 1, 2)로 바꾸면 크기를 비교할 수 있다. 위치가 뒤인 쪽이 이긴다.</p>
+
+    <div>
+      <p class="sec-title">풀이 방법 비교</p>
+      <div class="compare stack">
+        <div class="method">
+          <div class="method-head"><span class="label">방법 A</span> <code>index()</code>로 위치를 숫자로 바꿔 비교<span class="memo">가장 읽기 쉽다.</span></div>
+<pre class="code">
+cards = input()
+priority = "JQK"
+if priority.index(cards[0]) &lt; priority.index(cards[1]):
+    print("B")
+else:
+    print("A")
+</pre>
+        </div>
+        <div class="method">
+          <div class="method-head"><span class="label">방법 B</span> 반복문으로 위치 찾기 <span class="exam">시험 코드 방식</span><span class="memo">빈칸은 아래 틀에서 직접 채운다.</span></div>
+          <ol class="steps">
+            <li><code>winner</code>를 <code>'A'</code>로 정해 둔다. B가 이기는 경우만 찾으면 된다.</li>
+            <li>바깥 <code>for</code>: <code>"JQK"</code>에서 <b>A의 카드</b>(<code>cards</code>의 첫 글자)가 있는 위치 <code>i</code>를 찾는다.</li>
+            <li>안쪽 <code>for</code>: <code>i</code> <b>바로 다음 위치부터</b> 끝까지 보면서 <b>B의 카드</b>가 있으면 B가 더 센 카드이므로 <code>winner = 'B'</code>.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <div class="warn">
+      <p class="sec-title">헷갈리기 쉬운 점</p>
+      <ul>
+        <li><code>cards[0]</code>이 A의 카드, <code>cards[1]</code>이 B의 카드다. 문자열도 인덱스는 0부터 센다.</li>
+        <li>안쪽 반복은 <code>i</code>가 아니라 <code>i + 1</code>부터 시작한다. "A의 카드보다 뒤에 있는 카드"를 찾기 때문이다.</li>
+        <li><code>"JQK".index("K")</code>는 <code>2</code>다. <code>index()</code>는 처음 나오는 위치를 돌려준다.</li>
+      </ul>
+    </div>
+
+    <div class="practice">
+      <p class="sec-title">직접 써 보기 · 시험 코드 틀</p>
+<pre class="code">
+if __name__ == "__main__":
+    cards = input()
+
+    priority = "JQK"
+    winner = 'A'
+
+    for i in range(0, len(priority)):
+        if priority[i] == {{1}} :
+            for k in range( {{2}}, len(priority)):
+                if priority[k] == {{3}}:
+                    winner = 'B'
+
+    print(winner)
+</pre>
+    </div>
+  </article>
+</section>
+
+<!-- =====================================================
+     3쪽: 장 끝 정답
+     ===================================================== -->
+<section class="page">
+  <h2 class="answers-title">2장 정답</h2>
+
+  <div class="answer">
+    <h3>1세트-03 · 두 수 중 작은 수 <span class="badge type-write">함수 작성</span></h3>
+    <p>본문의 방법 A 또는 방법 B와 같은 결과가 나오면 정답이다. 입력을 <code>int()</code>로 바꿨는지 확인한다.</p>
+  </div>
+
+  <div class="answer">
+    <h3>2세트-10 · n번째 원소의 부호 <span class="badge type-write">함수 작성</span></h3>
+    <p>본문의 풀이와 같은 결과가 나오면 정답이다. 원소를 <code>arr[n - 1]</code>로 꺼냈는지 확인한다.</p>
+  </div>
+
+  <div class="answer">
+    <h3>2세트-05 · J · Q · K 카드 게임 <span class="badge type-blank">빈칸 채우기</span></h3>
+    <ol>
+      <li><span class="no">①</span><span><code>cards[0]</code> — A의 카드</span></li>
+      <li><span class="no">②</span><span><code>i + 1</code> — A의 카드 바로 다음 위치부터</span></li>
+      <li><span class="no">③</span><span><code>cards[1]</code> — B의 카드</span></li>
+    </ol>
+<pre class="code small">
+if __name__ == "__main__":
+    cards = input()
+
+    priority = "JQK"
+    winner = 'A'
+
+    for i in range(0, len(priority)):
+        if priority[i] == ⟦cards[0]⟧ :
+            for k in range( ⟦i + 1⟧, len(priority)):
+                if priority[k] == ⟦cards[1]⟧:
+                    winner = 'B'
+
+    print(winner)
+</pre>
+  </div>
+</section>
+
+</body>
+</html>
