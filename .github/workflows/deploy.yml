@@ -19,9 +19,15 @@ concurrency:
 
 jobs:
   deploy:
+    # 수동 실행에서 다른 브랜치를 골라도 Pages 루트에 배포하지 않는다.
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
+      # 실행을 시작한 SHA가 아니라 "지금의" main을 받아 온다.
+      # 예전 실행을 재실행하거나 대기열에서 늦게 실행돼도 항상 최신 main이 배포된다.
       - uses: actions/checkout@v4
+        with:
+          ref: main
 
       - name: Deploy to gh-pages
         uses: JamesIves/github-pages-deploy-action@v4

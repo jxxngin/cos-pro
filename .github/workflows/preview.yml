@@ -22,11 +22,37 @@ jobs:
   preview:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      # 대기열 순서나 재실행 때문에 이벤트가 늦게 실행될 수 있으므로,
+      # 실행 직전에 PR의 "지금" 상태를 보고 할 일을 정한다.
+      #   - 배포: PR이 열려 있고, 이 이벤트의 head SHA가 지금의 head와 같을 때만
+      #   - 정리: PR이 지금도 닫혀 있을 때만
+      #   - 그 밖에는 건너뜀 (더 새로운 실행이 처리한다)
+      - name: Check current PR state
+        id: check
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          PR: ${{ github.event.pull_request.number }}
+          EVENT_ACTION: ${{ github.event.action }}
+          EVENT_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          read -r state head < <(gh api "repos/$REPO/pulls/$PR" --jq '"\(.state) \(.head.sha)"')
+          if [ "$EVENT_ACTION" = "closed" ]; then
+            if [ "$state" = "closed" ]; then action=remove; else action=skip; fi
+          else
+            if [ "$state" = "open" ] && [ "$head" = "$EVENT_SHA" ]; then action=deploy; else action=skip; fi
+          fi
+          echo "event=$EVENT_ACTION event_sha=$EVENT_SHA current_state=$state current_head=$head -> $action"
+          echo "action=$action" >> "$GITHUB_OUTPUT"
 
-      - name: Deploy PR preview
+      - uses: actions/checkout@v4
+        if: steps.check.outputs.action != 'skip'
+
+      - name: Deploy or remove PR preview
+        if: steps.check.outputs.action != 'skip'
         uses: rossjrw/pr-preview-action@v1
         with:
+          action: ${{ steps.check.outputs.action }}
           source-dir: .
           preview-branch: gh-pages
           umbrella-dir: pr-preview
@@ -34,6 +60,7 @@ jobs:
       # GITHUB_TOKEN으로 한 푸시는 Pages 빌드를 시작하지 않으므로 빌드를 직접 요청한다.
       # 미리보기 배포와 정리(PR 종료) 모두에 필요하다.
       - name: Request Pages build
+        if: steps.check.outputs.action != 'skip'
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh api -X POST "repos/${{ github.repository }}/pages/builds"
