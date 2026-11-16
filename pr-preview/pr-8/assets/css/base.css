@@ -78,6 +78,8 @@ code, pre, kbd { font-family: var(--f-code); }
   flex-direction: column;
   gap: 3.5mm;
 }
+/* 쪽 안의 요소는 공간이 모자라도 눌려 줄어들지 않는다(넘치면 검사에 잡히도록). 남는 공간은 .fill-rest가 채운다 */
+.page > * { flex-shrink: 0; }
 
 .page-foot {
   position: absolute;
@@ -354,6 +356,7 @@ code, pre, kbd { font-family: var(--f-code); }
 .write-lines {
   --lines: 1;
   height: calc(var(--lines) * 8mm);
+  flex-shrink: 0;   /* 쪽이 모자라도 줄어들지 않게: 공간이 부족하면 넘침 검사에 잡힌다 */
   background-image: repeating-linear-gradient(
     to bottom,
     transparent 0,
