@@ -127,8 +127,8 @@
     document.querySelectorAll(".step, .answer").forEach(function (el) {
       mark(el, el.scrollHeight - el.clientHeight);
     });
-    // 3) 코드: 가로·세로로 잘리면 넘침
-    document.querySelectorAll("pre.code").forEach(function (pre) {
+    // 3) 코드 블록과 원문 입력·출력 상자: 긴 줄을 그대로 두고 넘친 부분을 자르므로 가로·세로 모두 본다
+    document.querySelectorAll("pre.code, .io-pair pre").forEach(function (pre) {
       mark(pre, Math.max(pre.scrollWidth - pre.clientWidth, pre.scrollHeight - pre.clientHeight));
     });
     document.body.setAttribute("data-overflow", String(count));
