@@ -24,7 +24,8 @@
 
 - 쪽 아래 머리글과 쪽 번호는 `sheet.js`가 `data-footer`로 붙인다.
 - 쪽 안의 요소는 `section.page`에 **바로** 넣는다(감싸는 `div` 없이). 그래야 `fill-rest`가 남는 공간을 채울 수 있다.
-- 장의 첫 쪽은 맨 위에 `header.chapter-band`(장 번호 `div.ch-no`, `h1`, 한 줄 설명 `p`)를 넣는다.
+- 장의 첫 쪽은 맨 위에 `header.chapter-band`(장 번호 `div.ch-no`에 두 자리로 `02`, `h1`, 한 줄 설명 `p`)를 넣는다. `CHAPTER` 글자는 CSS가 붙인다.
+- **각 문제는 새 `section.page`에서 시작한다.**
 
 ## 2. 문제 머리말 · 원문
 
@@ -33,9 +34,7 @@
   <h2>두 수 중 작은 수 · A</h2>
   <span class="src">1세트-03</span>
   <span class="badge type-write">함수 작성</span>   <!-- 빈칸 문제는 type-blank -->
-  <span class="tag">min</span>
 </div>
-<p class="cond">내장 함수 min, max를 사용해 푼다.</p>   <!-- A / B 문제만 -->
 
 <div class="orig">
   <div class="sec"><div class="lbl">문제 설명</div><div><p>원문 그대로</p></div></div>
@@ -51,11 +50,16 @@
   </div></div>
   <div class="sec"><div class="lbl">예제 설명</div><div><p>…</p></div></div>
 </div>
+<p class="tip">내장 함수 <code>min()</code>은 여러 값 중 가장 작은 값을 돌려준다.</p>   <!-- 앞에 "풀이 힌트" 자동 -->
 ```
+
+- 학습지 HTML의 문제 번호는 `유형1 문제 3`처럼 쓴다(`1세트-03`과 같은 문제).
+- 주제 태그(`span.tag`)는 쓰지 않는다. 사용할 함수 이름이 드러나기 때문이다.
+- `p.tip`(풀이 힌트)은 문제 원문 **다음에** 둔다. "~를 사용해 푼다"처럼 지시하지 않고, 쓸 수 있는 도구를 간접적으로 알려 준다. B 문제는 머리말 바로 아래에 둔다.
 
 - 원문은 [sources/grade3-original.md](sources/grade3-original.md)에서 **그대로** 옮긴다. 원문에 없는 섹션은 만들지 않고, 원문 순서를 따른다.
 - 원문의 줄바꿈은 `<br>` 또는 `<p>`로, `- ` 목록은 `<ul>`로 옮긴다. `<`, `>`는 `&lt;`, `&gt;`로 쓴다.
-- 문제가 다음 쪽으로 이어지면 그 쪽 맨 위에 머리말만 다시 넣고, 배지 대신 `<span class="cont">(이어서)</span>`를 쓴다.
+- 문제가 다음 쪽으로 이어지면 그 쪽 맨 위에 머리말(제목과 문제 번호만, 배지 없이)을 다시 넣는다. "(이어서)"는 쓰지 않는다.
 
 ## 3. 단계
 
@@ -66,7 +70,7 @@
   <div class="write-lines" style="--lines: 2"></div>
 </div>
 <div class="step fill-rest">
-  <p class="q"><span class="n">5.</span>1~3을 모아 완성 코드를 작성한다.</p>
+  <p class="q"><span class="n">5.</span>전체 코드를 처음부터 스스로 작성해 보자.</p>
   <div class="write-lines" style="--lines: 3"></div>
 </div>
 ```
