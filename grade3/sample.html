@@ -236,6 +236,10 @@ else:
 </pre></span></li>
     </ol>
   </div>
+</section>
+
+<section class="page">
+  <h2 class="answers-title">2장 힌트</h2>
   <div class="answer hint-box">
     <h3>유형2 문제 10 · n번째 원소의 부호</h3>
     <ol>
@@ -247,12 +251,17 @@ else:
 <pre class="code plain">
 list(map(int, ['1', '2', '3']))    # [1, 2, 3]
 </pre></span></li>
-      <li><span class="no">5</span><span><p>리스트의 인덱스는 0부터 시작한다. 따라서 n번째 원소의 인덱스는 <code>n - 1</code>이다. <code>arr[n]</code>은 n+1번째 원소다.</p>
+      <li><span class="no">5</span><span><p>리스트의 인덱스는 0부터 시작한다. 따라서 n번째 원소의 인덱스는 <code>n - 1</code>이다. 원소가 5개인 리스트의 인덱스는 0부터 4까지라서, 다섯 번째 원소는 <code>arr[4]</code>이다. <code>arr[n]</code>으로 쓰면 한 칸 뒤의 원소를 가리키고, <code>n</code>이 5이면 <code>arr[5]</code>는 리스트 범위를 벗어나 <code>IndexError</code>가 난다.</p>
         <table class="cells">
           <tr class="pos"><th>번째</th><td>1</td><td>2</td><td class="hl">3</td><td>4</td><td>5</td></tr>
           <tr class="val"><th>arr</th><td>-85</td><td>999</td><td class="hl">111</td><td>-32</td><td>0</td></tr>
           <tr class="idx"><th>인덱스</th><td>0</td><td>1</td><td class="hl">2</td><td>3</td><td>4</td></tr>
-        </table></span></li>
+        </table>
+<pre class="code plain">
+arr = [-85, 999, 111, -32, 0]
+print(arr[4])    # 0  (다섯 번째)
+print(arr[5])    # IndexError: list index out of range
+</pre></span></li>
       <li><span class="no">6</span><span><p>경우가 셋이면 <code>if</code> / <code>elif</code> / <code>else</code>를 쓴다. 위에서부터 차례로 검사해 처음 참인 곳 하나만 실행한다.</p>
 <pre class="code plain">
 if score &gt;= 90:
