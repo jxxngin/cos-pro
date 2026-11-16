@@ -108,35 +108,50 @@ code, pre, kbd { font-family: var(--f-code); }
 .is-overflow-el { outline: 2px dashed var(--c-warn); outline-offset: 1px; }
 
 /* ---------------------------------------------------------
-   장 머리띠
+   장 제목: 왼쪽에 CHAPTER 번호, 세로선, 오른쪽에 제목과 한 줄 설명
+   <header class="chapter-band"><div class="ch-no">02</div><div><h1>…</h1><p>…</p></div></header>
    --------------------------------------------------------- */
 .chapter-band {
-  background: var(--c-primary-soft);
-  border-radius: 3mm;
-  padding: 4mm 5mm;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   gap: 5mm;
+  padding: 1mm 0 4mm;
+  margin-bottom: 1mm;
+  border-bottom: 1px solid var(--c-line);
 }
 .chapter-band .ch-no {
   flex: none;
-  width: 12mm;
-  height: 12mm;
-  border-radius: 50%;
-  background: var(--c-primary);
-  color: #fff;
-  display: grid;
-  place-items: center;
-  font-size: 15pt;
+  padding-right: 5mm;
+  border-right: 2px solid var(--c-primary);
+  color: var(--c-primary);
+  font-size: 28pt;
   font-weight: 800;
+  line-height: 1;
+  letter-spacing: -.02em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.chapter-band .ch-no::before {
+  content: "CHAPTER";
+  font-size: 7pt;
+  font-weight: 700;
+  letter-spacing: .18em;
+  color: var(--c-muted);
+  margin-bottom: 1.5mm;
+}
+.chapter-band > div:last-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 .chapter-band h1 {
   margin: 0;
-  font-size: 16pt;
-  line-height: 1.25;
-  color: var(--c-primary);
+  font-size: 18pt;
+  line-height: 1.2;
+  color: var(--c-text);
 }
-.chapter-band p { margin: 1mm 0 0; }
+.chapter-band p { margin: 1mm 0 0; font-size: 9.5pt; color: var(--c-muted); }
 
 /* ---------------------------------------------------------
    문제 머리말 · 문제 읽기
@@ -158,10 +173,6 @@ code, pre, kbd { font-family: var(--f-code); }
   font-size: 9pt;
   color: var(--c-muted);
   font-weight: 600;
-}
-.prob-head .cont {
-  font-size: 9pt;
-  color: var(--c-muted);
 }
 
 .badge {
@@ -280,11 +291,20 @@ code, pre, kbd { font-family: var(--f-code); }
   overflow: hidden;
 }
 
-/* A / B 문제의 조건 한 줄 */
-.cond {
+/* 풀이 힌트: 문제 원문 다음에 둔다. 정답을 지시하지 않고 쓸 수 있는 도구를 간접적으로 알려 준다 */
+.tip {
   margin: 0;
-  font-weight: 700;
-  color: var(--c-primary);
+  padding: 1.5mm 3.5mm;
+  background: var(--c-note-soft);
+  border-left: 3px solid var(--c-note);
+  border-radius: 0 1.5mm 1.5mm 0;
+  font-size: 9.5pt;
+}
+.tip::before {
+  content: "풀이 힌트";
+  font-weight: 800;
+  color: var(--c-note);
+  margin-right: 2.5mm;
 }
 
 /* ---------------------------------------------------------

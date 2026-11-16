@@ -12,7 +12,7 @@
 
 <section class="page">
   <header class="chapter-band">
-    <div class="ch-no">2</div>
+    <div class="ch-no">02</div>
     <div>
       <h1>비교와 조건</h1>
       <p>두 값을 비교하거나 조건을 나눠 출력이 달라지는 문제. 막히면 장 끝의 힌트를 본다.</p>
@@ -20,11 +20,9 @@
   </header>
   <div class="prob-head">
     <h2>두 수 중 작은 수 · A</h2>
-    <span class="src">1세트-03</span>
+    <span class="src">유형1 문제 3</span>
     <span class="badge type-write">함수 작성</span>
-    <span class="tag">min</span><span class="tag">max</span>
   </div>
-  <p class="cond">내장 함수 min, max를 사용해 푼다.</p>
   <div class="orig">
     <div class="sec"><div class="lbl">문제 설명</div><div><p>숫자 두 개를 전달받아, 두 수 중 더 작은 수를 출력해주세요.</p></div></div>
     <div class="sec"><div class="lbl">입력 설명</div><div><p>숫자 두 개가 주어집니다.</p><ul><li>두 수는 -1,000 이상 1,000 이하인 정수입니다.</li><li>두 숫자는 같지 않습니다.</li></ul></div></div>
@@ -37,6 +35,7 @@
     </div></div>
     <div class="sec"><div class="lbl">예제 설명</div><div><p>27과 64중에서 더 작은 수는 27이므로 27를 출력합니다.</p></div></div>
   </div>
+  <p class="tip">내장 함수 <code>min()</code>은 여러 값 중 가장 작은 값을, <code>max()</code>는 가장 큰 값을 돌려준다.</p>
   <p class="steps-title">단계별로 풀기</p>
   <div class="step">
     <p class="q"><span class="n">1.</span>입력된 숫자 두 개를 <code>n1</code>, <code>n2</code>에 대입한다.<span class="hint-tag">힌트</span></p>
@@ -47,15 +46,15 @@
     <div class="write-lines" style="--lines: 2"></div>
   </div>
   <div class="step">
-    <p class="q"><span class="n">3.</span><code>min</code>을 사용해 <code>n1</code>, <code>n2</code> 중 작은 수를 출력한다.<span class="hint-tag">힌트</span></p>
+    <p class="q"><span class="n">3.</span><code>n1</code>, <code>n2</code> 중 작은 수를 출력한다.<span class="hint-tag">힌트</span></p>
     <div class="write-lines"></div>
   </div>
   <div class="step">
-    <p class="q"><span class="n">4.</span><code>max</code>를 사용해 <code>n1</code>, <code>n2</code> 중 큰 수를 출력한다. (추가 연습)</p>
+    <p class="q"><span class="n">4.</span><code>n1</code>, <code>n2</code> 중 큰 수를 출력한다. (추가 연습)</p>
     <div class="write-lines"></div>
   </div>
   <div class="step fill-rest">
-    <p class="q"><span class="n">5.</span>1~3을 모아 완성 코드를 작성한다.</p>
+    <p class="q"><span class="n">5.</span>전체 코드를 처음부터 스스로 작성해 보자.</p>
     <div class="write-lines" style="--lines: 3"></div>
   </div>
 </section>
@@ -63,28 +62,29 @@
 <section class="page">
   <div class="prob-head">
     <h2>두 수 중 작은 수 · B</h2>
-    <span class="src">1세트-03</span>
+    <span class="src">유형1 문제 3</span>
     <span class="badge type-write">함수 작성</span>
-    <span class="tag">if</span><span class="tag">else</span>
   </div>
-  <p class="cond">문제는 A와 같다. 이번에는 min, max를 사용하지 않는다.</p>
+  <p class="tip">문제는 A와 같다. <code>min()</code>, <code>max()</code> 없이도 <code>if</code> / <code>else</code>로 두 수를 직접 비교할 수 있다.</p>
   <div class="step">
     <p class="q"><span class="n">1.</span>입력된 숫자 두 개를 정수로 바꿔 <code>n1</code>, <code>n2</code>에 대입한다.</p>
     <div class="write-lines" style="--lines: 2"></div>
   </div>
   <div class="step">
-    <p class="q"><span class="n">2.</span><code>if</code> / <code>else</code>를 사용해 <code>n1</code>이 <code>n2</code>보다 작으면 <code>n1</code>을, 아니면 <code>n2</code>를 출력한다.<span class="hint-tag">힌트</span></p>
+    <p class="q"><span class="n">2.</span><code>n1</code>이 <code>n2</code>보다 작으면 <code>n1</code>을, 아니면 <code>n2</code>를 출력한다.<span class="hint-tag">힌트</span></p>
     <div class="write-lines" style="--lines: 4"></div>
   </div>
-  <div class="step">
-    <p class="q"><span class="n">3.</span>1~2를 모아 완성 코드를 작성한다.</p>
+  <div class="step fill-rest">
+    <p class="q"><span class="n">3.</span>전체 코드를 처음부터 스스로 작성해 보자.</p>
     <div class="write-lines" style="--lines: 6"></div>
   </div>
+</section>
+
+<section class="page">
   <div class="prob-head">
     <h2>공배수 판별</h2>
-    <span class="src">2세트-04</span>
+    <span class="src">유형2 문제 4</span>
     <span class="badge type-blank">빈칸 채우기</span>
-    <span class="tag">%</span><span class="tag">and</span>
   </div>
   <div class="orig">
     <div class="sec"><div class="lbl">문제 설명</div><div><p>정수변수 a, b, c가 주어졌을 때,</p><p>c가 a와 b의 공배수이면 문자열 True, 공배수가 아니면 문자열 False를 출력하는 프로그램의 빈칸을 채우십시오.</p></div></div>
@@ -100,14 +100,7 @@
     </div></div>
     <div class="sec"><div class="lbl">예제 설명</div><div><p>41 + 27 + 12 + 30 이므로 110를 출력합니다.</p></div></div>
   </div>
-</section>
-
-<section class="page">
-  <div class="prob-head">
-    <h2>공배수 판별</h2>
-    <span class="src">2세트-04</span>
-    <span class="cont">(이어서)</span>
-  </div>
+  <p class="tip">나머지 연산자 <code>%</code>로 어떤 수가 다른 수로 나누어떨어지는지 확인할 수 있다.</p>
   <p class="steps-title">단계별로 풀기</p>
   <div class="step">
     <p class="q"><span class="n">1.</span>입력된 정수 세 개를 정수로 바꿔 <code>a</code>, <code>b</code>, <code>c</code>에 대입한다.</p>
@@ -125,8 +118,15 @@
     <p class="q"><span class="n">4.</span>두 조건이 모두 참이면 <code>True</code>를, 아니면 <code>False</code>를 출력한다.<span class="hint-tag">힌트</span></p>
     <div class="write-lines" style="--lines: 4"></div>
   </div>
+</section>
+
+<section class="page">
+  <div class="prob-head">
+    <h2>공배수 판별</h2>
+    <span class="src">유형2 문제 4</span>
+  </div>
   <div class="step">
-    <p class="q"><span class="n">5.</span>1~4를 모아 완성 코드를 작성한다.</p>
+    <p class="q"><span class="n">5.</span>전체 코드를 처음부터 스스로 작성해 보자.</p>
     <div class="write-lines" style="--lines: 7"></div>
   </div>
   <div class="step">
@@ -149,11 +149,9 @@ if __name__ == "__main__":
 <section class="page">
   <div class="prob-head">
     <h2>절댓값이 큰 수 · A</h2>
-    <span class="src">2세트-02</span>
+    <span class="src">유형2 문제 2</span>
     <span class="badge type-blank">빈칸 채우기</span>
-    <span class="tag">abs</span><span class="tag">if</span>
   </div>
-  <p class="cond">내장 함수 abs를 사용해 푼다.</p>
   <div class="orig">
     <div class="sec"><div class="lbl">문제 설명</div><div><p>정수 a, b가 주어졌을 때, 절대값이 큰 수를 출력하는 프로그램의 빈칸을 채우십시오.</p></div></div>
     <div class="sec"><div class="lbl">입력 설명</div><div><p>a, b : - 999 이상 999 이하의 정수로서 a와 b의 절대값은 항상 다르게 주어집니다.</p></div></div>
@@ -166,13 +164,14 @@ if __name__ == "__main__":
     </div></div>
     <div class="sec"><div class="lbl">예제 설명</div><div><p>a 절대값 : 654, b 절대값 : 342<br>a 절대값이 크므로 a 값(-654)을 출력함</p></div></div>
   </div>
+  <p class="tip">내장 함수 <code>abs()</code>는 숫자의 부호를 뗀 값(절댓값)을 돌려준다.</p>
   <p class="steps-title">단계별로 풀기</p>
   <div class="step">
     <p class="q"><span class="n">1.</span>입력된 정수 두 개를 정수로 바꿔 <code>a</code>, <code>b</code>에 대입한다.</p>
     <div class="write-lines" style="--lines: 2"></div>
   </div>
   <div class="step">
-    <p class="q"><span class="n">2.</span><code>abs</code>를 사용해 <code>a</code>의 절댓값을 <code>abs_a</code>에, <code>b</code>의 절댓값을 <code>abs_b</code>에 대입한다.<span class="hint-tag">힌트</span></p>
+    <p class="q"><span class="n">2.</span><code>a</code>의 절댓값을 <code>abs_a</code>에, <code>b</code>의 절댓값을 <code>abs_b</code>에 대입한다.<span class="hint-tag">힌트</span></p>
     <div class="write-lines" style="--lines: 2"></div>
   </div>
   <div class="step">
@@ -180,7 +179,7 @@ if __name__ == "__main__":
     <div class="write-lines" style="--lines: 4"></div>
   </div>
   <div class="step fill-rest">
-    <p class="q"><span class="n">4.</span>1~3을 모아 완성 코드를 작성한다.</p>
+    <p class="q"><span class="n">4.</span>전체 코드를 처음부터 스스로 작성해 보자.</p>
     <div class="write-lines" style="--lines: 6"></div>
   </div>
 </section>
@@ -188,11 +187,10 @@ if __name__ == "__main__":
 <section class="page">
   <div class="prob-head">
     <h2>절댓값이 큰 수 · B</h2>
-    <span class="src">2세트-02</span>
+    <span class="src">유형2 문제 2</span>
     <span class="badge type-blank">빈칸 채우기</span>
-    <span class="tag">if</span><span class="tag">* -1</span>
   </div>
-  <p class="cond">문제는 A와 같다. 이번에는 abs를 사용하지 않는다.</p>
+  <p class="tip">문제는 A와 같다. <code>abs()</code> 없이도 음수에 -1을 곱하면 절댓값을 만들 수 있다.</p>
   <div class="step">
     <p class="q"><span class="n">1.</span>입력된 정수 두 개를 정수로 바꿔 <code>a</code>, <code>b</code>에 대입한다.</p>
     <div class="write-lines" style="--lines: 2"></div>
@@ -214,7 +212,7 @@ if __name__ == "__main__":
     <div class="write-lines" style="--lines: 4"></div>
   </div>
   <div class="step fill-rest">
-    <p class="q"><span class="n">6.</span>1~5를 모아 완성 코드를 작성한다.</p>
+    <p class="q"><span class="n">6.</span>전체 코드를 처음부터 스스로 작성해 보자.</p>
     <div class="write-lines" style="--lines: 10"></div>
   </div>
 </section>
@@ -222,8 +220,7 @@ if __name__ == "__main__":
 <section class="page">
   <div class="prob-head">
     <h2>절댓값이 큰 수 · B</h2>
-    <span class="src">2세트-02</span>
-    <span class="cont">(이어서)</span>
+    <span class="src">유형2 문제 2</span>
   </div>
   <div class="step">
     <p class="q"><span class="n">7.</span>시험 코드의 빈칸 ①②③④를 채운다.</p>
@@ -248,11 +245,13 @@ if __name__ == "__main__":
         print(b)
 </pre>
   </div>
+</section>
+
+<section class="page">
   <div class="prob-head">
     <h2>n번째 원소의 부호</h2>
-    <span class="src">2세트-10</span>
+    <span class="src">유형2 문제 10</span>
     <span class="badge type-write">함수 작성</span>
-    <span class="tag">리스트</span><span class="tag">인덱스</span><span class="tag">elif</span>
   </div>
   <div class="orig">
     <div class="sec"><div class="lbl">문제 설명</div><div><p>5개 정수로 구성된 리스트 arr과 정수 n이 주어졌을 때, arr의 n번째 원소가 음수이면 -1, 0이면 0, 양수이면 1을 출력하는 프로그램을 완성해주세요.</p></div></div>
@@ -266,14 +265,7 @@ if __name__ == "__main__":
     </div></div>
     <div class="sec"><div class="lbl">예제 설명</div><div><p>arr의 3번째 원소는 111이고, 양수이므로 1을 출력합니다.</p></div></div>
   </div>
-</section>
-
-<section class="page">
-  <div class="prob-head">
-    <h2>n번째 원소의 부호</h2>
-    <span class="src">2세트-10</span>
-    <span class="cont">(이어서)</span>
-  </div>
+  <p class="tip">리스트에서 사람이 세는 위치(몇 번째)와 인덱스는 1만큼 차이가 난다.</p>
   <p class="steps-title">단계별로 풀기</p>
   <div class="step">
     <p class="q"><span class="n">1.</span>첫째 줄 입력을 <code>line</code>에 대입한다.</p>
@@ -291,6 +283,13 @@ if __name__ == "__main__":
     <p class="q"><span class="n">4.</span>둘째 줄 입력을 정수로 바꿔 <code>n</code>에 대입한다.</p>
     <div class="write-lines"></div>
   </div>
+</section>
+
+<section class="page">
+  <div class="prob-head">
+    <h2>n번째 원소의 부호</h2>
+    <span class="src">유형2 문제 10</span>
+  </div>
   <div class="step">
     <p class="q"><span class="n">5.</span><code>arr</code>의 n번째 원소를 <code>x</code>에 대입한다.<span class="hint-tag">힌트</span></p>
     <div class="write-lines"></div>
@@ -300,17 +299,16 @@ if __name__ == "__main__":
     <div class="write-lines" style="--lines: 6"></div>
   </div>
   <div class="step fill-rest">
-    <p class="q"><span class="n">7.</span>1~6을 모아 완성 코드를 작성한다.</p>
-    <div class="write-lines" style="--lines: 9"></div>
+    <p class="q"><span class="n">7.</span>전체 코드를 처음부터 스스로 작성해 보자.</p>
+    <div class="write-lines" style="--lines: 11"></div>
   </div>
 </section>
 
 <section class="page">
   <div class="prob-head">
     <h2>J · Q · K 카드 게임</h2>
-    <span class="src">2세트-05</span>
+    <span class="src">유형2 문제 5</span>
     <span class="badge type-blank">빈칸 채우기</span>
-    <span class="tag">문자열 인덱스</span><span class="tag">index()</span>
   </div>
   <div class="orig">
     <div class="sec"><div class="lbl">문제 설명</div><div><p>A와 B는 카드게임을 하고 있습니다.</p><p>J, Q, K로 구성된 3장의 카드에서 A와 B가 1장씩 뽑았을 때, 우선순위가 높은 카드를 뽑은 사람이 이기게 됩니다. 카드의 우선순위는 J &lt; Q &lt; K 입니다.</p><p>A와 B가 뽑은 카드가 순서대로 저장된 문자열 cards가 주어졌을 때, 게임에서 이기는 사람을 출력하는 프로그램의 빈칸을 채우십시오.</p></div></div>
@@ -323,6 +321,7 @@ if __name__ == "__main__":
       <div><span class="lbl">출력</span><pre>B</pre></div>
     </div></div>
   </div>
+  <p class="tip">카드를 우선순위가 낮은 것부터 늘어놓은 문자열에서 각 카드의 위치(인덱스)를 비교하면 누가 이기는지 알 수 있다.</p>
   <p class="steps-title">단계별로 풀기</p>
   <div class="step">
     <p class="q"><span class="n">1.</span>입력을 <code>cards</code>에 대입한다.<span class="hint-tag">힌트</span></p>
@@ -345,15 +344,14 @@ if __name__ == "__main__":
 <section class="page">
   <div class="prob-head">
     <h2>J · Q · K 카드 게임</h2>
-    <span class="src">2세트-05</span>
-    <span class="cont">(이어서)</span>
+    <span class="src">유형2 문제 5</span>
   </div>
   <div class="step">
     <p class="q"><span class="n">5.</span><code>rank_a</code>와 <code>rank_b</code>를 비교해 이긴 사람을 출력한다.<span class="hint-tag">힌트</span></p>
     <div class="write-lines" style="--lines: 4"></div>
   </div>
   <div class="step">
-    <p class="q"><span class="n">6.</span>1~5를 모아 완성 코드를 작성한다.</p>
+    <p class="q"><span class="n">6.</span>전체 코드를 처음부터 스스로 작성해 보자.</p>
     <div class="write-lines" style="--lines: 10"></div>
   </div>
   <div class="step">
@@ -379,7 +377,7 @@ if __name__ == "__main__":
 <section class="page">
   <h2 class="answers-title">2장 힌트</h2>
   <div class="answer hint-box">
-    <h3>1세트-03 · 두 수 중 작은 수 · A</h3>
+    <h3>유형1 문제 3 · 두 수 중 작은 수 · A</h3>
     <ol>
       <li><span class="no">1</span><span><p><code>input()</code>은 입력 한 줄을 받아 문자열로 돌려준다. 받은 값은 변수에 대입해야 다시 쓸 수 있다. 입력이 두 줄이면 <code>input()</code>을 두 번 쓴다.</p>
 <pre class="code plain">
@@ -394,7 +392,7 @@ age = int(input())    # 받으면서 바로 바꾼다
     </ol>
   </div>
   <div class="answer hint-box">
-    <h3>1세트-03 · 두 수 중 작은 수 · B</h3>
+    <h3>유형1 문제 3 · 두 수 중 작은 수 · B</h3>
     <ol>
       <li><span class="no">2</span><span><p><code>if 조건:</code> 아래 줄은 조건이 참일 때, <code>else:</code> 아래 줄은 거짓일 때 실행된다. 아래 줄은 4칸 들여 쓴다.</p>
 <pre class="code plain">
@@ -406,7 +404,7 @@ else:
     </ol>
   </div>
   <div class="answer hint-box">
-    <h3>2세트-04 · 공배수 판별</h3>
+    <h3>유형2 문제 4 · 공배수 판별</h3>
     <ol>
       <li><span class="no">2</span><span><p><code>%</code>는 나눗셈의 나머지를 구한다. 나머지가 0이면 나누어떨어진다는 뜻이고, 앞의 수가 뒤의 수의 배수다. 같은지 비교할 때는 <code>==</code>를 쓴다.</p>
 <pre class="code plain">
@@ -422,7 +420,7 @@ if x &gt; 0 and x &lt; 10:
     </ol>
   </div>
   <div class="answer hint-box">
-    <h3>2세트-02 · 절댓값이 큰 수 · A</h3>
+    <h3>유형2 문제 2 · 절댓값이 큰 수 · A</h3>
     <ol>
       <li><span class="no">2</span><span><p><code>abs(x)</code>는 <code>x</code>의 절댓값(부호를 뗀 값)을 돌려준다. 예) <code>abs(-7)</code> → <code>7</code>, <code>abs(7)</code> → <code>7</code></p></span></li>
     </ol>
@@ -430,9 +428,9 @@ if x &gt; 0 and x &lt; 10:
 </section>
 
 <section class="page">
-  <h2 class="answers-title">2장 힌트 <span style="font-size: 10pt; color: var(--c-muted);">(이어서)</span></h2>
+  <h2 class="answers-title">2장 힌트</h2>
   <div class="answer hint-box">
-    <h3>2세트-02 · 절댓값이 큰 수 · B</h3>
+    <h3>유형2 문제 2 · 절댓값이 큰 수 · B</h3>
     <ol>
       <li><span class="no">3</span><span><p>음수에 -1을 곱하면 부호가 바뀌어 양수가 된다. 0과 양수는 그대로 두면 이미 절댓값이다. 예) <code>-7 * -1</code> → <code>7</code></p>
 <pre class="code plain">
@@ -442,7 +440,7 @@ if x &lt; 0:
     </ol>
   </div>
   <div class="answer hint-box">
-    <h3>2세트-10 · n번째 원소의 부호</h3>
+    <h3>유형2 문제 10 · n번째 원소의 부호</h3>
     <ol>
       <li><span class="no">2</span><span><p><code>split()</code>은 문자열을 공백 기준으로 잘라 리스트로 만든다. 잘린 조각은 아직 문자열이다.</p>
 <pre class="code plain">
@@ -472,9 +470,9 @@ else:
 </section>
 
 <section class="page">
-  <h2 class="answers-title">2장 힌트 <span style="font-size: 10pt; color: var(--c-muted);">(이어서)</span></h2>
+  <h2 class="answers-title">2장 힌트</h2>
   <div class="answer hint-box">
-    <h3>2세트-05 · J · Q · K 카드 게임</h3>
+    <h3>유형2 문제 5 · J · Q · K 카드 게임</h3>
     <ol>
       <li><span class="no">1</span><span><p>카드는 문자이므로 <code>int()</code>로 바꾸지 않는다.</p></span></li>
       <li><span class="no">2</span><span><p>문자열도 리스트처럼 인덱스로 한 글자씩 꺼낼 수 있다. 첫 글자의 인덱스는 0이다.</p>
@@ -505,7 +503,7 @@ else:
 <section class="page">
   <h2 class="answers-title">2장 정답</h2>
   <div class="answer">
-    <h3>1세트-03 · 두 수 중 작은 수 · A <span class="badge type-write">함수 작성</span></h3>
+    <h3>유형1 문제 3 · 두 수 중 작은 수 · A <span class="badge type-write">함수 작성</span></h3>
     <ol>
       <li><span class="no">1</span><span><code>n1 = input()</code> / <code>n2 = input()</code></span></li>
       <li><span class="no">2</span><span><code>n1 = int(n1)</code> / <code>n2 = int(n2)</code> (1과 합쳐 <code>n1 = int(input())</code>도 정답)</span></li>
@@ -520,7 +518,7 @@ print(min(n1, n2))
     </ol>
   </div>
   <div class="answer">
-    <h3>1세트-03 · 두 수 중 작은 수 · B <span class="badge type-write">함수 작성</span></h3>
+    <h3>유형1 문제 3 · 두 수 중 작은 수 · B <span class="badge type-write">함수 작성</span></h3>
     <ol>
       <li><span class="no">1</span><span><code>n1 = int(input())</code> / <code>n2 = int(input())</code></span></li>
       <li><span class="no">2 · 3</span><span>
@@ -535,7 +533,7 @@ else:
     </ol>
   </div>
   <div class="answer">
-    <h3>2세트-04 · 공배수 판별 <span class="badge type-blank">빈칸 채우기</span></h3>
+    <h3>유형2 문제 4 · 공배수 판별 <span class="badge type-blank">빈칸 채우기</span></h3>
     <ol>
       <li><span class="no">1</span><span><code>a = int(input())</code> / <code>b = int(input())</code> / <code>c = int(input())</code></span></li>
       <li><span class="no">2</span><span><code>c % a == 0</code></span></li>
@@ -569,9 +567,9 @@ if __name__ == "__main__":
 </section>
 
 <section class="page">
-  <h2 class="answers-title">2장 정답 <span style="font-size: 10pt; color: var(--c-muted);">(이어서)</span></h2>
+  <h2 class="answers-title">2장 정답</h2>
   <div class="answer">
-    <h3>2세트-02 · 절댓값이 큰 수 · A <span class="badge type-blank">빈칸 채우기</span></h3>
+    <h3>유형2 문제 2 · 절댓값이 큰 수 · A <span class="badge type-blank">빈칸 채우기</span></h3>
     <ol>
       <li><span class="no">1</span><span><code>a = int(input())</code> / <code>b = int(input())</code></span></li>
       <li><span class="no">2</span><span><code>abs_a = abs(a)</code> / <code>abs_b = abs(b)</code></span></li>
@@ -589,7 +587,7 @@ else:
     </ol>
   </div>
   <div class="answer">
-    <h3>2세트-10 · n번째 원소의 부호 <span class="badge type-write">함수 작성</span></h3>
+    <h3>유형2 문제 10 · n번째 원소의 부호 <span class="badge type-write">함수 작성</span></h3>
     <ol>
       <li><span class="no">1</span><span><code>line = input()</code></span></li>
       <li><span class="no">2</span><span><code>arr = line.split()</code></span></li>
@@ -615,9 +613,9 @@ else:
 </section>
 
 <section class="page">
-  <h2 class="answers-title">2장 정답 <span style="font-size: 10pt; color: var(--c-muted);">(이어서)</span></h2>
+  <h2 class="answers-title">2장 정답</h2>
   <div class="answer">
-    <h3>2세트-02 · 절댓값이 큰 수 · B <span class="badge type-blank">빈칸 채우기</span></h3>
+    <h3>유형2 문제 2 · 절댓값이 큰 수 · B <span class="badge type-blank">빈칸 채우기</span></h3>
     <ol>
       <li><span class="no">1</span><span><code>a = int(input())</code> / <code>b = int(input())</code></span></li>
       <li><span class="no">2</span><span><code>abs_a = a</code> / <code>abs_b = b</code></span></li>
@@ -666,9 +664,9 @@ if __name__ == "__main__":
 </section>
 
 <section class="page">
-  <h2 class="answers-title">2장 정답 <span style="font-size: 10pt; color: var(--c-muted);">(이어서)</span></h2>
+  <h2 class="answers-title">2장 정답</h2>
   <div class="answer">
-    <h3>2세트-05 · J · Q · K 카드 게임 <span class="badge type-blank">빈칸 채우기</span></h3>
+    <h3>유형2 문제 5 · J · Q · K 카드 게임 <span class="badge type-blank">빈칸 채우기</span></h3>
     <ol>
       <li><span class="no">1</span><span><code>cards = input()</code></span></li>
       <li><span class="no">2</span><span><code>a = cards[0]</code> / <code>b = cards[1]</code></span></li>
