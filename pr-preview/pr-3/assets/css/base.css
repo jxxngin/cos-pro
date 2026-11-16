@@ -31,7 +31,8 @@
   --c-tok-str: #B45309;
   --c-tok-num: #0E7490;
   --c-tok-fn: #1D4ED8;
-  --c-tok-com: #9CA3AF;
+  --c-tok-com: #5B6472;       /* 주석: 풀이 설명이 들어가므로 인쇄에서도 읽히게 (코드 바탕 대비 5.7:1) */
+  --c-lineno: #9CA3AF;        /* 줄 번호: 읽을 내용이 아니라 옅게 둔다 */
 
   /* 글꼴 */
   --f-body: "Pretendard", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
@@ -431,7 +432,7 @@ pre.code .line::before {
   width: 7mm;
   margin-right: 2.5mm;
   text-align: right;
-  color: var(--c-tok-com);
+  color: var(--c-lineno);
   border-right: 1px solid var(--c-line);
   padding-right: 1.5mm;
 }
