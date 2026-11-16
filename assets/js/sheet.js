@@ -57,7 +57,7 @@
       } else if (m[2]) {
         out += '<mark class="fill">' + highlight(t.slice(1, -1)) + "</mark>";
       } else if (m[3]) {
-        out += '<span class="tok-com">' + esc(t) + "</span>";
+        out += '<span class="tok-com">' + markersOnly(t) + "</span>";   // 주석 안의 빈칸·정답 표시도 바꾼다
       } else if (m[4]) {
         out += '<span class="tok-str">' + markersOnly(t) + "</span>";
       } else if (m[5]) {
