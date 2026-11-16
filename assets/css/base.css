@@ -269,7 +269,9 @@ code, pre, kbd { font-family: var(--f-code); }
   padding: .6mm 2.5mm;
   vertical-align: top;
 }
-.ex td { font-family: var(--f-code); white-space: pre; }
+/* 원문 값은 공백을 그대로 두되, 긴 값은 칸 안에서 줄을 바꿔 인쇄물에서 잘리지 않게 한다 */
+.ex { max-width: 100%; }
+.ex td { font-family: var(--f-code); white-space: pre-wrap; overflow-wrap: anywhere; }
 
 /* 원문 입력 / 출력 상자 */
 .io-pair {
@@ -287,7 +289,9 @@ code, pre, kbd { font-family: var(--f-code); }
   padding: 1mm 2.5mm;
   font-size: 9.5pt;
   line-height: 1.45;
-  white-space: pre;
+  /* 원문 공백은 보존하고, 상자 폭을 넘는 긴 줄은 잘라 내지 않고 줄을 바꾼다(인쇄물에 전부 실리도록) */
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
   overflow: hidden;
 }
 
