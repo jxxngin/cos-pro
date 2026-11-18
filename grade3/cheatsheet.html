@@ -22,9 +22,9 @@
   <div class="cheat full">
     <h3><span class="n">1</span>입력 받기</h3>
     <p><code>input()</code>은 입력 <b>한 줄</b>을 <b>문자열</b>로 돌려준다. 입력이 여러 줄이면 그 줄 수만큼 부른다.</p>
-    <div class="cols"><div><span class="cap">한 줄에 값 하나 · 입력 두 줄: 27, 5</span>
+    <div class="cols"><div><span class="cap">한 줄에 값 하나 · 입력 두 줄: 42, 5</span>
 <pre class="code plain">
-s = input()          # 첫째 줄 → "27"
+s = input()          # 첫째 줄 → "42"
 n = int(input())     # 둘째 줄 → 5
 </pre>
 </div><div><span class="cap">한 줄에 값 여러 개 · 입력 두 줄: 3 8 1, 4 0 6</span>
@@ -35,7 +35,7 @@ b = list(map(int, input().split()))
 # 둘째 줄 → [4, 0, 6]
 </pre>
 </div></div>
-    <p>정수로 바꾸지 않으면 더하기가 이어 붙이기가 된다. 예) <code>"27" + "1"</code> → <code>"271"</code>, <code>int("27") + 1</code> → <code>28</code></p>
+    <p>정수로 바꾸지 않으면 더하기가 이어 붙이기가 된다. 예) <code>"42" + "1"</code> → <code>"421"</code>, <code>int("42") + 1</code> → <code>43</code></p>
   </div>
   <div class="cheat full">
     <h3><span class="n">2</span>출력 형식</h3>
@@ -48,11 +48,11 @@ print("%d %d" % (3, 4))   # 3 4
 </pre>
 </div><div><span class="cap">print의 end</span>
 <pre class="code plain">
-print("a", end=" ")
-print("b")     # a b
+print("go", end=" ")
+print("on")    # go on
 print("x", end="")
 print("y")     # xy
-print(1, 2)    # 1 2 (값 사이 공백)
+print(5, 6)    # 5 6 (값 사이 공백)
 </pre>
 </div></div>
     <ul><li><code>%d</code> 정수, <code>%s</code> 문자열, <code>%.1f</code> <code>%.2f</code> 소수점 첫째·둘째 자리까지 실수. 값이 여러 개이면 괄호로 묶어 순서대로 넣는다.</li><li><code>end</code>를 쓰지 않으면 출력 뒤에 줄이 바뀐다. <code>end=" "</code>는 공백, <code>end=""</code>는 아무것도 붙이지 않는다.</li><li><code>round(2.50, 2)</code>는 <code>2.5</code>가 된다(끝자리 0이 사라짐). 자릿수를 꼭 맞춰야 하면 <code>"%.2f"</code>를 쓴다.</li></ul>
@@ -61,11 +61,11 @@ print(1, 2)    # 1 2 (값 사이 공백)
     <h3><span class="n">3</span>산술 연산</h3>
 
 <pre class="code plain">
-9 / 3       # 3.0 (항상 실수)
-7 % 2       # 1 (나머지)
-12 % 4 == 0 # True (나누어떨어짐)
-abs(-7)     # 7 (절댓값)
-"ab" * 3    # "ababab"
+6 / 3       # 2.0 (항상 실수)
+9 % 4       # 1 (나머지)
+15 % 5 == 0 # True (나누어떨어짐)
+abs(-12)    # 12 (절댓값)
+"xo" * 3    # "xoxoxo"
 </pre>
     <p>짝수·홀수, 배수는 <code>%</code> 나머지로 판단한다.</p>
   </div>
@@ -76,8 +76,8 @@ abs(-7)     # 7 (절댓값)
 3 &lt; 5              # True
 7 == 7             # True
 7 != 7             # False
-"cat" &lt; "dog"      # True
-"a" &lt;= "q" &lt;= "z"  # True
+"bird" &lt; "fish"    # True
+1 &lt;= 5 &lt;= 9        # True (이어서 비교)
 </pre>
     <p>문자열은 사전 순서로 비교한다. 조건 여러 개는 <code>and</code>(모두 참), <code>or</code>(하나라도 참)로 잇는다.</p>
   </div>
@@ -85,11 +85,11 @@ abs(-7)     # 7 (절댓값)
     <h3><span class="n">5</span>내장 함수</h3>
     <div class="cols"><div><span class="cap">리스트 · 값</span>
 <pre class="code plain">
-sum([1, 2, 3])      # 6
-max([3, 9, 4])      # 9
-min(3, 8)           # 3
-len("Hello")        # 5
-len([3, 9, 4])      # 3
+sum([2, 5, 8])      # 15
+max([6, 2, 7])      # 7
+min(6, 2)           # 2
+len("Python")       # 6
+len([6, 2, 7])      # 3
 </pre>
 </div><div><span class="cap">range(시작, 끝, 간격)</span>
 <pre class="code plain">
@@ -107,18 +107,18 @@ list(range(1, 9, 3))  # [1, 4, 7]
   <div class="cheat-grid">
   <div class="cheat full">
     <h3><span class="n">6</span>인덱스와 슬라이싱</h3>
-    <div class="cols"><div><span class="cap">nums = [10, 20, 30, 40, 50]</span>
+    <div class="cols"><div><span class="cap">nums = [11, 22, 33, 44, 55]</span>
         <table class="cells">
-          <tr class="val"><th>값</th><td>10</td><td>20</td><td>30</td><td>40</td><td>50</td></tr>
+          <tr class="val"><th>값</th><td>11</td><td>22</td><td>33</td><td>44</td><td>55</td></tr>
           <tr class="idx"><th>인덱스</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
         </table>
 </div><div><span class="cap">값 꺼내기</span>
 <pre class="code plain">
-nums[0]       # 10 (첫 번째)
-nums[4]       # 50 (마지막: len - 1)
-nums[1:3]     # [20, 30] (끝 미포함)
-nums[1::2]    # [20, 40] (2칸씩)
-"Hello"[:3]   # "Hel"
+nums[0]       # 11 (첫 번째)
+nums[4]       # 55 (마지막: len - 1)
+nums[1:3]     # [22, 33] (끝 미포함)
+nums[::3]     # [11, 44] (3칸씩)
+"Python"[:3]  # "Pyt"
 </pre>
 </div></div>
     <ul><li>인덱스는 <b>0부터</b> 시작한다. 길이가 5이면 마지막 인덱스는 4다. 없는 인덱스를 쓰면 오류(IndexError)가 난다.</li><li>슬라이싱 <code>[시작:끝:간격]</code>은 끝 위치를 포함하지 않는다. 간격이 양수(생략하면 1)일 때 시작을 비워 두면 처음부터, 끝을 비워 두면 마지막까지라는 뜻이다. 문자열에도 똑같이 쓴다.</li></ul>
@@ -128,7 +128,7 @@ nums[1::2]    # [20, 40] (2칸씩)
 
 <pre class="code plain">
 [7, 3, 9].index(9)   # 2 (위치)
-"banana".count("a")  # 3 (개수)
+"tomato".count("o")  # 2 (개수)
 "HeLLo".lower()      # "hello"
 "HeLLo".upper()      # "HELLO"
 "b".islower()        # True
@@ -140,13 +140,13 @@ nums[1::2]    # [20, 40] (2칸씩)
     <h3><span class="n">8</span>조건문</h3>
 
 <pre class="code plain">
-score = 85
-if score &gt;= 90:
-    print("A")
-elif score &gt;= 80:
-    print("B")     # 출력: B
+temp = 25
+if temp &gt;= 30:
+    print("더움")
+elif temp &gt;= 20:
+    print("따뜻함")  # 출력: 따뜻함
 else:
-    print("C")
+    print("쌀쌀함")
 </pre>
     <p>위에서부터 처음 참인 칸 하나만 실행한다. 비교는 <code>==</code>, 대입은 <code>=</code>.</p>
   </div>
@@ -154,18 +154,18 @@ else:
     <h3><span class="n">9</span>반복문</h3>
     <div class="cols"><div><span class="cap">값을 하나씩</span>
 <pre class="code plain">
-for ch in "abc":
+for ch in "sun":
     print(ch, end="")
-# abc
+# sun
 </pre>
 </div><div><span class="cap">위치(인덱스)로</span>
 <pre class="code plain">
-word = "abc"
+word = "sun"
 for i in range(len(word)):
     print(i, word[i])
-# 0 a
-# 1 b
-# 2 c
+# 0 s
+# 1 u
+# 2 n
 </pre>
 </div><div><span class="cap">반복 안의 반복 · 멈추기</span>
 <pre class="code plain">
