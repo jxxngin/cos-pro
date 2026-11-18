@@ -233,9 +233,9 @@ nums = list(map(int, input().split()))   # "1 2 3" → [1, 2, 3]
 </pre></span></li>
       <li><span class="no">3</span><span><p>원문의 "짝수 위치"는 1부터 센 위치(2, 4, 6번째)다. 인덱스는 0부터 시작하므로 인덱스로는 1, 3, 5다. <code>리스트[시작:끝:간격]</code>은 시작 인덱스부터 간격만큼 건너뛰며 원소를 꺼낸다. 끝을 비우면 마지막까지 꺼낸다.</p>
         <table class="cells">
-          <tr class="pos"><th>위치</th><td>1</td><td class="hl">2</td><td>3</td><td class="hl">4</td><td>5</td><td class="hl">6</td><td>7</td></tr>
-          <tr class="val"><th>arr</th><td>41</td><td class="hl">23</td><td>27</td><td class="hl">0</td><td>12</td><td class="hl">36</td><td>30</td></tr>
-          <tr class="idx"><th>인덱스</th><td>0</td><td class="hl">1</td><td>2</td><td class="hl">3</td><td>4</td><td class="hl">5</td><td>6</td></tr>
+          <tr class="pos"><th>위치</th><td>1</td><td class="hl">2</td><td>3</td><td class="hl">4</td><td>5</td></tr>
+          <tr class="val"><th>nums</th><td>10</td><td class="hl">20</td><td>30</td><td class="hl">40</td><td>50</td></tr>
+          <tr class="idx"><th>인덱스</th><td>0</td><td class="hl">1</td><td>2</td><td class="hl">3</td><td>4</td></tr>
         </table>
 <pre class="code plain">
 [10, 20, 30, 40, 50][1::2]    # [20, 40]
@@ -248,8 +248,8 @@ nums = list(map(int, input().split()))   # "1 2 3" → [1, 2, 3]
     <ol>
       <li><span class="no">3</span><span><p><code>range(시작, 끝, 간격)</code>은 시작부터 간격만큼 커지며 끝 바로 앞까지의 수를 만든다. <code>total += x</code>는 <code>total = total + x</code>와 같다.</p>
 <pre class="code plain">
-for i in range(1, 7, 2):
-    print(i)        # 1, 3, 5
+for i in range(1, 9, 2):
+    print(i)        # 1, 3, 5, 7
 </pre></span></li>
       <li><span class="no">6</span><span><p>시험 코드는 합을 담는 변수 이름으로 <code>sum</code>을 쓴다. 빈칸에는 <code>total</code> 대신 <code>sum</code>을 쓴다. <code>sum</code>은 내장 함수 이름이라, 이렇게 변수로 덮어쓰면 그 코드 안에서는 <code>sum()</code> 함수를 쓸 수 없다.</p></span></li>
     </ol>
@@ -261,14 +261,17 @@ for i in range(1, 7, 2):
   <div class="answer hint-box">
     <h3>유형1 문제 9 · 한 글자씩 늘어나는 부분 문자열 · A</h3>
     <ol>
-      <li><span class="no">2</span><span><p><code>range(1, len(s) + 1)</code>은 1부터 <code>len(s)</code>까지의 수를 만든다. <code>range</code>의 끝 값은 포함되지 않으므로 1을 더한다.</p></span></li>
+      <li><span class="no">2</span><span><p><code>range(시작, 끝)</code>의 끝 값은 포함되지 않는다. 그래서 어떤 수까지 포함하려면 끝 값을 그 수보다 1 크게 정한다. <code>len(문자열)</code>은 글자 수를 돌려준다.</p>
+<pre class="code plain">
+print(list(range(1, 6)))    # [1, 2, 3, 4, 5]  (1부터 5까지)
+</pre></span></li>
       <li><span class="no">3</span><span><p><code>문자열[:i]</code>는 앞에서부터 <code>i</code>글자(인덱스 0부터 <code>i - 1</code>까지)를 꺼낸다. <code>print(값, end=" ")</code>은 줄을 바꾸지 않고 끝에 공백을 붙인다.</p>
         <table class="cells">
-          <tr class="val"><th>s</th><td>I</td><td>o</td><td>T</td></tr>
-          <tr class="idx"><th>인덱스</th><td>0</td><td>1</td><td>2</td></tr>
+          <tr class="val"><th>s</th><td>H</td><td>e</td><td>l</td><td>l</td><td>o</td></tr>
+          <tr class="idx"><th>인덱스</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
         </table>
 <pre class="code plain">
-print("IoT"[:2])          # Io
+print("Hello"[:2])        # He
 print("a", end=" ")
 print("b")                # a b
 </pre></span></li>
@@ -277,12 +280,14 @@ print("b")                # a b
   <div class="answer hint-box">
     <h3>유형1 문제 9 · 한 글자씩 늘어나는 부분 문자열 · B</h3>
     <ol>
-      <li><span class="no">3</span><span><p>반복문 안에 반복문을 쓸 수 있다. 바깥 <code>i</code>가 한 번 바뀔 때마다 안쪽 <code>j</code>가 처음부터 다시 돈다. <code>range(i + 1)</code>은 0부터 <code>i</code>까지다. <code>end=""</code>을 쓰면 줄을 바꾸지 않고 이어서 출력한다.</p>
+      <li><span class="no">3</span><span><p>반복문 안에 반복문을 쓸 수 있다. 바깥 변수가 한 번 바뀔 때마다 안쪽 반복이 처음부터 다시 돈다. <code>range(끝)</code>은 0부터 끝 값 바로 앞까지의 수를 만든다(끝 값은 포함되지 않는다). <code>end=""</code>을 쓰면 줄을 바꾸지 않고 이어서 출력한다.</p>
 <pre class="code plain">
-# s = "IoT"일 때
-# i = 0 → j = 0       → I
-# i = 1 → j = 0, 1    → Io
-# i = 2 → j = 0, 1, 2 → IoT
+print(list(range(4)))    # [0, 1, 2, 3]
+
+for a in range(3):
+    for b in range(2):
+        print(a, b, end=" | ")
+# 0 0 | 0 1 | 1 0 | 1 1 | 2 0 | 2 1 |
 </pre></span></li>
       <li><span class="no">4</span><span><p><code>print(end=" ")</code>는 공백 하나만 출력하고 줄은 바꾸지 않는다. 마지막 부분 문자열 뒤에도 공백이 하나 더 나오는데, 시험 코드도 같다.</p></span></li>
       <li><span class="no">6</span><span><p>시험 코드는 문자열 변수 이름으로 <code>str</code>을 쓰고, 글자는 <code>"%s" % str[j]</code> 형식으로 출력한다. 빈칸은 안쪽 반복의 범위다.</p></span></li>
