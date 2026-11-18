@@ -181,33 +181,9 @@ for x in [5, 1, 9]:
     <p>반복 안의 반복은 바깥 한 번마다 안쪽이 처음부터 다시 돈다. <code>break</code>는 가장 가까운 반복을 바로 끝낸다.</p>
   </div>
   <div class="cheat full">
-    <h3><span class="n">10</span>자주 쓰는 틀</h3>
-    <div class="cols"><div><span class="cap">합계</span>
-<pre class="code plain">
-total = 0
-for x in [4, 6, 1]:
-    total += x
-print(total)   # 11
-</pre>
-</div><div><span class="cap">개수 세기</span>
-<pre class="code plain">
-cnt = 0
-for ch in "level":
-    if ch == "e":
-        cnt += 1
-print(cnt)     # 2
-</pre>
-</div><div><span class="cap">최댓값 찾기</span>
-<pre class="code plain">
-nums = [3, 9, 4]
-big = nums[0]
-for x in nums:
-    if x &gt; big:
-        big = x
-print(big)     # 9
-</pre>
-</div></div>
-    <p>변수는 반복 <b>전에</b> 시작 값을 정해 둔다. <code>total += x</code>는 <code>total = total + x</code>와 같다.</p>
+    <h3><span class="n">10</span>반복으로 값 모으기</h3>
+    <p>반복하며 값을 모을 변수는 반복 <b>전에</b> 시작 값을 정해 두고, 반복 안에서 바꿔 간다. 완성된 반복문은 각 장의 힌트에서 확인한다.</p>
+    <ul><li><b>합계</b>: 0에서 시작해 원소를 하나 꺼낼 때마다 더한다.</li><li><b>개수</b>: 0에서 시작해 조건에 맞는 원소를 만날 때만 1씩 늘린다.</li><li><b>최댓값</b>: 첫 원소를 지금까지의 최댓값으로 정해 두고, 그보다 큰 원소를 만나면 바꾼다. 반복이 끝나면 가장 큰 값이 남는다.</li><li><code>a += 2</code>는 <code>a = a + 2</code>와 같다. 기존 값에 더한 결과를 다시 대입한다.</li></ul>
   </div>
   <div class="cheat full">
     <h3><span class="n">11</span>시험 코드에서 주의할 것</h3>
