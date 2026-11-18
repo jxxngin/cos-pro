@@ -187,7 +187,7 @@ for x in [5, 1, 9]:
   </div>
   <div class="cheat full">
     <h3><span class="n">11</span>시험 코드에서 주의할 것</h3>
-    <ul><li>시험 코드가 <code>str</code>, <code>sum</code> 같은 내장 함수 이름을 변수 이름으로 쓰기도 한다. 내가 쓰는 코드에서는 이런 이름을 피한다.</li><li><code>/</code>로 나눈 값은 나누어떨어져도 실수다(<code>8 / 2</code> → <code>4.0</code>). 정수로 출력하려면 <code>%d</code>를 쓴다.</li><li>출력 설명에 적힌 구분(공백, 줄바꿈)을 그대로 맞춘다. 예제 출력과 한 글자씩 비교해 본다.</li></ul>
+    <ul><li>시험 코드가 <code>str</code>, <code>sum</code> 같은 내장 함수 이름을 변수 이름으로 쓰기도 한다. 내가 쓰는 코드에서는 이런 이름을 피한다.</li><li><code>/</code>로 나눈 값은 나누어떨어져도 실수다(<code>8 / 2</code> → <code>4.0</code>). <code>%d</code>는 소수부를 버리므로(<code>"%d" % (7 / 2)</code> → <code>"3"</code>) 나누어떨어질 때만 정수 출력에 쓴다.</li><li>출력 설명에 적힌 구분(공백, 줄바꿈)을 그대로 맞춘다. 예제 출력과 한 글자씩 비교해 본다.</li></ul>
   </div>
   </div>
 </section>
