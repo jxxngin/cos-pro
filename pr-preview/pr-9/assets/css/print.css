@@ -1,0 +1,26 @@
+/* =========================================================
+   인쇄 전용 스타일 (A4 세로)
+   .page 하나가 정확히 종이 한 장이 되도록, 쪽 여백은 .page 안쪽 여백으로 처리한다.
+   ========================================================= */
+
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+
+@media print {
+  body { background: #fff; }
+
+  .page {
+    margin: 0;
+    box-shadow: none;
+    break-after: page;
+  }
+  .page:last-child { break-after: auto; }
+
+  /* 화면 전용 표시는 인쇄하지 않는다 */
+  .page.is-overflow { outline: none; }
+  .page.is-overflow::after { display: none; }
+  .is-overflow-el { outline: none !important; }
+  .screen-only { display: none !important; }
+}
