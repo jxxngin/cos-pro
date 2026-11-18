@@ -175,10 +175,10 @@ for i in range(1, 3):
     print(i * 3)
 # 1 2 3
 # 2 4 6
-for x in [5, 1, 9]:
-    if x == 1:
+for x in [4, 7, 10]:
+    if x &gt; 5:
+        print("찾음", x)  # 찾음 7
         break
-    print(x)   # 5만 출력
 </pre>
 </div></div>
     <p>반복 안의 반복은 바깥 한 번마다 안쪽이 처음부터 다시 돈다. <code>break</code>는 가장 가까운 반복을 바로 끝낸다.</p>
