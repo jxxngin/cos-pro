@@ -16,6 +16,8 @@
   --c-blank-soft: #FEF3C7;
   --c-write: #059669;
   --c-write-soft: #D1FAE5;
+  --c-blank-ink: #92400E;     /* 배지 글자: 옅은 바탕 위 대비 6.4:1 */
+  --c-write-ink: #065F46;     /* 배지 글자: 옅은 바탕 위 대비 6.8:1 */
   --c-warn: #DC2626;
   --c-warn-soft: #FEF2F2;
   --c-note: #0369A1;
@@ -186,8 +188,8 @@ code, pre, kbd { font-family: var(--f-code); }
   border-radius: 99px;
   line-height: 1.6;
 }
-.badge.type-blank { background: var(--c-blank-soft); color: var(--c-blank); }
-.badge.type-write { background: var(--c-write-soft); color: var(--c-write); }
+.badge.type-blank { background: var(--c-blank-soft); color: var(--c-blank-ink); }
+.badge.type-write { background: var(--c-write-soft); color: var(--c-write-ink); }
 
 .tag {
   display: inline-block;
@@ -530,3 +532,105 @@ mark.fill {
 .answer .no { color: var(--c-primary); font-weight: 800; font-size: 9.5pt; }
 .answer .no.blank-no { color: var(--c-blank); }
 .answer p { margin: 0; }
+
+/* ---------------------------------------------------------
+   표지 · 목차 (grade3/index.html)
+   --------------------------------------------------------- */
+.cover-head {
+  padding: 2mm 0 4mm;
+  border-bottom: 2px solid var(--c-primary);
+}
+.cover-head .kicker {
+  margin: 0;
+  font-size: 10pt;
+  font-weight: 800;
+  letter-spacing: .12em;
+  color: var(--c-primary);
+}
+.cover-head h1 { margin: 1.5mm 0 0; font-size: 26pt; line-height: 1.2; }
+.cover-head p { margin: 2mm 0 0; color: var(--c-muted); }
+.cover-name {
+  display: flex;
+  gap: 8mm;
+  justify-content: flex-end;
+  font-size: 10pt;
+  color: var(--c-muted);
+}
+.cover-name span {
+  display: inline-block;
+  min-width: 42mm;
+  border-bottom: 1px solid var(--c-text);
+  padding-bottom: .5mm;
+}
+.cover-sub {
+  margin: 1mm 0 0;
+  font-size: 11.5pt;
+  font-weight: 800;
+}
+.how {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5mm;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: how;
+}
+.how li {
+  background: var(--c-primary-soft);
+  border-radius: 2mm;
+  padding: 2mm 3mm;
+  font-size: 9pt;
+  line-height: 1.45;
+}
+.how li::before {
+  counter-increment: how;
+  content: counter(how);
+  display: block;
+  font-size: 13pt;
+  font-weight: 800;
+  color: var(--c-primary);
+}
+.how b { display: block; font-size: 10pt; }
+.legend { display: flex; flex-wrap: wrap; gap: 2mm 5mm; font-size: 9pt; color: var(--c-muted); }
+.legend .hint-tag { margin-left: 0; }
+.toc { width: 100%; border-collapse: collapse; font-size: 9.5pt; }
+.toc th, .toc td { padding: 1.4mm 2mm; border-bottom: 1px solid var(--c-line); vertical-align: top; text-align: left; }
+.toc th { font-size: 8.5pt; color: var(--c-muted); font-weight: 700; border-bottom: 1.5px solid var(--c-text); }
+.toc .no { width: 12mm; font-size: 14pt; font-weight: 800; color: var(--c-primary); line-height: 1.2; }
+.toc .ttl { width: 46mm; font-weight: 800; }
+/* 화면에서는 링크임을 알 수 있게 색과 밑줄을 둔다(인쇄에서는 print.css가 지운다) */
+.toc .ttl a { color: var(--c-primary); text-decoration: underline; text-underline-offset: .6mm; }
+.toc ul { margin: 0; padding: 0; list-style: none; }
+.toc li { display: flex; gap: 2mm; align-items: baseline; }
+.toc li + li { margin-top: .6mm; }
+.toc li .src { flex: none; width: 23mm; color: var(--c-muted); font-size: 8.5pt; font-weight: 600; }
+.toc li .badge { flex: none; font-size: 7.5pt; padding: 0 1.8mm; }
+.toc li .ab { color: var(--c-muted); font-size: 8.5pt; }
+
+/* ---------------------------------------------------------
+   한 장 요약 (grade3/cheatsheet.html)
+   --------------------------------------------------------- */
+.chapter-band.extra .ch-no { font-size: 20pt; }
+.chapter-band.extra .ch-no::before { content: "SUMMARY"; }
+.cheat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5mm; }
+.cheat {
+  border: 1px solid var(--c-line);
+  border-radius: 2mm;
+  padding: 1.8mm 3mm 2mm;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2mm;
+  min-width: 0;
+}
+.cheat.full { grid-column: 1 / -1; }
+.cheat h3 { margin: 0; font-size: 10.5pt; display: flex; align-items: baseline; gap: 2mm; }
+.cheat h3 .n { color: var(--c-primary); font-weight: 800; }
+.cheat p { margin: 0; font-size: 9pt; }
+.cheat ul { margin: 0; padding-left: 4mm; font-size: 9pt; }
+.cheat ul li + li { margin-top: .5mm; }
+.cheat pre.code { font-size: 8.3pt; line-height: 1.4; }
+.cheat .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); gap: 2.5mm; }
+.cheat .cols > div { min-width: 0; display: flex; flex-direction: column; gap: 1mm; }
+.cheat .cols .cap { font-size: 8.5pt; font-weight: 700; color: var(--c-muted); }
+.cheat .cells { margin: 0; }
