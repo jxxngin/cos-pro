@@ -279,8 +279,8 @@ print("%d" % counter)
       <li><span class="no">2</span><span><p>개수를 셀 변수는 반복 전에 0으로 시작하고, 조건에 맞을 때마다 1씩 늘린다. <code>counter += 1</code>은 <code>counter = counter + 1</code>과 같다.</p></span></li>
       <li><span class="no">3</span><span><p><code>len(문자열)</code>은 글자 수를 돌려준다. <code>range(0, len(s))</code>는 0부터 <code>len(s) - 1</code>까지의 수를 차례로 만든다. 이 수를 인덱스로 쓰면 <code>s[i]</code>로 한 글자씩 꺼낼 수 있다.</p>
         <table class="cells">
-          <tr class="val"><th>s</th><td>L</td><td>O</td><td>G</td><td>i</td><td>c</td></tr>
-          <tr class="idx"><th>인덱스 i</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+          <tr class="val"><th>s</th><td>B</td><td>l</td><td>U</td><td>e</td></tr>
+          <tr class="idx"><th>인덱스 i</th><td>0</td><td>1</td><td>2</td><td>3</td></tr>
         </table>
 <pre class="code plain">
 for i in range(0, len("abc")):
@@ -343,10 +343,10 @@ print(8 % 2)    # 0
   <div class="answer hint-box">
     <h3>유형1 문제 2 · 7 앞에 있는 숫자의 개수 · A</h3>
     <ol>
-      <li><span class="no">2</span><span><p><code>리스트.index(값)</code>은 그 값이 처음 나오는 인덱스를 돌려준다. 인덱스는 0부터 시작하므로, 어떤 값의 인덱스는 그 값 앞에 있는 원소의 개수와 같다.</p>
+      <li><span class="no">2</span><span><p><code>리스트.index(값)</code>은 그 값이 처음 나오는 인덱스를 돌려준다. 인덱스는 0부터 시작하므로, 어떤 값의 인덱스는 그 값 앞에 있는 원소의 개수와 같다. 아래에서 9의 인덱스는 3이고, 9 앞에는 원소가 3개 있다.</p>
         <table class="cells">
-          <tr class="val"><th>n</th><td>14</td><td>45</td><td>50</td><td>3</td><td class="hl">7</td><td>11</td></tr>
-          <tr class="idx"><th>인덱스</th><td>0</td><td>1</td><td>2</td><td>3</td><td class="hl">4</td><td>5</td></tr>
+          <tr class="val"><th>n</th><td>8</td><td>21</td><td>40</td><td class="hl">9</td><td>26</td></tr>
+          <tr class="idx"><th>인덱스</th><td>0</td><td>1</td><td>2</td><td class="hl">3</td><td>4</td></tr>
         </table></span></li>
     </ol>
   </div>
