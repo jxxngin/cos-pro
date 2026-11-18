@@ -290,7 +290,11 @@ for a in range(3):
 # 0 0 | 0 1 | 1 0 | 1 1 | 2 0 | 2 1 |
 </pre></span></li>
       <li><span class="no">4</span><span><p><code>print(end=" ")</code>는 공백 하나만 출력하고 줄은 바꾸지 않는다. 마지막 부분 문자열 뒤에도 공백이 하나 더 나오는데, 시험 코드도 같다.</p></span></li>
-      <li><span class="no">6</span><span><p>시험 코드는 문자열 변수 이름으로 <code>str</code>을 쓰고, 글자는 <code>"%s" % str[j]</code> 형식으로 출력한다. 빈칸은 안쪽 반복의 범위다.</p></span></li>
+      <li><span class="no">6</span><span><p>시험 코드는 문자열 변수 이름으로 <code>str</code>을 쓰고, 글자는 <code>"%s" % str[j]</code> 형식으로 출력한다. 빈칸은 안쪽 반복의 범위다. 시험 코드의 빈칸을 채울 때는 변수 이름 <code>str</code>을 그대로 둔다. 그런데 <code>str</code>은 원래 내장 함수 이름이라, 여기에 문자열을 대입하면 그 코드 안에서는 <code>str()</code> 함수를 쓸 수 없다. 그래서 직접 코드를 쓸 때(1~5단계)는 <code>s</code>처럼 다른 이름을 쓴다.</p>
+<pre class="code plain">
+str = "abc"
+print(str(123))    # TypeError: 'str' object is not callable
+</pre></span></li>
     </ol>
   </div>
   <div class="answer hint-box">
