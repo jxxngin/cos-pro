@@ -194,16 +194,16 @@ for i in range(3):
   <div class="answer hint-box">
     <h3>유형1 문제 5 · 하이픈과 별 교차 출력 · A</h3>
     <ol>
-      <li><span class="no">2</span><span><p><code>range(n)</code>은 0부터 <code>n - 1</code>까지의 수를 만든다. <code>i</code>가 커질수록 하이픈은 늘고 별은 줄어든다(n = 5일 때).</p>
+      <li><span class="no">2</span><span><p><code>range(n)</code>은 0부터 <code>n - 1</code>까지의 수를 만든다. 출력은 길이가 n인 묶음 n개가 이어진 것이다. 묶음마다(반복 번호 <code>i</code>마다) 하이픈과 별이 몇 개인지 아래 표에 적어 보면 규칙이 보인다(n = 4로 연습).</p>
         <table class="cells">
-          <tr class="pos"><th>i</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
-          <tr class="val"><th>하이픈</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
-          <tr class="val"><th>별</th><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td></tr>
+          <tr class="pos"><th>i</th><td>0</td><td>1</td><td>2</td><td>3</td></tr>
+          <tr class="val"><th>하이픈</th><td></td><td></td><td></td><td></td></tr>
+          <tr class="val"><th>별</th><td></td><td></td><td></td><td></td></tr>
         </table></span></li>
       <li><span class="no">3</span><span><p><code>문자열 * 정수</code>는 문자열을 정수만큼 반복한다. <code>"-" * 0</code>은 빈 문자열이다. 문자열끼리는 <code>+</code>로 이어 붙인다. <code>print(값, end="")</code>은 줄을 바꾸지 않는다.</p>
 <pre class="code plain">
 print("ab" * 3)              # ababab
-print("-" * 2 + "*" * 3)     # --***
+print("ab" * 2 + "c")        # ababc
 </pre></span></li>
     </ol>
   </div>
