@@ -16,6 +16,8 @@
   --c-blank-soft: #FEF3C7;
   --c-write: #059669;
   --c-write-soft: #D1FAE5;
+  --c-blank-ink: #92400E;     /* 배지 글자: 옅은 바탕 위 대비 6.4:1 */
+  --c-write-ink: #065F46;     /* 배지 글자: 옅은 바탕 위 대비 6.8:1 */
   --c-warn: #DC2626;
   --c-warn-soft: #FEF2F2;
   --c-note: #0369A1;
@@ -186,8 +188,8 @@ code, pre, kbd { font-family: var(--f-code); }
   border-radius: 99px;
   line-height: 1.6;
 }
-.badge.type-blank { background: var(--c-blank-soft); color: var(--c-blank); }
-.badge.type-write { background: var(--c-write-soft); color: var(--c-write); }
+.badge.type-blank { background: var(--c-blank-soft); color: var(--c-blank-ink); }
+.badge.type-write { background: var(--c-write-soft); color: var(--c-write-ink); }
 
 .tag {
   display: inline-block;
