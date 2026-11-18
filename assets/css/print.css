@@ -23,4 +23,7 @@
   .page.is-overflow::after { display: none; }
   .is-overflow-el { outline: none !important; }
   .screen-only { display: none !important; }
+
+  /* 종이에서는 링크가 동작하지 않으므로 목차 제목을 본문 글자처럼 보인다 */
+  .toc .ttl a { color: var(--c-text); text-decoration: none; }
 }
