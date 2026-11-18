@@ -15,7 +15,7 @@
     <div class="ch-no">01</div>
     <div>
       <h1>기본 연산과 출력 형식</h1>
-      <p>사칙연산과 절댓값, 정해진 형식에 맞춰 출력하는 문제.</p>
+      <p>사칙연산과 절댓값, 문자열 이어 붙이기, 정해진 형식에 맞춰 출력하는 문제.</p>
     </div>
   </header>
   <div class="prob-head">
@@ -147,6 +147,79 @@ if __name__ == "__main__":
 </section>
 
 <section class="page">
+  <div class="prob-head">
+    <h2>두 문자열 사이에 & 넣기 · A</h2>
+    <span class="src">유형1 문제 7</span>
+    <span class="badge type-blank">빈칸 채우기</span>
+  </div>
+  <div class="orig">
+    <div class="sec"><div class="lbl">문제 설명</div><div><p>특수문자(&amp;)가 포함된 문자열을 나타내려 합니다.</p><p>문자열 두 개를 전달받아 첫 번째 문자열과 두 번째 문자열 사이에 특수문자(&amp;)를 포함하여 출력하도록 코드를 작성하려 합니다. 빈칸(⬜)을 채워 전체 코드를 완성해주세요.</p></div></div>
+    <div class="sec"><div class="lbl">입력 설명</div><div><p>문자열 두 개가 주어집니다.</p><ul><li>두 문자열은 알파벳 소문자로만 이루어집니다.</li><li>두 문자열의 길이는 1 이상 100 이하입니다.</li></ul></div></div>
+    <div class="sec"><div class="lbl">출력 설명</div><div><p>전달받은 첫 번째 문자열과 두 번째 문자열 사이에 특수문자(&amp;)를 포함하여 출력해주세요.</p></div></div>
+    <div class="sec"><div class="lbl">예제</div><div><table class="ex"><tr><th>str1</th><th>str2</th><th>result</th></tr><tr><td>peach</td><td>lemon</td><td>peach&amp;lemon</td></tr></table></div></div>
+    <div class="sec"><div class="lbl"></div><div class="io-pair">
+      <div><span class="lbl">입력</span><pre>peach
+lemon</pre></div>
+      <div><span class="lbl">출력</span><pre>peach&amp;lemon</pre></div>
+    </div></div>
+    <div class="sec"><div class="lbl">예제 설명</div><div><p>전달받은 첫 번째 문자열 “peach”과 두 번재 문자열 “lemon” 사이에 특수문자(&amp;)을 포함하여 “peach&amp;lemon”을 출력합니다.</p></div></div>
+  </div>
+  <p class="tip">문자열끼리 <code>+</code>로 연산하면 앞뒤로 이어 붙인 새 문자열이 된다.</p>
+  <p class="steps-title">단계별로 풀기</p>
+  <div class="step">
+    <p class="q"><span class="n">1.</span>입력된 문자열 두 개를 <code>str1</code>, <code>str2</code>에 대입한다.</p>
+    <div class="write-lines" style="--lines: 2"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">2.</span><code>str1</code>과 <code>str2</code> 사이에 <code>"&amp;"</code>를 넣은 문자열을 출력한다.<span class="hint-tag">힌트</span></p>
+    <div class="write-lines"></div>
+  </div>
+  <div class="step fill-rest">
+    <p class="q"><span class="n">3.</span>전체 코드를 처음부터 스스로 작성해 보자.</p>
+    <div class="write-lines" style="--lines: 4"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">4.</span>시험 코드의 빈칸 ①을 채운다.<span class="hint-tag">힌트</span></p>
+<pre class="code">
+str1 = input()
+str2 = input()
+
+print({{1:wide}})
+</pre>
+  </div>
+</section>
+
+<section class="page">
+  <div class="prob-head">
+    <h2>두 문자열 사이에 & 넣기 · B</h2>
+    <span class="src">유형1 문제 7</span>
+    <span class="badge type-blank">빈칸 채우기</span>
+  </div>
+  <p class="tip">문제는 A와 같다. <code>%</code> 포맷의 <code>%s</code>는 그 자리에 문자열을 넣는다.</p>
+  <div class="step">
+    <p class="q"><span class="n">1.</span>입력된 문자열 두 개를 <code>str1</code>, <code>str2</code>에 대입한다.</p>
+    <div class="write-lines" style="--lines: 2"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">2.</span><code>%</code> 포맷으로 <code>str1</code>과 <code>str2</code> 사이에 <code>"&amp;"</code>를 넣은 문자열을 출력한다.<span class="hint-tag">힌트</span></p>
+    <div class="write-lines" style="--lines: 2"></div>
+  </div>
+  <div class="step fill-rest">
+    <p class="q"><span class="n">3.</span>전체 코드를 처음부터 스스로 작성해 보자.</p>
+    <div class="write-lines" style="--lines: 4"></div>
+  </div>
+  <div class="step">
+    <p class="q"><span class="n">4.</span>시험 코드의 빈칸 ①을 <code>%</code> 포맷으로 채운다.</p>
+<pre class="code">
+str1 = input()
+str2 = input()
+
+print({{1:wide}})
+</pre>
+  </div>
+</section>
+
+<section class="page">
   <h2 class="answers-title">1장 힌트</h2>
   <div class="answer hint-box">
     <h3>유형1 문제 10 · 두 수의 차의 절댓값 · A</h3>
@@ -176,6 +249,23 @@ print(x)    # 4
       <li><span class="no">2</span><span><p><code>/</code>로 나눈 결과는 항상 실수다. 나누어떨어져도 <code>.0</code>이 붙는다. 예) <code>7 * 4 / 2</code> → <code>14.0</code></p></span></li>
       <li><span class="no">4</span><span><p><code>"형식" % 값</code>은 값을 형식에 맞춘 문자열을 만든다. <code>%.2f</code>는 소수점 둘째 자리까지, <code>%d</code>는 정수다. 값이 여러 개이면 괄호로 묶어 순서대로 넣는다. 예) <code>"%.2f" % 3.14159</code> → <code>3.14</code>, <code>"%d-%d" % (3, 4)</code> → <code>3-4</code></p></span></li>
       <li><span class="no">6</span><span><p>시험 코드는 빈칸 ③에 형식 문자열을 넣고, <code>%</code> 뒤의 <code>(triangle, rectangle)</code>가 그 형식에 차례로 들어간다. ①·②는 2·3단계에서 쓴 식이다.</p></span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="page">
+  <h2 class="answers-title">1장 힌트</h2>
+  <div class="answer hint-box">
+    <h3>유형1 문제 7 · 두 문자열 사이에 & 넣기 · A</h3>
+    <ol>
+      <li><span class="no">2</span><span><p><code>+</code>는 숫자끼리는 더하기지만, 문자열끼리는 앞뒤로 이어 붙인다. 셋 이상도 차례로 이을 수 있고, 넣을 글자도 따옴표로 감싼 문자열로 쓴다. 예) <code>"rain" + "/" + "bow"</code> → <code>"rain/bow"</code></p></span></li>
+      <li><span class="no">4</span><span><p>시험 코드는 <code>print( )</code>의 괄호 안이 비어 있다. 괄호 안에는 출력할 값 하나(식)가 들어간다.</p></span></li>
+    </ol>
+  </div>
+  <div class="answer hint-box">
+    <h3>유형1 문제 7 · 두 문자열 사이에 & 넣기 · B</h3>
+    <ol>
+      <li><span class="no">2</span><span><p><code>%s</code>는 그 자리에 문자열을 넣는다. 형식 문자열 안의 다른 글자는 그대로 출력된다. 값이 여러 개이면 괄호로 묶어 순서대로 넣는다. 예) <code>"[%s]" % "rain"</code> → <code>[rain]</code></p></span></li>
     </ol>
   </div>
 </section>
@@ -252,6 +342,52 @@ if __name__ == "__main__":
     rectangle = ⟦base * height⟧
 
     print("⟦%.1f %d⟧" % (triangle, rectangle))
+</pre>
+  </div>
+</section>
+
+<section class="page">
+  <h2 class="answers-title">1장 정답</h2>
+  <div class="answer">
+    <h3>유형1 문제 7 · 두 문자열 사이에 & 넣기 · A <span class="badge type-blank">빈칸 채우기</span></h3>
+    <ol>
+      <li><span class="no">1</span><span><code>str1 = input()</code> / <code>str2 = input()</code></span></li>
+      <li><span class="no">2</span><span><code>print(str1 + "&amp;" + str2)</code></span></li>
+      <li><span class="no">3</span><span>
+<pre class="code small">
+str1 = input()
+str2 = input()
+print(str1 + "&amp;" + str2)
+</pre></span></li>
+      <li><span class="no blank-no">4 ①</span><span><code>str1 + "&amp;" + str2</code></span></li>
+    </ol>
+<p><code>print(str1, "&amp;", str2)</code>는 값 사이에 공백이 들어가 <code>peach &amp; lemon</code>이 되므로 틀린다.</p>
+<pre class="code small">
+str1 = input()
+str2 = input()
+
+print(⟦str1 + "&amp;" + str2⟧)
+</pre>
+  </div>
+  <div class="answer">
+    <h3>유형1 문제 7 · 두 문자열 사이에 & 넣기 · B <span class="badge type-blank">빈칸 채우기</span></h3>
+    <ol>
+      <li><span class="no">1</span><span><code>str1 = input()</code> / <code>str2 = input()</code></span></li>
+      <li><span class="no">2</span><span><code>print("%s&amp;%s" % (str1, str2))</code></span></li>
+      <li><span class="no">3</span><span>
+<pre class="code small">
+str1 = input()
+str2 = input()
+print("%s&amp;%s" % (str1, str2))
+</pre></span></li>
+      <li><span class="no blank-no">4 ①</span><span><code>"%s&amp;%s" % (str1, str2)</code></span></li>
+    </ol>
+
+<pre class="code small">
+str1 = input()
+str2 = input()
+
+print(⟦"%s&amp;%s" % (str1, str2)⟧)
 </pre>
   </div>
 </section>

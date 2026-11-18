@@ -595,7 +595,7 @@ mark.fill {
 .legend { display: flex; flex-wrap: wrap; gap: 2mm 5mm; font-size: 9pt; color: var(--c-muted); }
 .legend .hint-tag { margin-left: 0; }
 .toc { width: 100%; border-collapse: collapse; font-size: 9.5pt; }
-.toc th, .toc td { padding: 1.4mm 2mm; border-bottom: 1px solid var(--c-line); vertical-align: top; text-align: left; }
+.toc th, .toc td { padding: 1.2mm 2mm; border-bottom: 1px solid var(--c-line); vertical-align: top; text-align: left; }
 .toc th { font-size: 8.5pt; color: var(--c-muted); font-weight: 700; border-bottom: 1.5px solid var(--c-text); }
 .toc .no { width: 12mm; font-size: 14pt; font-weight: 800; color: var(--c-primary); line-height: 1.2; }
 .toc .ttl { width: 46mm; font-weight: 800; }
