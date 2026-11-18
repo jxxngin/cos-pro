@@ -430,7 +430,7 @@ if __name__ == "__main__":
 <pre class="code plain">
 name = input()
 </pre></span></li>
-      <li><span class="no">2</span><span><p><code>input()</code>으로 받은 값은 숫자처럼 보여도 문자열이다. 크기를 비교하거나 계산하려면 <code>int()</code>로 정수로 바꾼다. 바꾸지 않으면 문자열끼리 비교하므로 <code>"100" &lt; "27"</code>이 <code>True</code>가 된다.</p>
+      <li><span class="no">2</span><span><p><code>input()</code>으로 받은 값은 숫자처럼 보여도 문자열이다. 크기를 비교하거나 계산하려면 <code>int()</code>로 정수로 바꾼다. 바꾸지 않으면 문자열끼리 비교하므로 <code>"100" &lt; "9"</code>이 <code>True</code>가 된다.</p>
 <pre class="code plain">
 age = int(age)        # 이미 받은 값을 바꾼다
 age = int(input())    # 받으면서 바로 바꾼다
@@ -530,7 +530,7 @@ else:
       <li><span class="no">1</span><span><p>카드는 문자이므로 <code>int()</code>로 바꾸지 않는다.</p></span></li>
       <li><span class="no">2</span><span><p>문자열도 리스트처럼 인덱스로 한 글자씩 꺼낼 수 있다. 첫 글자의 인덱스는 0이다.</p>
         <table class="cells">
-          <tr class="val"><th>cards</th><td>Q</td><td>K</td></tr>
+          <tr class="val"><th>cards</th><td>J</td><td>K</td></tr>
           <tr class="idx"><th>인덱스</th><td>0</td><td>1</td></tr>
           <tr class="pos"><th>카드 주인</th><td>A</td><td>B</td></tr>
         </table></span></li>
@@ -542,7 +542,7 @@ else:
 <pre class="code plain">
 "JQK".index("Q")    # 1
 </pre></span></li>
-      <li><span class="no">5</span><span><p>인덱스가 큰 쪽이 이긴다. <code>rank_a</code>가 더 작으면 B가 이긴다.</p></span></li>
+      <li><span class="no">5</span><span><p>두 인덱스를 비교하는 조건 하나로 A가 이기는 경우와 B가 이기는 경우를 나눌 수 있다. 인덱스가 클수록 우선순위가 높은 카드다.</p></span></li>
     </ol>
   </div>
   <div class="answer hint-box">
