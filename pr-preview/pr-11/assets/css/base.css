@@ -599,7 +599,8 @@ mark.fill {
 .toc th { font-size: 8.5pt; color: var(--c-muted); font-weight: 700; border-bottom: 1.5px solid var(--c-text); }
 .toc .no { width: 12mm; font-size: 14pt; font-weight: 800; color: var(--c-primary); line-height: 1.2; }
 .toc .ttl { width: 46mm; font-weight: 800; }
-.toc .ttl a { color: inherit; text-decoration: none; }
+/* 화면에서는 링크임을 알 수 있게 색과 밑줄을 둔다(인쇄에서는 print.css가 지운다) */
+.toc .ttl a { color: var(--c-primary); text-decoration: underline; text-underline-offset: .6mm; }
 .toc ul { margin: 0; padding: 0; list-style: none; }
 .toc li { display: flex; gap: 2mm; align-items: baseline; }
 .toc li + li { margin-top: .6mm; }

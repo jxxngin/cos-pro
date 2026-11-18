@@ -93,7 +93,7 @@ len([6, 2, 7])      # 3
 </pre>
 </div><div><span class="cap">range(시작, 끝, 간격)</span>
 <pre class="code plain">
-list(range(4))        # [0, 1, 2, 3]
+list(range(6))        # [0, 1, 2, 3, 4, 5]
 list(range(2, 5))     # [2, 3, 4]
 list(range(1, 9, 3))  # [1, 4, 7]
 # 끝 값은 포함하지 않는다
@@ -107,17 +107,17 @@ list(range(1, 9, 3))  # [1, 4, 7]
   <div class="cheat-grid">
   <div class="cheat full">
     <h3><span class="n">6</span>인덱스와 슬라이싱</h3>
-    <div class="cols"><div><span class="cap">nums = [11, 22, 33, 44, 55]</span>
+    <div class="cols"><div><span class="cap">data = [11, 22, 33, 44, 55]</span>
         <table class="cells">
           <tr class="val"><th>값</th><td>11</td><td>22</td><td>33</td><td>44</td><td>55</td></tr>
           <tr class="idx"><th>인덱스</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
         </table>
 </div><div><span class="cap">값 꺼내기</span>
 <pre class="code plain">
-nums[0]       # 11 (첫 번째)
-nums[4]       # 55 (마지막: len - 1)
-nums[1:3]     # [22, 33] (끝 미포함)
-nums[::3]     # [11, 44] (3칸씩)
+data[0]       # 11 (첫 번째)
+data[4]       # 55 (마지막: len - 1)
+data[1:3]     # [22, 33] (끝 미포함)
+data[::3]     # [11, 44] (3칸씩)
 "Python"[:3]  # "Pyt"
 </pre>
 </div></div>
