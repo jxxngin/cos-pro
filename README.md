@@ -11,14 +11,14 @@
 | --- | --- | --- | --- |
 | 표지 | [표지 · 목차](https://jxxngin.github.io/cos-pro/grade3/index.html) | 푸는 방법, 장별 수록 문제 | 1 |
 | 요약 | [한 장 요약](https://jxxngin.github.io/cos-pro/grade3/cheatsheet.html) | 문제에 나온 문법만 모은 요약 | 2 |
-| 1장 | [기본 연산과 출력 형식](https://jxxngin.github.io/cos-pro/grade3/ch01-basic-output.html) | 유형1 문제 10, 유형2 문제 3 | 7 |
+| 1장 | [기본 연산과 출력 형식](https://jxxngin.github.io/cos-pro/grade3/ch01-basic-output.html) | 유형1 문제 10, 유형2 문제 3, 유형1 문제 7 | 11 |
 | 2장 | [비교와 조건](https://jxxngin.github.io/cos-pro/grade3/ch02-compare.html) | 유형1 문제 3, 유형2 문제 4 · 2 · 10 · 5 | 23 |
 | 3장 | [합계 · 평균 · 최댓값](https://jxxngin.github.io/cos-pro/grade3/ch03-sum-max.html) | 유형2 문제 1 · 8, 유형1 문제 8 | 11 |
 | 4장 | [개수 세기](https://jxxngin.github.io/cos-pro/grade3/ch04-count.html) | 유형1 문제 6, 유형2 문제 9 · 6, 유형1 문제 2 | 14 |
 | 5장 | [문자열 · 리스트 다루기](https://jxxngin.github.io/cos-pro/grade3/ch05-string-list.html) | 유형1 문제 4 · 9, 유형2 문제 7 | 10 |
 | 6장 | [반복으로 만들기](https://jxxngin.github.io/cos-pro/grade3/ch06-loop.html) | 유형1 문제 1 · 5 | 9 |
 
-20문제 중 19문제를 수록했습니다. 유형1 문제 7은 시험 코드 자료를 받는 대로 1장에 추가합니다.
+3급 20문제를 모두 수록했습니다.
 
 ## 학습지 한 문제의 흐름
 
